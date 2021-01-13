@@ -25,22 +25,22 @@ $request = array(
             'externalId' => uniqid(),
             'name' => 'Item 1',
             'price' => 30,
-            'subMerchantId' => 1,
-            'subMerchantPrice' => 27
+            'subMerchantMemberId' => 1,
+            'subMerchantMemberPrice' => 27
         ),
         array(
             'externalId' => uniqid(),
             'name' => 'Item 2',
             'price' => 50,
-            'subMerchantId' => 2,
-            'subMerchantPrice' => 42
+            'subMerchantMemberId' => 2,
+            'subMerchantMemberPrice' => 42
         ),
         array(
             'externalId' => uniqid(),
             'name' => 'Item 3',
             'price' => 20,
-            'subMerchantId' => 3,
-            'subMerchantPrice' => 18
+            'subMerchantMemberId' => 3,
+            'subMerchantMemberPrice' => 18
         )
     )
 );
