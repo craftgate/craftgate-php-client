@@ -2,7 +2,7 @@
 
 namespace Craftgate\Model;
 
-class SubMerchantType
+class MemberType
 {
     const PERSONAL = "PERSONAL";
     const PRIVATE_COMPANY = "PRIVATE_COMPANY";

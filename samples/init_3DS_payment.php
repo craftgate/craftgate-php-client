@@ -11,7 +11,7 @@ $request = array(
     'walletPrice' => 0,
     'installment' => 1,
     'currency' => Currency::TL,
-    'paymentGroup' => PaymentGroup::PRODUCT,
+    'paymentGroup' => PaymentGroup::LISTING_OR_SUBSCRIPTION,
     'conversationId' => '456d1297-908e-4bd6-a13b-4be31a6e47d5',
     'callbackUrl' => 'https://www.your-website.com/craftgate-3DSecure-callback',
     'card' => array(
@@ -25,23 +25,17 @@ $request = array(
         array(
             'externalId' => uniqid(),
             'name' => 'Item 1',
-            'price' => 30,
-            'subMerchantId' => 1,
-            'subMerchantPrice' => 27
+            'price' => 30
         ),
         array(
             'externalId' => uniqid(),
             'name' => 'Item 2',
-            'price' => 50,
-            'subMerchantId' => 2,
-            'subMerchantPrice' => 42
+            'price' => 50
         ),
         array(
             'externalId' => uniqid(),
             'name' => 'Item 3',
-            'price' => 20,
-            'subMerchantId' => 3,
-            'subMerchantPrice' => 18
+            'price' => 20
         )
     )
 );

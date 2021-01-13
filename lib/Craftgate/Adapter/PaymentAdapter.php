@@ -29,18 +29,6 @@ class PaymentAdapter extends BaseAdapter
         return parent::httpPost($path, $request);
     }
 
-    public function initCheckoutPayment(array $request)
-    {
-        $path = "/payment/v1/checkout-payment/init";
-        return parent::httpPost($path, $request);
-    }
-
-    public function retrieveCheckoutPayment($token)
-    {
-        $path = "/payment/v1/checkout-payment?token=" . $token;
-        return parent::httpGet($path);
-    }
-
     public function approvePaymentTransactions(array $request)
     {
         $path = "/payment/v1/payment-transactions/approve";
@@ -89,10 +77,10 @@ class PaymentAdapter extends BaseAdapter
         return parent::httpGet($path);
     }
 
-    public function searchPayments(array $request)
+    public function storeCard(array $request)
     {
-        $path = "/payment/v1/card-payments" . RequestQueryParamsBuilder::buildQuery($request);
-        return parent::httpGet($path);
+        $path = "/payment/v1/cards";
+        return parent::httpPost($path, $request);
     }
 
     public function deleteStoredCard(array $request)

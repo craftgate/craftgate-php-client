@@ -5,7 +5,6 @@ namespace Craftgate;
 use Craftgate\Adapter\InstallmentAdapter;
 use Craftgate\Adapter\OnboardingAdapter;
 use Craftgate\Adapter\PaymentAdapter;
-use Craftgate\Adapter\SettlementReportingAdapter;
 
 class Craftgate
 {
@@ -13,7 +12,6 @@ class Craftgate
     private $paymentAdapter;
     private $installmentAdapter;
     private $onboardingAdapter;
-    private $settlementReportingAdapter;
 
     public function __construct($requestOptions)
     {
@@ -21,7 +19,6 @@ class Craftgate
         $this->paymentAdapter = new PaymentAdapter($requestOptions);
         $this->installmentAdapter = new InstallmentAdapter($requestOptions);
         $this->onboardingAdapter = new OnboardingAdapter($requestOptions);
-        $this->settlementReportingAdapter = new SettlementReportingAdapter($requestOptions);
     }
 
     public function payment()
@@ -37,10 +34,5 @@ class Craftgate
     public function onboarding()
     {
         return $this->onboardingAdapter;
-    }
-
-    public function settlementReporting()
-    {
-        return $this->settlementReportingAdapter;
     }
 }

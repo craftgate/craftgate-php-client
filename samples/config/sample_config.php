@@ -14,7 +14,7 @@ class FunctionalTestConfig
         $options = new RequestOptions();
         $options->setApiKey('api-key');
         $options->setSecretKey('secret-key');
-        $options->setBaseUrl('http://api.craftgate.io');
+        $options->setBaseUrl('http://sandbox-api.craftgate.io');
         return new Craftgate($options);
     }
 }

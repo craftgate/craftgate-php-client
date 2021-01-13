@@ -11,45 +11,27 @@ class OnboardingAdapter extends BaseAdapter
         parent::__construct($requestOptions);
     }
 
-    public function createSubMerchant(array $request)
+    public function createMember(array $request)
     {
-        $path = "/onboarding/v1/sub-merchants";
+        $path = "/onboarding/v1/members";
         return parent::httpPost($path, $request);
     }
 
-    public function updateSubMerchant($subMerchantId, array $request)
+    public function updateMember($memberId, array $request)
     {
-        $path = "/onboarding/v1/sub-merchants/" . $subMerchantId;
+        $path = "/onboarding/v1/members/" . $memberId;
         return parent::httpPut($path, $request);
     }
 
-    public function retrieveSubMerchant($subMerchantId)
+    public function retrieveMember($memberId)
     {
-        $path = "/onboarding/v1/sub-merchants/" . $subMerchantId;
+        $path = "/onboarding/v1/members/" . $memberId;
         return parent::httpGet($path);
     }
 
-    public function searchSubMerchants(array $request)
+    public function searchMembers(array $request)
     {
-        $path = "/onboarding/v1/sub-merchants" . RequestQueryParamsBuilder::buildQuery($request);
-        return parent::httpGet($path);
-    }
-
-    public function createBuyer(array $request)
-    {
-        $path = "/onboarding/v1/buyers";
-        return parent::httpPost($path, $request);
-    }
-
-    public function updateBuyer($buyerId, array $request)
-    {
-        $path = "/onboarding/v1/buyers/" . $buyerId;
-        return parent::httpPut($path, $request);
-    }
-
-    public function retrieveBuyer($buyerId)
-    {
-        $path = "/onboarding/v1/buyers/" . $buyerId;
+        $path = "/onboarding/v1/members" . RequestQueryParamsBuilder::buildQuery($request);
         return parent::httpGet($path);
     }
 }
