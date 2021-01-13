@@ -1,4 +1,4 @@
-name: Build TokenPay PHP Client
+name: Build Craftgate PHP Client
 
 on:
   pull_request:
