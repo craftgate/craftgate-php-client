@@ -11,7 +11,7 @@ class AuthSignatureGenerator
             $requestString = json_encode($request);
         }
 
-        $hashStr = $requestOptions->getBaseUrl() . $path . $requestOptions->getApiKey() . $requestOptions->getSecretKey() . $randomString . $requestString;
+        $hashStr = $requestOptions->getBaseUrl() . urldecode($path) . $requestOptions->getApiKey() . $requestOptions->getSecretKey() . $randomString . $requestString;
         return strtoupper(base64_encode(hash("sha256", $hashStr, true)));
     }
 }
