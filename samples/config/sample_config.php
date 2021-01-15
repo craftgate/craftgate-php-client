@@ -12,8 +12,8 @@ class FunctionalTestConfig
     public static function craftgate()
     {
         $options = new RequestOptions();
-        $options->setApiKey('sandbox-wdpjblkwseePGqYFkFzQtvKPGsKNvtfo');
-        $options->setSecretKey('sandbox-lXXDXSMwlskgePfZJhWrhjzaZkvTudjS');
+        $options->setApiKey('api-key');
+        $options->setSecretKey('secret-key');
         $options->setBaseUrl('https://sandbox-api.craftgate.io');
         return new Craftgate($options);
     }
