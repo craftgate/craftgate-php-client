@@ -3,6 +3,7 @@
 require_once('config/sample_config.php');
 
 use Craftgate\Model\MemberType;
+use Craftgate\Model\SettlementEarningsDestination;
 
 $request = array(
     'isBuyer' => false,
@@ -19,7 +20,8 @@ $request = array(
     'memberExternalId' => uniqid(),
     'legalCompanyTitle' => 'Dem Zeytinyağı Üretim Ltd. Şti.',
     'taxNumber' => '1111111114',
-    'taxOffice' => 'Erenköy'
+    'taxOffice' => 'Erenköy',
+    'settlementEarningsDestination' => SettlementEarningsDestination::IBAN
 );
 
 $response = FunctionalTestConfig::craftgate()->onboarding()->createMember($request);
