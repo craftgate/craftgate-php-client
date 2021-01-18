@@ -2,9 +2,14 @@
 
 require_once('config/sample_config.php');
 
+use Craftgate\Model\MemberType;
+
 $request = array(
+    'name' => 'Zeytinyağı Üretim',
+    'page' => 0,
+    'size' => 25,
     'memberIds' => array(1, 2),
-    'name' => 'Zeytinyağı Üretim'
+    'memberType' => MemberType::LIMITED_OR_JOINT_STOCK_COMPANY
 );
 
 $response = FunctionalTestConfig::craftgate()->onboarding()->searchMembers($request);
