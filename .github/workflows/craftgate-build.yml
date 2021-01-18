@@ -1,4 +1,4 @@
-name: Build Craftgate PHP Client
+name: Craftgate PHP CI
 
 on:
   pull_request:

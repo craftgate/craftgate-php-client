@@ -3,7 +3,6 @@
 namespace Craftgate\Tests\Util;
 
 use Craftgate\Request\Common\RequestQueryParamsBuilder;
-use Craftgate\Util\AuthSignatureGenerator;
 
 class RequestQueryParamsBuilderTest extends \PHPUnit_Framework_TestCase
 {
