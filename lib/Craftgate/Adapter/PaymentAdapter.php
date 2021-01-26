@@ -37,7 +37,7 @@ class PaymentAdapter extends BaseAdapter
 
     public function initCheckoutPayment(array $request)
     {
-        $path = "/payment/v1/checkout-payment/init"
+        $path = "/payment/v1/checkout-payment/init";
         return parent::httpPost($path, $request);
     }
 
