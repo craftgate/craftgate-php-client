@@ -20,10 +20,10 @@ composer require craftgate/craftgate
 ```
 
 ### Manual Installation
-You need to download the latest [release](https://github.com/craftgate/craftgate-php-client/releases) and copy to your project. Then, include the bootstrap file as shown below. This file will autoload all the class files into your project.
+You need to download the latest [release](https://github.com/craftgate/craftgate-php-client/releases) and copy to your project. Then, include the autoload file as shown below. This file will autoload all the class files into your project.
 
 ```php
-require_once('/path/to/craftgate-php-client/CraftgateBootstrap.php');
+require '/path/to/craftgate-php-client/autoload.php';
 ```
 
 ## Usage

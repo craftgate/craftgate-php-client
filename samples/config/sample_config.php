@@ -1,8 +1,6 @@
 <?php
 
-require_once(dirname(__DIR__) . '/../CraftgateBootstrap.php');
-
-CraftgateBootstrap::init();
+require __DIR__ . '/../../autoload.php';
 
 use Craftgate\Craftgate;
 use Craftgate\Request\Common\RequestOptions;
