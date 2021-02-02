@@ -3,6 +3,7 @@
 require_once('config/sample_config.php');
 
 use Craftgate\Model\MemberType;
+use Craftgate\Util\Guid;
 
 $request = array(
     'isBuyer' => true,
@@ -11,7 +12,7 @@ $request = array(
     'email' => 'haluk.demir@example.com',
     'identityNumber' => '11111111110',
     'phoneNumber' => '905551111111',
-    'memberExternalId' => uniqid(),
+    'memberExternalId' => Guid::generate(),
     'memberType' => MemberType::PERSONAL,
     'contactName' => 'Haluk',
     'contactSurname' => 'Demir',

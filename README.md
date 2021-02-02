@@ -94,17 +94,17 @@ $request = array(
     ),
     'items' => array(
         array(
-            'externalId' => uniqid(),
+            'externalId' => \Craftgate\Util\Guid::generate(),
             'name' => 'Item 1',
             'price' => 30
         ),
         array(
-            'externalId' => uniqid(),
+            'externalId' => \Craftgate\Util\Guid::generate(),
             'name' => 'Item 2',
             'price' => 50
         ),
         array(
-            'externalId' => uniqid(),
+            'externalId' => \Craftgate\Util\Guid::generate(),
             'name' => 'Item 3',
             'price' => 20
         )

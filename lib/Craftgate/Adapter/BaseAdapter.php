@@ -3,7 +3,8 @@
 namespace Craftgate\Adapter;
 
 use Craftgate\HttpClient\RestClientAdapter;
-use Craftgate\Util\AuthSignatureGenerator;
+use Craftgate\Util\Guid,
+    Craftgate\Util\AuthSignatureGenerator;
 
 class BaseAdapter
 {
@@ -28,7 +29,7 @@ class BaseAdapter
             "Content-type: application/json"
         );
 
-        $randomString = uniqid();
+        $randomString = Guid::generate();
 
         $headers[] = "x-api-key: " . $this->requestOptions->getApiKey();
         $headers[] = "x-rnd-key: " . $randomString;
