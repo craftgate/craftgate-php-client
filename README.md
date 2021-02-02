@@ -33,9 +33,10 @@ Once you've obtained your API credentials, you can start using Craftgate by inst
 
 ```php
 
-$options = new RequestOptions();
-$options->setApiKey('<YOUR API KEY>');
-$options->setSecretKey('<YOUR SECRET KEY>');
+$options = new RequestOptions(array(
+    'apiKey' => '<YOUR API KEY>',
+    'secretKey' => '<YOUR SECRET KEY>',
+));
 
 $craftgate = new Craftgate($options);
 ...
@@ -46,10 +47,11 @@ By default the Craftgate client connects to the production API servers at `https
 
 ```php
 
-$options = new RequestOptions();
-$options->setApiKey('<YOUR API KEY>');
-$options->setSecretKey('<YOUR SECRET KEY>');
-$options->setBaseUrl('https://sandbox-api.craftgate.io');
+$options = new RequestOptions(array(
+    'apiKey' => '<YOUR API KEY>',
+    'secretKey' => '<YOUR SECRET KEY>',
+    'baseUrl' => 'https://sandbox-api.craftgate.io',
+));
 
 $craftgate = new Craftgate($options);
 
@@ -67,10 +69,11 @@ Let's quickly review an example where we implement a credit card payment scenari
 > For more examples covering almost all use-cases, check out the [examples in the `samples/` folder](./samples)
 
 ```php
-$options = new RequestOptions();
-$options->setApiKey('<YOUR API KEY>');
-$options->setSecretKey('<YOUR SECRET KEY>');
-$options->setBaseUrl('https://sandbox-api.craftgate.io');
+$options = new RequestOptions(array(
+    'apiKey' => '<YOUR API KEY>',
+    'secretKey' => '<YOUR SECRET KEY>',
+    'baseUrl' => 'https://sandbox-api.craftgate.io',
+));
 
 $craftgate = new Craftgate($options);
 
