@@ -29,10 +29,14 @@ class BaseAdapter
         );
 
         $randomString = uniqid();
-        array_push($headers, "x-api-key: " . $this->requestOptions->getApiKey());
-        array_push($headers, "x-rnd-key: " . $randomString);
-        array_push($headers, "x-auth-version: v1");
-        array_push($headers, "x-signature: " . AuthSignatureGenerator::generateSignature($this->requestOptions, $path, $randomString, $request));
+
+        $headers[] = "x-api-key: " . $this->requestOptions->getApiKey();
+        $headers[] = "x-rnd-key: " . $randomString;
+        $headers[] = "x-auth-version: v1";
+        $headers[] = "x-signature: " . AuthSignatureGenerator::generateSignature(
+            $this->requestOptions, $path, $randomString, $request
+        );
+
         return $headers;
     }
 
