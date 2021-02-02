@@ -8,6 +8,13 @@ class RequestOptions
     private $secretKey;
     private $baseUrl;
 
+    public function __construct(array $options = null)
+    {
+        isset($options['apiKey'])    && $this->apiKey    = $options['apiKey'];
+        isset($options['secretKey']) && $this->secretKey = $options['secretKey'];
+        isset($options['baseUrl'])   && $this->baseUrl   = $options['baseUrl'];
+    }
+
     public function getApiKey()
     {
         return $this->apiKey;
