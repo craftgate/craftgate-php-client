@@ -4,7 +4,7 @@ namespace Craftgate\Adapter;
 
 use Craftgate\HttpClient\RestClientAdapter;
 use Craftgate\Util\Guid,
-    Craftgate\Util\AuthSignatureGenerator;
+    Craftgate\Util\Signature;
 
 class BaseAdapter
 {
@@ -34,7 +34,7 @@ class BaseAdapter
         $headers[] = "x-api-key: " . $this->requestOptions->getApiKey();
         $headers[] = "x-rnd-key: " . $randomString;
         $headers[] = "x-auth-version: v1";
-        $headers[] = "x-signature: " . AuthSignatureGenerator::generateSignature(
+        $headers[] = "x-signature: " . Signature::generate(
             $this->requestOptions, $path, $randomString, $request
         );
 
