@@ -17,6 +17,12 @@ class Options
         }
     }
 
+    public function __debugInfo()
+    {
+        // Hides sensitive data (properties) while dump calls,
+        // so toArray() method should be called for debugging.
+    }
+
     public function setApiKey($apiKey)
     {
         $this->apiKey = $apiKey;
@@ -45,5 +51,14 @@ class Options
     public function getBaseUrl()
     {
         return $this->baseUrl;
+    }
+
+    public function toArray()
+    {
+        return array(
+            'apiKey'    => $this->apiKey,
+            'secretKey' => $this->secretKey,
+            'baseUrl'   => $this->baseUrl,
+        );
     }
 }
