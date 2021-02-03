@@ -7,7 +7,7 @@ use Craftgate\Model\Currency;
 $request = array(
     'binNumber' => '525864',
     'price' => 100,
-    'currency' => Currency::TL
+    'currency' => Currency::TRY
 );
 
 $response = FunctionalTestConfig::craftgate()->installment()->searchInstallments($request);
