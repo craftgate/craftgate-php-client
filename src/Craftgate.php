@@ -10,38 +10,30 @@ use Craftgate\Adapter\WalletAdapter;
 
 class Craftgate
 {
-    private $options;
-    private $paymentAdapter;
-    private $installmentAdapter;
-    private $onboardingAdapter;
-    private $walletAdapter;
+    public $options;
 
     public function __construct(Options $options)
     {
-        $this->options            = $options;
-        $this->paymentAdapter     = new PaymentAdapter($options);
-        $this->installmentAdapter = new InstallmentAdapter($options);
-        $this->onboardingAdapter  = new OnboardingAdapter($options);
-        $this->walletAdapter      = new WalletAdapter($options);
+        $this->options = $options;
     }
 
     public function payment()
     {
-        return $this->paymentAdapter;
+        return new PaymentAdapter($this->options);
     }
 
     public function installment()
     {
-        return $this->installmentAdapter;
+        return new InstallmentAdapter($this->options);
     }
 
     public function onboarding()
     {
-        return $this->onboardingAdapter;
+        return new OnboardingAdapter($this->options);
     }
 
     public function wallet()
     {
-        return $this->walletAdapter;
+        return new WalletAdapter($this->options);
     }
 }
