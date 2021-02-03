@@ -21,17 +21,17 @@ $request = array(
     ),
     'items' => array(
         array(
-            'externalId' => Guid::geenrate(),
+            'externalId' => Guid::generate(),
             'name' => 'Item 1',
             'price' => 30
         ),
         array(
-            'externalId' => Guid::geenrate(),
+            'externalId' => Guid::generate(),
             'name' => 'Item 2',
             'price' => 50
         ),
         array(
-            'externalId' => Guid::geenrate(),
+            'externalId' => Guid::generate(),
             'name' => 'Item 3',
             'price' => 20
         )
