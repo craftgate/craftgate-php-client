@@ -29,33 +29,27 @@ require '/path/to/craftgate-php-client/autoload.php';
 ## Usage
 To access the Craftgate API you'll first need to obtain API credentials (e.g. an API key and a secret key). If you don't already have a Craftgate account, you can signup at [https://craftgate.io/](https://craftgate.io)
 
-Once you've obtained your API credentials, you can start using Craftgate by instantiating a `Craftgate` with your credentials.
+Once you've obtained your API credentials, you can start using Craftgate by instantiating a `Craftgate\Client` with your credentials.
 
 ```php
-use Craftgate\Options;
-use Craftgate\Craftgate;
+use Craftgate\Client;
 
-$options = new Options(array(
+$client = new Client(array(
     'apiKey' => '<YOUR API KEY>',
     'secretKey' => '<YOUR SECRET KEY>',
 ));
-
-$craftgate = new Craftgate($options);
 ```
 
 By default the Craftgate client connects to the production API servers at `https://api.craftgate.io`. For testing purposes, please use the sandbox URL `https://sandbox-api.craftgate.io` using the .
 
 ```php
-use Craftgate\Options;
-use Craftgate\Craftgate;
+use Craftgate\Client;
 
-$options = new Options(array(
+$client = new Client(array(
     'apiKey' => '<YOUR API KEY>',
     'secretKey' => '<YOUR SECRET KEY>',
     'baseUrl' => 'https://sandbox-api.craftgate.io',
 ));
-
-$craftgate = new Craftgate($options);
 ```
 
 ## Examples
@@ -70,18 +64,15 @@ Let's quickly review an example where we implement a credit card payment scenari
 > For more examples covering almost all use-cases, check out the [examples in the `samples/` folder](./samples)
 
 ```php
-use Craftgate\Options;
-use Craftgate\Craftgate;
+use Craftgate\Client;
 use Craftgate\Model;
 use Craftgate\Util;
 
-$options = new Options(array(
+$client = new Client(array(
     'apiKey' => '<YOUR API KEY>',
     'secretKey' => '<YOUR SECRET KEY>',
     'baseUrl' => 'https://sandbox-api.craftgate.io',
 ));
-
-$craftgate = new Craftgate($options);
 
 $request = array(
     'price' => 100,
@@ -119,16 +110,15 @@ $request = array(
 
 $response = $craftgate->payment()->createPayment($request);
 
-print_r($response);
-
+var_dump($response);
 ```
 
 ### Advanced Usage: Adapters
-In reality, the `Craftgate` class serves as a collection of adapters that integrates with different parts of the API. While the intended usage for most use-cases is to instantiate a `Craftgate` instance (as illustrated in the examples above) and use its adapter initializers (e.g. `payment()`), you can also manually import a certain adapter class and instantiate it.
+In reality, the `Craftgate\Client` class serves as a collection of adapters that integrates with different parts of the API. While the intended usage for most use-cases is to instantiate a `Craftgate\Client` instance (as illustrated in the examples above) and use its adapter initializers (e.g. `payment()`).
 
-**Note:** When instantiating an adapter, you can use the same options as you would when instantiating a `Craftgate`
+**Note:** When instantiating an adapter, you can use the same options as you would when instantiating a `Craftgate\Client`
 
-All adapters in the `Craftgate` have their purposes and initializers that listed below:
+All adapters in the `Craftgate\Client` have their purposes and initializers that listed below:
 
 | Adapter Name | Purpose | Initializer |
 |--------------|---------|----------|
