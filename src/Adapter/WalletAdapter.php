@@ -2,16 +2,10 @@
 
 namespace Craftgate\Adapter;
 
-use Craftgate\Options;
 use Craftgate\Util\Util;
 
-class WalletAdapter extends BaseAdapter
+class WalletAdapter extends AbstractAdapter
 {
-    public function __construct(Options $options)
-    {
-        parent::__construct($options);
-    }
-
     public function searchWallets(array $request)
     {
         $path = "/wallet/v1/wallets" . Util::buildQuery($request);

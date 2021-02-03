@@ -2,16 +2,10 @@
 
 namespace Craftgate\Adapter;
 
-use Craftgate\Options;
 use Craftgate\Util\Util;
 
-class InstallmentAdapter extends BaseAdapter
+class InstallmentAdapter extends AbstractAdapter
 {
-    public function __construct(Options $options)
-    {
-        parent::__construct($options);
-    }
-
     public function searchInstallments(array $request)
     {
         $path = "/installment/v1/installments" . Util::buildrequest($request);

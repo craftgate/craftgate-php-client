@@ -2,16 +2,10 @@
 
 namespace Craftgate\Adapter;
 
-use Craftgate\Options;
 use Craftgate\Util\Util;
 
-class PaymentAdapter extends BaseAdapter
+class PaymentAdapter extends AbstractAdapter
 {
-    public function __construct(Options $options)
-    {
-        parent::__construct($options);
-    }
-
     public function createPayment(array $request)
     {
         $path = "/payment/v1/card-payments";

@@ -7,7 +7,7 @@ use Craftgate\HttpClient\RestClientAdapter;
 use Craftgate\Util\Guid,
     Craftgate\Util\Signature;
 
-class BaseAdapter
+abstract class AbstractAdapter
 {
     private $options;
     private $restClient;

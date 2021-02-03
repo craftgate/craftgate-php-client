@@ -2,16 +2,10 @@
 
 namespace Craftgate\Adapter;
 
-use Craftgate\Options;
 use Craftgate\Util\Util;
 
-class OnboardingAdapter extends BaseAdapter
+class OnboardingAdapter extends AbstractAdapter
 {
-    public function __construct($options)
-    {
-        parent::__construct($options);
-    }
-
     public function createMember(array $request)
     {
         $path = "/onboarding/v1/members";
