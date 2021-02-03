@@ -9,24 +9,24 @@ class OnboardingAdapter extends AbstractAdapter
     public function createMember(array $request)
     {
         $path = "/onboarding/v1/members";
-        return parent::httpPost($path, $request);
+        return $this->httpPost($path, $request);
     }
 
     public function updateMember($memberId, array $request)
     {
         $path = "/onboarding/v1/members/" . $memberId;
-        return parent::httpPut($path, $request);
+        return $this->httpPut($path, $request);
     }
 
     public function retrieveMember($memberId)
     {
         $path = "/onboarding/v1/members/" . $memberId;
-        return parent::httpGet($path);
+        return $this->httpGet($path);
     }
 
     public function searchMembers(array $request)
     {
         $path = "/onboarding/v1/members" . Util::buildQuery($request);
-        return parent::httpGet($path);
+        return $this->httpGet($path);
     }
 }
