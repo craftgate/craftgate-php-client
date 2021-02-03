@@ -2,7 +2,7 @@
 
 namespace Craftgate;
 
-class Options
+class ClientOptions
 {
     const BASE_URL = 'https://api.craftgate.io';
 

@@ -2,11 +2,11 @@
 
 namespace Craftgate\Util;
 
-use Craftgate\Options;
+use Craftgate\ClientOptions;
 
 class Signature
 {
-    public static function generate(Options $options, $path, $randomString, $request = null)
+    public static function generate(ClientOptions $options, $path, $randomString, $request = null)
     {
         $hash = $options->getBaseUrl() . urldecode($path)
               . $options->getApiKey()  . $options->getSecretKey()

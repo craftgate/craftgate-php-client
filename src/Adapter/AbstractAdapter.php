@@ -2,7 +2,7 @@
 
 namespace Craftgate\Adapter;
 
-use Craftgate\Options;
+use Craftgate\ClientOptions;
 use Craftgate\HttpClient\RestClientAdapter;
 use Craftgate\Util\Guid,
     Craftgate\Util\Signature;
@@ -12,7 +12,7 @@ abstract class AbstractAdapter
     private $options;
     private $restClient;
 
-    public function __construct(Options $options)
+    public function __construct(ClientOptions $options)
     {
         $this->options = $options;
         $this->restClient = new RestClientAdapter();
