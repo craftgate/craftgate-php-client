@@ -58,7 +58,7 @@ $craftgate = new Craftgate($options);
 ```
 
 ## Examples
-Included in the project are a number of examples that cover almost all use-cases. Refer to [the `samples/` folder](./samples)] for more info.
+Included in the project are a number of examples that cover almost all use-cases. Refer to [the `samples/` folder](./samples) for more info.
 
 ### Running the Examples
 If you've cloned this repo on your development machine and wish to run the examples you can run an example with the command `./vendor/bin/phpunit`
