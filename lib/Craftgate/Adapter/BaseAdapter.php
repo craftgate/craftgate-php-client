@@ -25,16 +25,14 @@ class BaseAdapter
     protected function createHttpHeaders($path, $request = null)
     {
         $headers = array(
-            "Accept: application/json",
-            "Content-type: application/json"
+            'accept: application/json',
+            'content-type: application/json'
         );
 
-        $randomString = Guid::generate();
-
-        $headers[] = "x-api-key: " . $this->requestOptions->getApiKey();
-        $headers[] = "x-rnd-key: " . $randomString;
-        $headers[] = "x-auth-version: v1";
-        $headers[] = "x-signature: " . Signature::generate(
+        $headers[] = 'x-api-key: ' . $this->requestOptions->getApiKey();
+        $headers[] = 'x-rnd-key: ' . ($randomString = Guid::generate());
+        $headers[] = 'x-auth-version: v1';
+        $headers[] = 'x-signature: ' . Signature::generate(
             $this->requestOptions, $path, $randomString, $request
         );
 
@@ -43,21 +41,25 @@ class BaseAdapter
 
     protected function httpGet($path)
     {
-        return $this->restClient->get($this->requestOptions->getBaseUrl() . $path, $this->createHttpHeaders($path));
+        return $this->restClient->get($this->requestOptions->getBaseUrl() . $path,
+            $this->createHttpHeaders($path));
     }
 
     protected function httpPost($path, $request)
     {
-        return $this->restClient->post($this->requestOptions->getBaseUrl() . $path, $this->createHttpHeaders($path, $request), $request);
+        return $this->restClient->post($this->requestOptions->getBaseUrl() . $path,
+            $this->createHttpHeaders($path, $request), $request);
     }
 
     protected function httpPut($path, $request)
     {
-        return $this->restClient->put($this->requestOptions->getBaseUrl() . $path, $this->createHttpHeaders($path, $request), $request);
+        return $this->restClient->put($this->requestOptions->getBaseUrl() . $path,
+            $this->createHttpHeaders($path, $request), $request);
     }
 
     protected function httpDelete($path)
     {
-        return $this->restClient->delete($this->requestOptions->getBaseUrl() . $path, $this->createHttpHeaders($path));
+        return $this->restClient->delete($this->requestOptions->getBaseUrl() . $path,
+            $this->createHttpHeaders($path));
     }
 }
