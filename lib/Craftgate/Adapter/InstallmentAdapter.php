@@ -2,7 +2,7 @@
 
 namespace Craftgate\Adapter;
 
-use Craftgate\Request\Common\RequestQueryParamsBuilder;
+use Craftgate\Util\Util;
 
 class InstallmentAdapter extends BaseAdapter
 {
@@ -13,7 +13,7 @@ class InstallmentAdapter extends BaseAdapter
 
     public function searchInstallments(array $request)
     {
-        $path = "/installment/v1/installments" . RequestQueryParamsBuilder::buildQuery($request);
+        $path = "/installment/v1/installments" . Util::buildrequest($query);
         return parent::httpGet($path);
     }
 

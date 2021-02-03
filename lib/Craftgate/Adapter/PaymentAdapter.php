@@ -2,7 +2,7 @@
 
 namespace Craftgate\Adapter;
 
-use Craftgate\Request\Common\RequestQueryParamsBuilder;
+use Craftgate\Util\Util;
 
 class PaymentAdapter extends BaseAdapter
 {
@@ -85,7 +85,7 @@ class PaymentAdapter extends BaseAdapter
 
     public function searchPaymentTransactionRefunds(array $request)
     {
-        $path = "/payment/v1/refund-transactions" . RequestQueryParamsBuilder::buildQuery($request);
+        $path = "/payment/v1/refund-transactions" . Util::buildQuery($request);
         return parent::httpGet($path);
     }
 
@@ -109,13 +109,13 @@ class PaymentAdapter extends BaseAdapter
 
     public function searchStoredCards(array $request)
     {
-        $path = "/payment/v1/cards" . RequestQueryParamsBuilder::buildQuery($request);
+        $path = "/payment/v1/cards" . Util::buildQuery($request);
         return parent::httpGet($path);
     }
 
     public function deleteStoredCard(array $request)
     {
-        $path = "/payment/v1/cards" . RequestQueryParamsBuilder::buildQuery($request);
+        $path = "/payment/v1/cards" . Util::buildQuery($request);
         return parent::httpDelete($path);
     }
 

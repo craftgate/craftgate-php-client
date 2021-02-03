@@ -2,7 +2,7 @@
 
 namespace Craftgate\Adapter;
 
-use Craftgate\Request\Common\RequestQueryParamsBuilder;
+use Craftgate\Util\Util;
 
 class WalletAdapter extends BaseAdapter
 {
@@ -13,13 +13,13 @@ class WalletAdapter extends BaseAdapter
 
     public function searchWallets(array $request)
     {
-        $path = "/wallet/v1/wallets" . RequestQueryParamsBuilder::buildQuery($request);
+        $path = "/wallet/v1/wallets" . Util::buildQuery($request);
         return parent::httpGet($path);
     }
 
     public function searchWalletTransactions($walletId, array $request)
     {
-        $path = "/wallet/v1/wallets/" . $walletId . "/wallet-transactions" . RequestQueryParamsBuilder::buildQuery($request);
+        $path = "/wallet/v1/wallets/" . $walletId . "/wallet-transactions" . Util::buildQuery($request);
         return parent::httpGet($path);
     }
 

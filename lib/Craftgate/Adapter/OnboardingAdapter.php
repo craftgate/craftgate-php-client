@@ -2,7 +2,7 @@
 
 namespace Craftgate\Adapter;
 
-use Craftgate\Request\Common\RequestQueryParamsBuilder;
+use Craftgate\Util\Util;
 
 class OnboardingAdapter extends BaseAdapter
 {
@@ -31,7 +31,7 @@ class OnboardingAdapter extends BaseAdapter
 
     public function searchMembers(array $request)
     {
-        $path = "/onboarding/v1/members" . RequestQueryParamsBuilder::buildQuery($request);
+        $path = "/onboarding/v1/members" . Util::buildQuery($request);
         return parent::httpGet($path);
     }
 }
