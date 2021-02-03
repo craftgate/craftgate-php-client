@@ -1,19 +1,22 @@
 <?php
 
-namespace Craftgate\Tests\HttpClient;
+namespace Craftgate\Tests\Util;
 
 use Craftgate\Util\Curl;
 
 class CurlTest extends \PHPUnit_Framework_TestCase
 {
-    public function test_should_exec_curl()
+    public function test_response_should_be_null_and_cause_exception()
     {
-        $response = Curl::request('url', array(
-            CURLOPT_CUSTOMREQUEST  => 'GET',
-            CURLOPT_RETURNTRANSFER => true,
-        ));
+        $response = Curl::get('foo', array());
+
+        $this->assertNull($response);
+    }
+
+    public function test_response_should_not_be_null_and_cause_exception()
+    {
+        $response = Curl::get('https://httpbin.org/', array());
 
         $this->assertNotNull($response);
-        $this->assertFalse($response);
     }
 }
