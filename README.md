@@ -32,29 +32,30 @@ To access the Craftgate API you'll first need to obtain API credentials (e.g. an
 Once you've obtained your API credentials, you can start using Craftgate by instantiating a `Craftgate` with your credentials.
 
 ```php
+use Craftgate\Options;
+use Craftgate\Craftgate;
 
-$options = new RequestOptions(array(
+$options = new Options(array(
     'apiKey' => '<YOUR API KEY>',
     'secretKey' => '<YOUR SECRET KEY>',
 ));
 
 $craftgate = new Craftgate($options);
-...
-
 ```
 
 By default the Craftgate client connects to the production API servers at `https://api.craftgate.io`. For testing purposes, please use the sandbox URL `https://sandbox-api.craftgate.io` using the .
 
 ```php
+use Craftgate\Options;
+use Craftgate\Craftgate;
 
-$options = new RequestOptions(array(
+$options = new Options(array(
     'apiKey' => '<YOUR API KEY>',
     'secretKey' => '<YOUR SECRET KEY>',
     'baseUrl' => 'https://sandbox-api.craftgate.io',
 ));
 
 $craftgate = new Craftgate($options);
-
 ```
 
 ## Examples
@@ -69,7 +70,12 @@ Let's quickly review an example where we implement a credit card payment scenari
 > For more examples covering almost all use-cases, check out the [examples in the `samples/` folder](./samples)
 
 ```php
-$options = new RequestOptions(array(
+use Craftgate\Options;
+use Craftgate\Craftgate;
+use Craftgate\Model;
+use Craftgate\Util;
+
+$options = new Options(array(
     'apiKey' => '<YOUR API KEY>',
     'secretKey' => '<YOUR SECRET KEY>',
     'baseUrl' => 'https://sandbox-api.craftgate.io',
@@ -82,8 +88,8 @@ $request = array(
     'paidPrice' => 100,
     'walletPrice' => 0,
     'installment' => 1,
-    'currency' => \Craftgate\Model\Currency::TRY,
-    'paymentGroup' => \Craftgate\Model\PaymentGroup::LISTING_OR_SUBSCRIPTION,
+    'currency' => Model\Currency::TRY,
+    'paymentGroup' => Model\PaymentGroup::LISTING_OR_SUBSCRIPTION,
     'conversationId' => '456d1297-908e-4bd6-a13b-4be31a6e47d5',
     'card' => array(
         'cardHolderName' => 'Haluk Demir',
@@ -94,17 +100,17 @@ $request = array(
     ),
     'items' => array(
         array(
-            'externalId' => \Craftgate\Util\Guid::generate(),
+            'externalId' => Util\Guid::generate(),
             'name' => 'Item 1',
             'price' => 30
         ),
         array(
-            'externalId' => \Craftgate\Util\Guid::generate(),
+            'externalId' => Util\Guid::generate(),
             'name' => 'Item 2',
             'price' => 50
         ),
         array(
-            'externalId' => \Craftgate\Util\Guid::generate(),
+            'externalId' => Util\Guid::generate(),
             'name' => 'Item 3',
             'price' => 20
         )
