@@ -20,7 +20,7 @@ composer require craftgate/craftgate
 ```
 
 ### Manual Installation
-You need to download the latest [release](https://github.com/craftgate/craftgate-php-client/releases) and copy to your project. Then, include the autoload file as shown below. This file will autoload all the class files into your project.
+You need to download the latest [release](https://github.com/craftgate/craftgate-php-client/releases) and copy to your project. Then, include the autoload file as shown below. This file will autoload all related classes into your project on-demand.
 
 ```php
 require '/path/to/craftgate-php-client/autoload.php';
@@ -32,20 +32,16 @@ To access the Craftgate API you'll first need to obtain API credentials (e.g. an
 Once you've obtained your API credentials, you can start using Craftgate by instantiating a `Craftgate\Client` with your credentials.
 
 ```php
-use Craftgate\Client;
-
-$client = new Client(array(
+$client = new \Craftgate\Client(array(
     'apiKey' => '<YOUR API KEY>',
     'secretKey' => '<YOUR SECRET KEY>',
 ));
 ```
 
-By default the Craftgate client connects to the production API servers at `https://api.craftgate.io`. For testing purposes, please use the sandbox URL `https://sandbox-api.craftgate.io` using the .
+By default the Craftgate client connects to the production API servers at `https://api.craftgate.io`. For testing purposes, please use the sandbox URL `https://sandbox-api.craftgate.io`.
 
 ```php
-use Craftgate\Client;
-
-$client = new Client(array(
+$client = new \Craftgate\Client(array(
     'apiKey' => '<YOUR API KEY>',
     'secretKey' => '<YOUR SECRET KEY>',
     'baseUrl' => 'https://sandbox-api.craftgate.io',
@@ -64,11 +60,7 @@ Let's quickly review an example where we implement a credit card payment scenari
 > For more examples covering almost all use-cases, check out the [examples in the `samples/` folder](./samples)
 
 ```php
-use Craftgate\Client;
-use Craftgate\Model;
-use Craftgate\Util;
-
-$client = new Client(array(
+$client = new \Craftgate\Client(array(
     'apiKey' => '<YOUR API KEY>',
     'secretKey' => '<YOUR SECRET KEY>',
     'baseUrl' => 'https://sandbox-api.craftgate.io',
@@ -79,8 +71,8 @@ $request = array(
     'paidPrice' => 100,
     'walletPrice' => 0,
     'installment' => 1,
-    'currency' => Model\Currency::TRY,
-    'paymentGroup' => Model\PaymentGroup::LISTING_OR_SUBSCRIPTION,
+    'currency' => \Craftgate\Model\Currency::TRY,
+    'paymentGroup' => \Craftgate\Model\PaymentGroup::LISTING_OR_SUBSCRIPTION,
     'conversationId' => '456d1297-908e-4bd6-a13b-4be31a6e47d5',
     'card' => array(
         'cardHolderName' => 'Haluk Demir',
@@ -91,24 +83,24 @@ $request = array(
     ),
     'items' => array(
         array(
-            'externalId' => Util\Guid::generate(),
+            'externalId' => \Craftgate\Util\Guid::generate(),
             'name' => 'Item 1',
             'price' => 30
         ),
         array(
-            'externalId' => Util\Guid::generate(),
+            'externalId' => \Craftgate\Util\Guid::generate(),
             'name' => 'Item 2',
             'price' => 50
         ),
         array(
-            'externalId' => Util\Guid::generate(),
+            'externalId' => \Craftgate\Util\Guid::generate(),
             'name' => 'Item 3',
             'price' => 20
         )
     )
 );
 
-$response = $craftgate->payment()->createPayment($request);
+$response = $client->payment()->createPayment($request);
 
 var_dump($response);
 ```
