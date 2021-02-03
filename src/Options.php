@@ -4,9 +4,11 @@ namespace Craftgate;
 
 class Options
 {
+    const BASE_URL = 'https://api.craftgate.io';
+
     private $apiKey;
     private $secretKey;
-    private $baseUrl;
+    private $baseUrl = self::BASE_URL;
 
     public function __construct(array $options = null)
     {
