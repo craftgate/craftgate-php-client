@@ -2,14 +2,14 @@
 
 namespace Craftgate\Tests\Util;
 
-use Craftgate\Request\Common\RequestOptions;
+use Craftgate\Options;
 use Craftgate\Util\Signature;
 
 class SignatureTest extends \PHPUnit_Framework_TestCase
 {
     public function test_should_generate_signature()
     {
-        $options = new RequestOptions(array(
+        $options = new Options(array(
             'apiKey' => 'api-key',
             'secretKey' => 'secret-key',
             'baseUrl' => 'http://localhost:8000',
@@ -21,7 +21,7 @@ class SignatureTest extends \PHPUnit_Framework_TestCase
 
     public function test_should_generate_signature_with_body()
     {
-        $options = new RequestOptions(array(
+        $options = new Options(array(
             'apiKey' => 'api-key',
             'secretKey' => 'secret-key',
             'baseUrl' => 'http://localhost:8000',
@@ -37,7 +37,7 @@ class SignatureTest extends \PHPUnit_Framework_TestCase
 
     public function test_should_generate_signature_with_encoded_query_string()
     {
-        $options = new RequestOptions(array(
+        $options = new Options(array(
             'apiKey' => 'api-key',
             'secretKey' => 'secret-key',
             'baseUrl' => 'http://localhost:8000',

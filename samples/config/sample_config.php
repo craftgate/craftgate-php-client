@@ -2,14 +2,14 @@
 
 require __DIR__ . '/../../autoload.php';
 
+use Craftgate\Options;
 use Craftgate\Craftgate;
-use Craftgate\Request\Common\RequestOptions;
 
 class FunctionalTestConfig
 {
     public static function craftgate()
     {
-        $options = new RequestOptions(array(
+        $options = new Options(array(
             'apiKey' => 'api-key',
             'secretKey' => 'secret-key',
             'baseUrl' => 'https://sandbox-api.craftgate.io',
