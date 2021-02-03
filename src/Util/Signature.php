@@ -2,13 +2,15 @@
 
 namespace Craftgate\Util;
 
+use Craftgate\Options;
+
 class Signature
 {
-    public static function generate($requestOptions, $path, $randomString, $request = null)
+    public static function generate(Options $options, $path, $randomString, $request = null)
     {
-        $hash = $requestOptions->getBaseUrl() . urldecode($path)
-              . $requestOptions->getApiKey()  . $requestOptions->getSecretKey()
-              . $randomString                 . ($request ? json_encode($request) : '');
+        $hash = $options->getBaseUrl() . urldecode($path)
+              . $options->getApiKey()  . $options->getSecretKey()
+              . $randomString          . ($request ? json_encode($request) : '');
 
         return base64_encode(hash('sha256', $hash, true));
     }

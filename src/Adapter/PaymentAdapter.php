@@ -2,13 +2,14 @@
 
 namespace Craftgate\Adapter;
 
+use Craftgate\Options;
 use Craftgate\Util\Util;
 
 class PaymentAdapter extends BaseAdapter
 {
-    public function __construct($requestOptions)
+    public function __construct(Options $options)
     {
-        parent::__construct($requestOptions);
+        parent::__construct($options);
     }
 
     public function createPayment(array $request)

@@ -2,18 +2,19 @@
 
 namespace Craftgate\Adapter;
 
+use Craftgate\Options;
 use Craftgate\HttpClient\RestClientAdapter;
 use Craftgate\Util\Guid,
     Craftgate\Util\Signature;
 
 class BaseAdapter
 {
-    private $requestOptions;
+    private $options;
     private $restClient;
 
-    public function __construct($requestOptions)
+    public function __construct(Options $options)
     {
-        $this->requestOptions = $requestOptions;
+        $this->options = $options;
         $this->restClient = new RestClientAdapter();
     }
 
@@ -29,11 +30,11 @@ class BaseAdapter
             'content-type: application/json'
         );
 
-        $headers[] = 'x-api-key: ' . $this->requestOptions->getApiKey();
+        $headers[] = 'x-api-key: ' . $this->options->getApiKey();
         $headers[] = 'x-rnd-key: ' . ($randomString = Guid::generate());
         $headers[] = 'x-auth-version: v1';
         $headers[] = 'x-signature: ' . Signature::generate(
-            $this->requestOptions, $path, $randomString, $request
+            $this->options, $path, $randomString, $request
         );
 
         return $headers;
@@ -41,25 +42,25 @@ class BaseAdapter
 
     protected function httpGet($path)
     {
-        return $this->restClient->get($this->requestOptions->getBaseUrl() . $path,
+        return $this->restClient->get($this->options->getBaseUrl() . $path,
             $this->createHttpHeaders($path));
     }
 
     protected function httpPost($path, $request)
     {
-        return $this->restClient->post($this->requestOptions->getBaseUrl() . $path,
+        return $this->restClient->post($this->options->getBaseUrl() . $path,
             $this->createHttpHeaders($path, $request), $request);
     }
 
     protected function httpPut($path, $request)
     {
-        return $this->restClient->put($this->requestOptions->getBaseUrl() . $path,
+        return $this->restClient->put($this->options->getBaseUrl() . $path,
             $this->createHttpHeaders($path, $request), $request);
     }
 
     protected function httpDelete($path)
     {
-        return $this->restClient->delete($this->requestOptions->getBaseUrl() . $path,
+        return $this->restClient->delete($this->options->getBaseUrl() . $path,
             $this->createHttpHeaders($path));
     }
 }

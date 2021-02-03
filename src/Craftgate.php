@@ -2,6 +2,7 @@
 
 namespace Craftgate;
 
+use Craftgate\Options;
 use Craftgate\Adapter\InstallmentAdapter;
 use Craftgate\Adapter\OnboardingAdapter;
 use Craftgate\Adapter\PaymentAdapter;
@@ -9,19 +10,19 @@ use Craftgate\Adapter\WalletAdapter;
 
 class Craftgate
 {
-    private $requestOptions;
+    private $options;
     private $paymentAdapter;
     private $installmentAdapter;
     private $onboardingAdapter;
     private $walletAdapter;
 
-    public function __construct($requestOptions)
+    public function __construct(Options $options)
     {
-        $this->requestOptions = $requestOptions;
-        $this->paymentAdapter = new PaymentAdapter($requestOptions);
-        $this->installmentAdapter = new InstallmentAdapter($requestOptions);
-        $this->onboardingAdapter = new OnboardingAdapter($requestOptions);
-        $this->walletAdapter = new WalletAdapter($requestOptions);
+        $this->options            = $options;
+        $this->paymentAdapter     = new PaymentAdapter($options);
+        $this->installmentAdapter = new InstallmentAdapter($options);
+        $this->onboardingAdapter  = new OnboardingAdapter($options);
+        $this->walletAdapter      = new WalletAdapter($options);
     }
 
     public function payment()
