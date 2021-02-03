@@ -25,7 +25,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Craftgate\\": "lib/Craftgate/"
+            "Craftgate\\": "src/"
         }
     },
     "autoload-dev": {
