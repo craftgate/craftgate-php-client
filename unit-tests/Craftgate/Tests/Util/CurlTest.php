@@ -8,15 +8,25 @@ class CurlTest extends \PHPUnit_Framework_TestCase
 {
     public function test_response_should_be_null_and_cause_exception()
     {
-        $response = Curl::get('foo', array());
+        $response = $exception = null;
+
+        try {
+            $response = Curl::get('foo', array());
+        } catch (\Exception $exception) {}
 
         $this->assertNull($response);
+        $this->assertNotNull($exception);
     }
 
-    public function test_response_should_not_be_null_and_cause_exception()
+    public function test_response_should_not_be_null_and_not_cause_exception()
     {
-        $response = Curl::get('https://httpbin.org/', array());
+        $response = $exception = null;
+
+        try {
+            $response = Curl::get('https://httpbin.org/', array());
+        } catch (\Exception $exception) {}
 
         $this->assertNotNull($response);
+        $this->assertNull($exception);
     }
 }
