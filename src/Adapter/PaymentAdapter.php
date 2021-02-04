@@ -32,15 +32,15 @@ class PaymentAdapter extends AbstractAdapter
 
     public function initCheckoutPayment(array $request)
     {
-        $path = "/payment/v1/checkout-payment/init";
+        $path = "/payment/v1/checkout-payments/init";
         return $this->httpPost($path, $request);
     }
 
     public function retrieveCheckoutPayment($token)
-        {
-            $path = "/payment/v1/checkout-payment?token=" . $token;
-            return $this->httpGet($path);
-        }
+    {
+        $path = "/payment/v1/checkout-payments/" . $token;
+        return $this->httpGet($path);
+    }
 
     public function createDepositPayment(array $request)
     {
