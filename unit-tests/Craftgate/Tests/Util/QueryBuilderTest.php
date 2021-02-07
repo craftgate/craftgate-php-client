@@ -2,15 +2,15 @@
 
 namespace Craftgate\Tests\Util;
 
-use Craftgate\Util\Util;
+use Craftgate\Util\QueryBuilder;
 
-class UtilTest extends \PHPUnit_Framework_TestCase
+class QueryBuilderTest extends \PHPUnit_Framework_TestCase
 {
     public function test_should_build_query()
     {
         $params = array("foo" => "bar");
         $expected = "?foo=bar";
-        $actual = Util::buildQuery($params);
+        $actual = QueryBuilder::build($params);
         $this->assertEquals($expected, $actual);
     }
 
@@ -18,7 +18,7 @@ class UtilTest extends \PHPUnit_Framework_TestCase
     {
         $params = null;
         $expected = "";
-        $actual = Util::buildQuery($params);
+        $actual = QueryBuilder::build($params);
         $this->assertEquals($expected, $actual);
     }
 
@@ -26,7 +26,7 @@ class UtilTest extends \PHPUnit_Framework_TestCase
     {
         $params = array("foo" => "Zeytinyağı Üretim");
         $expected = "?foo=Zeytinya%C4%9F%C4%B1%20%C3%9Cretim";
-        $actual = Util::buildQuery($params);
+        $actual = QueryBuilder::build($params);
         $this->assertEquals($expected, $actual);
     }
 }

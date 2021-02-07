@@ -2,9 +2,9 @@
 
 namespace Craftgate\Util;
 
-class Util
+class QueryBuilder
 {
-    public static function buildQuery(array $params = null)
+    public static function build(array $params = null)
     {
         if ($params == null) {
             return '';
