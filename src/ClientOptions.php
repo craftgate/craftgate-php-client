@@ -4,11 +4,12 @@ namespace Craftgate;
 
 class ClientOptions
 {
-    const BASE_URL = 'https://api.craftgate.io';
+    const API_URL = 'https://api.craftgate.io';
+    const SANDBOX_API_URL = 'https://sandbox-api.craftgate.io';
 
     private $apiKey;
     private $secretKey;
-    private $baseUrl = self::BASE_URL;
+    private $baseUrl = self::API_URL;
 
     public function __construct(array $options = null)
     {
