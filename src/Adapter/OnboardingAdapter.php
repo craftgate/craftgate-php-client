@@ -4,7 +4,7 @@ namespace Craftgate\Adapter;
 
 use Craftgate\Util\Util;
 
-class OnboardingAdapter extends AbstractAdapter
+class OnboardingAdapter extends BaseAdapter
 {
     public function createMember(array $request)
     {

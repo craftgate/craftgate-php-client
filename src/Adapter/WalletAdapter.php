@@ -4,7 +4,7 @@ namespace Craftgate\Adapter;
 
 use Craftgate\Util\Util;
 
-class WalletAdapter extends AbstractAdapter
+class WalletAdapter extends BaseAdapter
 {
     public function searchWallets(array $request)
     {

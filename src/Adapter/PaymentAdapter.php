@@ -4,7 +4,7 @@ namespace Craftgate\Adapter;
 
 use Craftgate\Util\Util;
 
-class PaymentAdapter extends AbstractAdapter
+class PaymentAdapter extends BaseAdapter
 {
     public function createPayment(array $request)
     {

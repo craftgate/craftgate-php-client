@@ -4,7 +4,7 @@ namespace Craftgate\Adapter;
 
 use Craftgate\Util\Util;
 
-class InstallmentAdapter extends AbstractAdapter
+class InstallmentAdapter extends BaseAdapter
 {
     public function searchInstallments(array $request)
     {

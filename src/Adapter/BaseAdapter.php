@@ -7,7 +7,7 @@ use Craftgate\Util\Curl,
     Craftgate\Util\Guid,
     Craftgate\Util\Signature;
 
-abstract class AbstractAdapter
+class BaseAdapter
 {
     private $options;
 
