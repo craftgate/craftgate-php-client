@@ -2,13 +2,13 @@
 
 namespace Craftgate;
 
-use Craftgate\ClientOptions;
+use Craftgate\CraftgateOptions;
 use Craftgate\Adapter\InstallmentAdapter;
 use Craftgate\Adapter\OnboardingAdapter;
 use Craftgate\Adapter\PaymentAdapter;
 use Craftgate\Adapter\WalletAdapter;
 
-class Client
+class Craftgate
 {
     private $options;
 
@@ -17,17 +17,17 @@ class Client
         $this->setOptions($options);
     }
 
-    /** @var array|Craftgate\ClientOptions $options */
+    /** @var array|Craftgate\CraftgateOptions $options */
     public function setOptions($options)
     {
         if (is_array($options)) {
-            $options = new ClientOptions($options);
+            $options = new CraftgateOptions($options);
         }
 
-        if (!$options instanceof ClientOptions) {
+        if (!$options instanceof CraftgateOptions) {
             throw new \Exception(sprintf(
                 'Argument $options must be either instance of %s or an array, %s given',
-                ClientOptions::class, gettype($options)
+                'Craftgate\CraftgateOptions', gettype($options)
             ));
         }
 
@@ -36,7 +36,7 @@ class Client
         return $this;
     }
 
-    /** @return Craftgate\ClientOptions */
+    /** @return Craftgate\CraftgateOptions */
     public function getOptions()
     {
         return $this->options;

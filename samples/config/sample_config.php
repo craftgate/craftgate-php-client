@@ -2,13 +2,13 @@
 
 require __DIR__ . '/../../autoload.php';
 
-use Craftgate\Client;
+use Craftgate\Craftgate;
 
 class FunctionalTestConfig
 {
     public static function craftgate()
     {
-        return new Client(array(
+        return new Craftgate(array(
             'apiKey' => 'api-key',
             'secretKey' => 'secret-key',
             'baseUrl' => 'https://sandbox-api.craftgate.io',

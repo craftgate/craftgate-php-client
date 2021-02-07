@@ -2,7 +2,7 @@
 
 namespace Craftgate\Adapter;
 
-use Craftgate\ClientOptions;
+use Craftgate\CraftgateOptions;
 use Craftgate\Util\Curl,
     Craftgate\Util\Guid,
     Craftgate\Util\Signature;
@@ -11,7 +11,7 @@ class BaseAdapter
 {
     private $options;
 
-    public function __construct(ClientOptions $options)
+    public function __construct(CraftgateOptions $options)
     {
         $this->options = $options;
     }
