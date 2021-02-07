@@ -2,7 +2,6 @@
 
 namespace Craftgate;
 
-use Craftgate\CraftgateOptions;
 use Craftgate\Adapter\InstallmentAdapter;
 use Craftgate\Adapter\OnboardingAdapter;
 use Craftgate\Adapter\PaymentAdapter;

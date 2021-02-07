@@ -7,38 +7,38 @@ class Curl
     public static function get($url, array $headers)
     {
         return self::request($url, array(
-            CURLOPT_CUSTOMREQUEST  => 'GET',
+            CURLOPT_CUSTOMREQUEST => 'GET',
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_HTTPHEADER     => $headers,
+            CURLOPT_HTTPHEADER => $headers,
         ));
     }
 
     public static function post($url, array $headers, $content)
     {
         return self::request($url, array(
-            CURLOPT_CUSTOMREQUEST  => 'POST',
+            CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_HTTPHEADER     => $headers,
-            CURLOPT_POSTFIELDS     => json_encode($content),
+            CURLOPT_HTTPHEADER => $headers,
+            CURLOPT_POSTFIELDS => json_encode($content),
         ));
     }
 
     public static function put($url, array $headers, $content)
     {
         return self::request($url, array(
-            CURLOPT_CUSTOMREQUEST  => 'PUT',
+            CURLOPT_CUSTOMREQUEST => 'PUT',
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_HTTPHEADER     => $headers,
-            CURLOPT_POSTFIELDS     => json_encode($content),
+            CURLOPT_HTTPHEADER => $headers,
+            CURLOPT_POSTFIELDS => json_encode($content),
         ));
     }
 
     public static function delete($url, array $headers)
     {
         return self::request($url, array(
-            CURLOPT_CUSTOMREQUEST  => 'DELETE',
+            CURLOPT_CUSTOMREQUEST => 'DELETE',
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_HTTPHEADER     => $headers,
+            CURLOPT_HTTPHEADER => $headers,
         ));
     }
 

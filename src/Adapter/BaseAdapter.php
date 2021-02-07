@@ -3,9 +3,9 @@
 namespace Craftgate\Adapter;
 
 use Craftgate\CraftgateOptions;
-use Craftgate\Util\Curl,
-    Craftgate\Util\Guid,
-    Craftgate\Util\Signature;
+use Craftgate\Util\Curl;
+use Craftgate\Util\Guid;
+use Craftgate\Util\Signature;
 
 class BaseAdapter
 {
@@ -18,7 +18,7 @@ class BaseAdapter
 
     protected function httpGet($path)
     {
-        $url     = $this->prepareUrl($path);
+        $url = $this->prepareUrl($path);
         $headers = $this->prepareHeaders($path);
 
         return Curl::get($url, $headers);
@@ -26,7 +26,7 @@ class BaseAdapter
 
     protected function httpPost($path, $request)
     {
-        $url     = $this->prepareUrl($path);
+        $url = $this->prepareUrl($path);
         $headers = $this->prepareHeaders($path, $request);
 
         return Curl::post($url, $headers, $request);
@@ -34,7 +34,7 @@ class BaseAdapter
 
     protected function httpPut($path, $request)
     {
-        $url     = $this->prepareUrl($path);
+        $url = $this->prepareUrl($path);
         $headers = $this->prepareHeaders($path, $request);
 
         return Curl::put($url, $headers, $request);
@@ -42,7 +42,7 @@ class BaseAdapter
 
     protected function httpDelete($path)
     {
-        $url     = $this->prepareUrl($path);
+        $url = $this->prepareUrl($path);
         $headers = $this->prepareHeaders($path);
 
         return Curl::delete($url, $headers);
@@ -59,8 +59,8 @@ class BaseAdapter
         $headers[] = 'x-rnd-key: ' . ($randomString = Guid::generate());
         $headers[] = 'x-auth-version: v1';
         $headers[] = 'x-signature: ' . Signature::generate(
-            $this->options, $path, $randomString, $request
-        );
+                $this->options, $path, $randomString, $request
+            );
 
         return $headers;
     }

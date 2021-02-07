@@ -14,9 +14,9 @@ class CraftgateOptions
     public function __construct(array $options = null)
     {
         if ($options != null) {
-            isset($options['apiKey'])    && $this->apiKey    = $options['apiKey'];
+            isset($options['apiKey']) && $this->apiKey = $options['apiKey'];
             isset($options['secretKey']) && $this->secretKey = $options['secretKey'];
-            isset($options['baseUrl'])   && $this->baseUrl   = $options['baseUrl'];
+            isset($options['baseUrl']) && $this->baseUrl = $options['baseUrl'];
         }
     }
 
@@ -59,9 +59,9 @@ class CraftgateOptions
     public function toArray()
     {
         return array(
-            'apiKey'    => $this->apiKey,
+            'apiKey' => $this->apiKey,
             'secretKey' => $this->secretKey,
-            'baseUrl'   => $this->baseUrl,
+            'baseUrl' => $this->baseUrl,
         );
     }
 }

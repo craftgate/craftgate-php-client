@@ -12,7 +12,8 @@ class CurlTest extends \PHPUnit_Framework_TestCase
 
         try {
             $response = Curl::get('foo', array());
-        } catch (\Exception $exception) {}
+        } catch (\Exception $exception) {
+        }
 
         $this->assertNull($response);
         $this->assertNotNull($exception);
@@ -24,7 +25,8 @@ class CurlTest extends \PHPUnit_Framework_TestCase
 
         try {
             $response = Curl::get('https://httpbin.org/', array());
-        } catch (\Exception $exception) {}
+        } catch (\Exception $exception) {
+        }
 
         $this->assertNotNull($response);
         $this->assertNull($exception);
