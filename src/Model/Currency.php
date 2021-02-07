@@ -4,5 +4,5 @@ namespace Craftgate\Model;
 
 class Currency
 {
-    const TRY = 'TRY';
+    const TL = 'TRY';
 }
