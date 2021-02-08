@@ -8,7 +8,7 @@ $request = array(
     'name' => 'Zeytinyağı Üretim',
     'page' => 0,
     'size' => 25,
-    'memberIds' => array(1, 2),
+    'memberIds' => implode(',', array(1, 2)),
     'memberType' => MemberType::LIMITED_OR_JOINT_STOCK_COMPANY
 );
 
