@@ -106,11 +106,11 @@ var_dump($response);
 ```
 
 ### Advanced Usage: Adapters
-In reality, the `Craftgate\Craftgate` class serves as a provider of adapters that integrates with different parts of the API. While the intended usage for most use-cases is to instantiate a `Craftgate\Craftgate` instance (as illustrated in the examples above) and use its adapter initializers (e.g. `payment()`).
+In reality, the `Craftgate` class serves as a provider of adapters that integrates with different parts of the API. While the intended usage for most use-cases is to instantiate a `Craftgate` instance (as illustrated in the examples above) and use its adapter initializers (e.g. `payment()`).
 
-**Note:** When instantiating an adapter, you can use the same options as you would when instantiating a `Craftgate\Craftgate`
+**Note:** When instantiating an adapter, you can use the same options as you would when instantiating a `Craftgate`
 
-All adapters in the `Craftgate\Craftgate` have their purposes and initializers that listed below:
+All adapters in the `Craftgate` have their purposes and initializers that listed below:
 
 | Adapter Name | Purpose | Initializer |
 |--------------|---------|----------|
