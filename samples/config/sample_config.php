@@ -4,7 +4,7 @@ require __DIR__ . '/../../autoload.php';
 
 use Craftgate\Craftgate;
 
-class FunctionalTestConfig
+class SampleConfig
 {
     public static function craftgate()
     {

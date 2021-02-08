@@ -12,6 +12,6 @@ $request = array(
     'memberType' => MemberType::LIMITED_OR_JOINT_STOCK_COMPANY
 );
 
-$response = FunctionalTestConfig::craftgate()->onboarding()->searchMembers($request);
+$response = SampleConfig::craftgate()->onboarding()->searchMembers($request);
 
 print_r($response);

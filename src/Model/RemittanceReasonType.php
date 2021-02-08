@@ -4,6 +4,6 @@ namespace Craftgate\Model;
 
 class RemittanceReasonType
 {
-    const REMITTANCE = "REMITTANCE";
-    const LOYALTY = "LOYALTY";
+    const REMITTANCE = 'REMITTANCE';
+    const LOYALTY = 'LOYALTY';
 }

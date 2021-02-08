@@ -4,6 +4,6 @@ namespace Craftgate\Model;
 
 class RefundDestinationType
 {
-    const CARD = "CARD";
-    const WALLET = "WALLET";
+    const CARD = 'CARD';
+    const WALLET = 'WALLET';
 }

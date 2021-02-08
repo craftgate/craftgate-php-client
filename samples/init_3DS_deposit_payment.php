@@ -19,6 +19,6 @@ $request = array(
     )
 );
 
-$response = FunctionalTestConfig::craftgate()->payment()->init3DSDepositPayment($request);
+$response = SampleConfig::craftgate()->payment()->init3DSDepositPayment($request);
 
 print_r($response);

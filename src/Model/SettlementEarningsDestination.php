@@ -4,6 +4,6 @@ namespace Craftgate\Model;
 
 class SettlementEarningsDestination
 {
-    const IBAN = "IBAN";
-    const WALLET = "WALLET";
+    const IBAN = 'IBAN';
+    const WALLET = 'WALLET';
 }

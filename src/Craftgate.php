@@ -16,7 +16,6 @@ class Craftgate
         $this->setOptions($options);
     }
 
-    /** @var array|Craftgate\CraftgateOptions $options */
     public function setOptions($options)
     {
         if (is_array($options)) {
@@ -35,7 +34,6 @@ class Craftgate
         return $this;
     }
 
-    /** @return Craftgate\CraftgateOptions */
     public function getOptions()
     {
         return $this->options;

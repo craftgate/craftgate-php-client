@@ -7,6 +7,6 @@ $request = array(
     'cardToken' => '11a078c4-3c32-4796-90b1-51ee5517a212'
 );
 
-$response = FunctionalTestConfig::craftgate()->payment()->deleteStoredCard($request);
+$response = SampleConfig::craftgate()->payment()->deleteStoredCard($request);
 
 print_r($response);

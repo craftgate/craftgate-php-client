@@ -11,6 +11,6 @@ $request = array(
     'refundDestinationType' => RefundDestinationType::CARD
 );
 
-$response = FunctionalTestConfig::craftgate()->payment()->refundPaymentTransaction($request);
+$response = SampleConfig::craftgate()->payment()->refundPaymentTransaction($request);
 
 print_r($response);

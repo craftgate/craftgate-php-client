@@ -10,6 +10,6 @@ $request = array(
     'currency' => Currency::TL
 );
 
-$response = FunctionalTestConfig::craftgate()->installment()->searchInstallments($request);
+$response = SampleConfig::craftgate()->installment()->searchInstallments($request);
 
 print_r($response);

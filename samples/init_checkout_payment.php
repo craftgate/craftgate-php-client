@@ -34,6 +34,6 @@ $request = array(
     )
 );
 
-$response = FunctionalTestConfig::craftgate()->payment()->initCheckoutPayment($request);
+$response = SampleConfig::craftgate()->payment()->initCheckoutPayment($request);
 
 print_r($response);

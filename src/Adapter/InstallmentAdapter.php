@@ -2,13 +2,13 @@
 
 namespace Craftgate\Adapter;
 
-use Craftgate\Util\Util;
+use Craftgate\Util\QueryBuilder;
 
 class InstallmentAdapter extends BaseAdapter
 {
     public function searchInstallments(array $request)
     {
-        $path = "/installment/v1/installments" . Util::buildrequest($request);
+        $path = "/installment/v1/installments" . QueryBuilder::build($request);
         return $this->httpGet($path);
     }
 

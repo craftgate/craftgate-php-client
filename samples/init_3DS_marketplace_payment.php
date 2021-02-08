@@ -47,6 +47,6 @@ $request = array(
     )
 );
 
-$response = FunctionalTestConfig::craftgate()->payment()->init3DSPayment($request);
+$response = SampleConfig::craftgate()->payment()->init3DSPayment($request);
 
 print_r($response);

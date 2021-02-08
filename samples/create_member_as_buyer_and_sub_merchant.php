@@ -25,6 +25,6 @@ $request = array(
     'settlementEarningsDestination' => SettlementEarningsDestination::IBAN
 );
 
-$response = FunctionalTestConfig::craftgate()->onboarding()->createMember($request);
+$response = SampleConfig::craftgate()->onboarding()->createMember($request);
 
 print_r($response);

@@ -15,6 +15,6 @@ $request = array(
     'cardType' => CardType::CREDIT_CARD
 );
 
-$response = FunctionalTestConfig::craftgate()->payment()->searchStoredCards($request);
+$response = SampleConfig::craftgate()->payment()->searchStoredCards($request);
 
 print_r($response);

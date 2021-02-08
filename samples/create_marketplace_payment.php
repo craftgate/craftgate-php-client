@@ -46,6 +46,6 @@ $request = array(
     )
 );
 
-$response = FunctionalTestConfig::craftgate()->payment()->createPayment($request);
+$response = SampleConfig::craftgate()->payment()->createPayment($request);
 
 print_r($response);
