@@ -3,8 +3,9 @@
 namespace Craftgate\Tests\Util;
 
 use Craftgate\Util\Curl;
+use PHPUnit\Framework\TestCase;
 
-class CurlTest extends \PHPUnit_Framework_TestCase
+class CurlTest extends TestCase
 {
     public function test_response_should_be_null_and_cause_exception()
     {

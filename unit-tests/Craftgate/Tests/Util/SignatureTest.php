@@ -4,8 +4,9 @@ namespace Craftgate\Tests\Util;
 
 use Craftgate\CraftgateOptions;
 use Craftgate\Util\Signature;
+use PHPUnit\Framework\TestCase;
 
-class SignatureTest extends \PHPUnit_Framework_TestCase
+class SignatureTest extends TestCase
 {
     public function test_should_generate_signature()
     {
