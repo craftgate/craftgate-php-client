@@ -10,6 +10,6 @@ $request = array(
     'cardAlias' => 'My Other Cards'
 );
 
-$response = FunctionalTestConfig::craftgate()->payment()->storeCard($request);
+$response = SampleConfig::craftgate()->payment()->storeCard($request);
 
 print_r($response);

@@ -4,6 +4,7 @@ require_once('config/sample_config.php');
 
 use Craftgate\Model\Currency;
 use Craftgate\Model\PaymentGroup;
+use Craftgate\Util\Guid;
 
 $request = array(
     'price' => 100,
@@ -24,23 +25,23 @@ $request = array(
     ),
     'items' => array(
         array(
-            'externalId' => uniqid(),
+            'externalId' => Guid::generate(),
             'name' => 'Item 1',
             'price' => 30
         ),
         array(
-            'externalId' => uniqid(),
+            'externalId' => Guid::generate(),
             'name' => 'Item 2',
             'price' => 50
         ),
         array(
-            'externalId' => uniqid(),
+            'externalId' => Guid::generate(),
             'name' => 'Item 3',
             'price' => 20
         )
     )
 );
 
-$response = FunctionalTestConfig::craftgate()->payment()->createPayment($request);
+$response = SampleConfig::craftgate()->payment()->createPayment($request);
 
 print_r($response);

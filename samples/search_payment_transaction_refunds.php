@@ -6,6 +6,6 @@ $request = array(
     'paymentId' => 1,
 );
 
-$response = FunctionalTestConfig::craftgate()->payment()->searchPaymentTransactionRefunds($request);
+$response = SampleConfig::craftgate()->payment()->searchPaymentTransactionRefunds($request);
 
 print_r($response);

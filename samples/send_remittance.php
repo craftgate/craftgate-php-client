@@ -11,6 +11,6 @@ $request = array(
     'remittanceReasonType' => RemittanceReasonType::REMITTANCE
 );
 
-$response = FunctionalTestConfig::craftgate()->wallet()->sendRemittance($request);
+$response = SampleConfig::craftgate()->wallet()->sendRemittance($request);
 
 print_r($response);

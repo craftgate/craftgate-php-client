@@ -6,6 +6,6 @@ $request = array(
     'paymentId' => 1
 );
 
-$response = FunctionalTestConfig::craftgate()->payment()->complete3DSDepositPayment($request);
+$response = SampleConfig::craftgate()->payment()->complete3DSDepositPayment($request);
 
 print_r($response);

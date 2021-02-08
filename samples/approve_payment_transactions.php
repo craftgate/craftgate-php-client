@@ -7,6 +7,6 @@ $request = array(
     'isTransactional' => true
 );
 
-$response = FunctionalTestConfig::craftgate()->payment()->approvePaymentTransactions($request);
+$response = SampleConfig::craftgate()->payment()->approvePaymentTransactions($request);
 
 print_r($response);

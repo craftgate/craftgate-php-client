@@ -18,6 +18,6 @@ $request = array(
     )
 );
 
-$response = FunctionalTestConfig::craftgate()->payment()->createDepositPayment($request);
+$response = SampleConfig::craftgate()->payment()->createDepositPayment($request);
 
 print_r($response);

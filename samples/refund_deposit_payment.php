@@ -7,6 +7,6 @@ $request = array(
     'conversationId' => '456d1297-908e-4bd6-a13b-4be31a6e47d5'
 );
 
-$response = FunctionalTestConfig::craftgate()->payment()->refundDepositPayment(1, $request);
+$response = SampleConfig::craftgate()->payment()->refundDepositPayment(1, $request);
 
 print_r($response);

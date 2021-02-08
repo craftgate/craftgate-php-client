@@ -8,6 +8,6 @@ $request = array(
     'walletTransactionType' => WalletTransactionType::DEPOSIT_FROM_CARD
 );
 
-$response = FunctionalTestConfig::craftgate()->wallet()->searchWalletTransactions(1, $request);
+$response = SampleConfig::craftgate()->wallet()->searchWalletTransactions(1, $request);
 
 print_r($response);

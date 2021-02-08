@@ -17,6 +17,6 @@ $request = array(
     'address' => 'Suadiye Mah. Örnek Cd. No:23, 34740 Kadıköy/İstanbul'
 );
 
-$response = FunctionalTestConfig::craftgate()->onboarding()->updateMember(1, $request);
+$response = SampleConfig::craftgate()->onboarding()->updateMember(1, $request);
 
 print_r($response);

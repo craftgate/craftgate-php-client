@@ -1,20 +1,17 @@
 <?php
 
-require_once(dirname(__DIR__) . '/../CraftgateBootstrap.php');
-
-CraftgateBootstrap::init();
+require __DIR__ . '/../../autoload.php';
 
 use Craftgate\Craftgate;
-use Craftgate\Request\Common\RequestOptions;
 
-class FunctionalTestConfig
+class SampleConfig
 {
     public static function craftgate()
     {
-        $options = new RequestOptions();
-        $options->setApiKey('api-key');
-        $options->setSecretKey('secret-key');
-        $options->setBaseUrl('https://sandbox-api.craftgate.io');
-        return new Craftgate($options);
+        return new Craftgate(array(
+            'apiKey' => 'api-key',
+            'secretKey' => 'secret-key',
+            'baseUrl' => 'https://sandbox-api.craftgate.io',
+        ));
     }
 }
