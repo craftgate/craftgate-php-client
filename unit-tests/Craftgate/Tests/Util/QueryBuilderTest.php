@@ -3,9 +3,8 @@
 namespace Craftgate\Tests\Util;
 
 use Craftgate\Util\QueryBuilder;
-use PHPUnit\Framework\TestCase;
 
-class QueryBuilderTest extends TestCase
+class QueryBuilderTest extends \TestCase
 {
     public function test_should_build_query()
     {
