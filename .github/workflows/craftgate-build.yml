@@ -42,5 +42,5 @@ jobs:
           php -r "if(strpos(@exec('composer -V'), 'Composer version') === false) {throw new Exception('Composer not found');}"
       - name: Run Unit Tests
         run: |
-          composer install
+          composer update --prefer-lowest --prefer-stable
           composer test
