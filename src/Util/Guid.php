@@ -6,7 +6,7 @@ class Guid
 {
     public static function generate()
     {
-        if (function_exists('random_bytes_')) {
+        if (function_exists('random_bytes')) {
             $input = random_bytes(32); // PHP 7.0
         } else {
             srand();
