@@ -30,7 +30,8 @@
     "autoload-dev": {
         "psr-4": {
             "": "unit-tests/"
-        }
+        },
+        "files": ["unit-tests/polyfill.php"]
     },
     "scripts": {
         "test": "vendor/bin/phpunit --colors"
