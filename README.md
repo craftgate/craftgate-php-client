@@ -1,6 +1,8 @@
 # Craftgate PHP Client
 
 [![Build Status](https://github.com/craftgate/craftgate-php-client/workflows/Craftgate%20PHP%20CI/badge.svg?branch=master)](https://github.com/craftgate/craftgate-php-client/actions)
+[![Latest Stable Version](https://poser.pugx.org/craftgate/craftgate/v/stable.svg)](https://packagist.org/packages/craftgate/craftgate)
+[![License](https://poser.pugx.org/craftgate/craftgate/license.svg)](https://packagist.org/packages/craftgate/craftgate)
 
 This repo contains the PHP client for Craftgate API.
 
