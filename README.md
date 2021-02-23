@@ -121,5 +121,8 @@ All adapters in the `Craftgate` have their purposes and initializers that listed
 | `PaymentAdapter` | Conducting payments, retrieving payment information, managing stored cards | `payment()` |
 | `WalletAdapter` | Managing remittance, retrieving wallet transactions | `wallet()` |
 
+### Contributions
+For all contributions to this client please see the contribution guide [here](CONTRIBUTING.md).
+
 ## License
 MIT
