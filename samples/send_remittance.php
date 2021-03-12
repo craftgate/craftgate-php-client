@@ -7,8 +7,8 @@ use Craftgate\Model\RemittanceReasonType;
 $request = array(
     'memberId' => 1,
     'price' => 50,
-    'description' => 'Remittance send to memberId 1',
-    'remittanceReasonType' => RemittanceReasonType::REMITTANCE
+    'description' => 'Loyalty send to memberId 1',
+    'remittanceReasonType' => RemittanceReasonType::REDEEM_ONLY_LOYALTY
 );
 
 $response = SampleConfig::craftgate()->wallet()->sendRemittance($request);
