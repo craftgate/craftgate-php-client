@@ -4,6 +4,6 @@ namespace Craftgate\Model;
 
 class RemittanceReasonType
 {
-    const REMITTANCE = 'REMITTANCE';
-    const LOYALTY = 'LOYALTY';
+    const SUBMERCHANT_SEND_RECEIVE = 'SUBMERCHANT_SEND_RECEIVE';
+    const REDEEM_ONLY_LOYALTY = 'REDEEM_ONLY_LOYALTY';
 }
