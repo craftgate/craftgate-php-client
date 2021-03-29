@@ -24,7 +24,7 @@ class BaseAdapter
         return Curl::get($url, $headers);
     }
 
-    protected function httpPost($path, $request)
+    protected function httpPost($path, $request = null)
     {
         $url = $this->prepareUrl($path);
         $headers = $this->prepareHeaders($path, $request);
