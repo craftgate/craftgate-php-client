@@ -11,7 +11,7 @@ class SampleConfig
         return new Craftgate(array(
             'apiKey' => 'api-key',
             'secretKey' => 'secret-key',
-            'baseUrl' => 'http://localhost:8000',
+            'baseUrl' => 'https://sandbox-api.craftgate.io',
         ));
     }
 }
