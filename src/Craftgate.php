@@ -5,6 +5,7 @@ namespace Craftgate;
 use Craftgate\Adapter\InstallmentAdapter;
 use Craftgate\Adapter\OnboardingAdapter;
 use Craftgate\Adapter\PaymentAdapter;
+use Craftgate\Adapter\PaymentReportingAdapter;
 use Craftgate\Adapter\WalletAdapter;
 
 class Craftgate
@@ -57,5 +58,10 @@ class Craftgate
     public function wallet()
     {
         return new WalletAdapter($this->options);
+    }
+
+    public function paymentReporting()
+    {
+        return new PaymentReportingAdapter($this->options);
     }
 }

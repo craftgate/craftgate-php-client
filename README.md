@@ -121,6 +121,7 @@ All adapters in the `Craftgate` have their purposes and initializers that listed
 | `OnboardingAdapter` | Conducting CRUD operations on buyers and sub merchants | `onboarding()` |
 | `PaymentAdapter` | Conducting payments, retrieving payment information, managing stored cards | `payment()` |
 | `WalletAdapter` | Managing remittance, retrieving wallet transactions | `wallet()` |
+| `PaymentReportingAdapter` | Payment reporting operations like search payments | `paymentReporting()` |
 
 ### Contributions
 For all contributions to this client please see the contribution guide [here](CONTRIBUTING.md).
