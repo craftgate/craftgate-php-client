@@ -122,6 +122,7 @@ All adapters in the `Craftgate` have their purposes and initializers that listed
 | `PaymentAdapter` | Conducting payments, retrieving payment information, managing stored cards | `payment()` |
 | `WalletAdapter` | Managing remittance, retrieving wallet transactions | `wallet()` |
 | `SettlementReportingAdapter` | Settlement operations like search payout completed transactions, search bounced payout transactions | `settlementReporting()` |
+| `PaymentReportingAdapter` | Payment reporting operations like search payments | `paymentReporting()` |
 
 ### Contributions
 For all contributions to this client please see the contribution guide [here](CONTRIBUTING.md).
