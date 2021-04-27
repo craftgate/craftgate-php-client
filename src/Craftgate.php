@@ -5,8 +5,8 @@ namespace Craftgate;
 use Craftgate\Adapter\InstallmentAdapter;
 use Craftgate\Adapter\OnboardingAdapter;
 use Craftgate\Adapter\PaymentAdapter;
-use Craftgate\Adapter\SettlementReportingAdapter;
 use Craftgate\Adapter\PaymentReportingAdapter;
+use Craftgate\Adapter\SettlementReportingAdapter;
 use Craftgate\Adapter\WalletAdapter;
 
 class Craftgate
