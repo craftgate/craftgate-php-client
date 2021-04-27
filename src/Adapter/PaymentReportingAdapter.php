@@ -6,7 +6,7 @@ use Craftgate\Util\QueryBuilder;
 
 class PaymentReportingAdapter extends BaseAdapter
 {
-    public function searchPayments($request)
+    public function searchPayments(array $request)
     {
         $path = "/payment-reporting/v1/payments" . QueryBuilder::build($request);
         return $this->httpGet($path);
@@ -18,31 +18,31 @@ class PaymentReportingAdapter extends BaseAdapter
         return $this->httpGet($path);
     }
 
-    public function listPaymentTransactions($paymentId)
+    public function retrievePaymentTransactions($paymentId)
     {
         $path = "/payment-reporting/v1/payments/" . $paymentId . "/transactions";
         return $this->httpGet($path);
     }
 
-    public function listPaymentRefunds($paymentId)
+    public function retrievePaymentRefunds($paymentId)
     {
         $path = "/payment-reporting/v1/payments/" . $paymentId . "/refunds";
         return $this->httpGet($path);
     }
 
-    public function listPaymentTransactionRefunds($paymentId, $paymentTransactionId)
+    public function retrievePaymentTransactionRefunds($paymentId, $paymentTransactionId)
     {
         $path = "/payment-reporting/v1/payments/" . $paymentId . "/transactions/" . $paymentTransactionId . "/refunds";
         return $this->httpGet($path);
     }
 
-    public function searchRefunds($request)
+    public function searchPaymentRefunds(array $request)
     {
         $path = "/payment-reporting/v1/refunds" . QueryBuilder::build($request);
         return $this->httpGet($path);
     }
 
-    public function searchPaymentTransactionRefunds($request)
+    public function searchPaymentTransactionRefunds(array $request)
     {
         $path = "/payment-reporting/v1/refund-transactions" . QueryBuilder::build($request);
         return $this->httpGet($path);
