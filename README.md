@@ -4,8 +4,11 @@
 [![CI Score](https://meercode.io/badge/craftgate/craftgate-php-client?type=ci-score&lastDay=14)](https://meercode.io/craftgate/craftgate-php-client)
 [![Latest Stable Version](https://poser.pugx.org/craftgate/craftgate/v/stable.svg)](https://packagist.org/packages/craftgate/craftgate)
 [![License](https://poser.pugx.org/craftgate/craftgate/license.svg)](https://packagist.org/packages/craftgate/craftgate)
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/craftgate/craftgate-php-client)
 
 This repo contains the PHP client for Craftgate API.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/craftgate/craftgate-php-client)
 
 ## Requirements
 - PHP 5.3 and later.
