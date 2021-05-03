@@ -124,6 +124,7 @@ All adapters in the `Craftgate` have their purposes and initializers that listed
 | `OnboardingAdapter` | Conducting CRUD operations on buyers and sub merchants | `onboarding()` |
 | `PaymentAdapter` | Conducting payments, retrieving payment information, managing stored cards | `payment()` |
 | `WalletAdapter` | Managing remittance, retrieving wallet transactions | `wallet()` |
+| `SettlementAdapter` | Settlement operations like create instant wallet settlement | `settlement()` |
 | `SettlementReportingAdapter` | Settlement operations like search payout completed transactions, search bounced payout transactions | `settlementReporting()` |
 | `PaymentReportingAdapter` | Payment reporting operations like search payments | `paymentReporting()` |
 

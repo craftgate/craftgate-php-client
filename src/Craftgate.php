@@ -6,6 +6,7 @@ use Craftgate\Adapter\InstallmentAdapter;
 use Craftgate\Adapter\OnboardingAdapter;
 use Craftgate\Adapter\PaymentAdapter;
 use Craftgate\Adapter\PaymentReportingAdapter;
+use Craftgate\Adapter\SettlementAdapter;
 use Craftgate\Adapter\SettlementReportingAdapter;
 use Craftgate\Adapter\WalletAdapter;
 
@@ -59,6 +60,11 @@ class Craftgate
     public function wallet()
     {
         return new WalletAdapter($this->options);
+    }
+
+    public function settlement()
+    {
+        return new SettlementAdapter($this->options);
     }
 
     public function settlementReporting()
