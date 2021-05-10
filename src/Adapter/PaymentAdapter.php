@@ -78,12 +78,6 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpGet($path);
     }
 
-    public function searchPaymentTransactionRefunds(array $request)
-    {
-        $path = "/payment/v1/refund-transactions" . QueryBuilder::build($request);
-        return $this->httpGet($path);
-    }
-
     public function refundPayment(array $request)
     {
         $path = "/payment/v1/refunds";
