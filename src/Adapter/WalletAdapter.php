@@ -6,9 +6,9 @@ use Craftgate\Util\QueryBuilder;
 
 class WalletAdapter extends BaseAdapter
 {
-    public function searchWallets(array $request)
+    public function retrieveMemberWallet($memberId)
     {
-        $path = "/wallet/v1/wallets" . QueryBuilder::build($request);
+        $path = "/wallet/v1/members/" . $memberId . "/wallet";
         return $this->httpGet($path);
     }
 
