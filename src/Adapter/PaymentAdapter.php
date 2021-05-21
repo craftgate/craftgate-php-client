@@ -48,12 +48,6 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
-    public function refundDepositPayment($paymentId, array $request)
-    {
-        $path = "/payment/v1/deposits/" . $paymentId . "/refunds";
-        return $this->httpPost($path, $request);
-    }
-
     public function init3DSDepositPayment(array $request)
     {
         $path = "/payment/v1/deposits/3ds-init";
