@@ -30,6 +30,12 @@ class WalletAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
+    public function retrieveRemittance($walletTransactionId)
+    {
+        $path = "/wallet/v1/remittances/" . $walletTransactionId;
+        return $this->httpGet($path);
+    }
+
     public function retrieveMerchantMemberWallet()
     {
         $path = "/wallet/v1/merchants/me/wallet";
