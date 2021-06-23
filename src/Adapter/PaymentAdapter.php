@@ -18,6 +18,12 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpGet($path);
     }
 
+    public function postAuthPayment(array $request)
+    {
+        $path = "/payment/v1/card-payments/" . $request["paymentId"] . "/post-auth";
+        return $this->httpPost($path, $request);
+    }
+
     public function init3DSPayment(array $request)
     {
         $path = "/payment/v1/card-payments/3ds-init";
