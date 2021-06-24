@@ -18,9 +18,9 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpGet($path);
     }
 
-    public function postAuthPayment(array $request)
+    public function postAuthPayment($paymentId, array $request)
     {
-        $path = "/payment/v1/card-payments/" . $request["paymentId"] . "/post-auth";
+        $path = "/payment/v1/card-payments/" . $paymentId . "/post-auth";
         return $this->httpPost($path, $request);
     }
 
