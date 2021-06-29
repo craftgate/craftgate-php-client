@@ -2,11 +2,13 @@
 
 require_once('config/sample_config.php');
 
-use Craftgate\Model\Currency;
-use Craftgate\Model\PaymentGroup;
-use Craftgate\Model\PaymentPhase;
-use Craftgate\Util\Guid;
-
+/**
+ * if you don't want to send paidPrice in the request, paid price of pre auth payment will be used. $request should be:
+ *
+ * $request = array(
+ *     'paidPrice' => null
+ * );
+ */
 $request = array(
     'paidPrice' => 100
 );
