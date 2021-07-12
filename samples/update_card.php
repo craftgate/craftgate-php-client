@@ -3,10 +3,10 @@
 require_once('config/sample_config.php');
 
 $request = array(
-    'cardUserKey' => '8373c41d-711e-4ef6-b5b9-bf669ccab819',
-    'cardToken' => '307820ad-c096-4ad1-a122-7092a9665ebd',
-    'expireYear' => '2025',
-    'expireMonth' => '12',
+    'cardUserKey' => 'fac377f2-ab15-4696-88d2-5e71b27ec378',
+    'cardToken' => '11a078c4-3c32-4796-90b1-51ee5517a212',
+    'expireYear' => '2044',
+    'expireMonth' => '07',
 );
 
 $response = SampleConfig::craftgate()->payment()->updateCard($request);
