@@ -1,7 +1,7 @@
 # Craftgate PHP Client
 
 [![Build Status](https://github.com/craftgate/craftgate-php-client/workflows/Craftgate%20PHP%20CI/badge.svg?branch=master)](https://github.com/craftgate/craftgate-php-client/actions)
-[![CI Score](https://meercode.io/badge/craftgate/craftgate-php-client?type=ci-score&lastDay=14)](https://meercode.io/craftgate/craftgate-php-client)
+[![CI Score](https://meercode.io/badge/craftgate/craftgate-php-client?type=ci-score&lastDay=90)](https://meercode.io/craftgate/craftgate-php-client)
 [![Latest Stable Version](https://poser.pugx.org/craftgate/craftgate/v/stable.svg)](https://packagist.org/packages/craftgate/craftgate)
 [![License](https://poser.pugx.org/craftgate/craftgate/license.svg)](https://packagist.org/packages/craftgate/craftgate)
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/craftgate/craftgate-php-client)
