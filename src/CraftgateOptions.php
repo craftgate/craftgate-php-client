@@ -5,7 +5,6 @@ namespace Craftgate;
 class CraftgateOptions
 {
     const API_URL = 'https://api.craftgate.io';
-    const SANDBOX_API_URL = 'https://sandbox-api.craftgate.io';
 
     private $apiKey;
     private $secretKey;

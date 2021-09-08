@@ -30,3 +30,4 @@ build/
 composer.lock
 composer.phar
 vendor/*
+.phpunit.result.cache

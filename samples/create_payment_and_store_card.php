@@ -14,6 +14,7 @@ $request = array(
     'currency' => Currency::TL,
     'paymentGroup' => PaymentGroup::LISTING_OR_SUBSCRIPTION,
     'conversationId' => '456d1297-908e-4bd6-a13b-4be31a6e47d5',
+    'externalId' => 'external_id-123456789',
     'card' => array(
         'cardHolderName' => 'Haluk Demir',
         'cardNumber' => '5258640000000001',

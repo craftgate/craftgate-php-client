@@ -18,6 +18,12 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpGet($path);
     }
 
+    public function postAuthPayment($paymentId, array $request)
+    {
+        $path = "/payment/v1/card-payments/" . $paymentId . "/post-auth";
+        return $this->httpPost($path, $request);
+    }
+
     public function init3DSPayment(array $request)
     {
         $path = "/payment/v1/card-payments/3ds-init";
@@ -48,12 +54,6 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
-    public function refundDepositPayment($paymentId, array $request)
-    {
-        $path = "/payment/v1/deposits/" . $paymentId . "/refunds";
-        return $this->httpPost($path, $request);
-    }
-
     public function init3DSDepositPayment(array $request)
     {
         $path = "/payment/v1/deposits/3ds-init";
@@ -78,12 +78,6 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpGet($path);
     }
 
-    public function searchPaymentTransactionRefunds(array $request)
-    {
-        $path = "/payment/v1/refund-transactions" . QueryBuilder::build($request);
-        return $this->httpGet($path);
-    }
-
     public function refundPayment(array $request)
     {
         $path = "/payment/v1/refunds";
@@ -99,6 +93,12 @@ class PaymentAdapter extends BaseAdapter
     public function storeCard(array $request)
     {
         $path = "/payment/v1/cards";
+        return $this->httpPost($path, $request);
+    }
+
+    public function updateCard(array $request)
+    {
+        $path = "/payment/v1/cards/update";
         return $this->httpPost($path, $request);
     }
 

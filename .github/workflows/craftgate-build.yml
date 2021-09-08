@@ -1,24 +1,14 @@
 name: Craftgate PHP CI
 
-on:
-  pull_request:
-    branches:
-      - master
-    paths-ignore:
-      - '**.md'
-  push:
-    branches:
-      - master
-    paths-ignore:
-      - '**.md'
+on: [ push, pull_request ]
 
 jobs:
   run:
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
-        operating-system: [ubuntu-latest]
-        php-versions: ['5.3', '5.4', '5.5', '5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0']
+        operating-system: [ ubuntu-18.04 ]
+        php-versions: [ '5.3', '5.4', '5.5', '5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0' ]
     name: Build with PHP ${{ matrix.php-versions }}
     steps:
       - name: Checkout

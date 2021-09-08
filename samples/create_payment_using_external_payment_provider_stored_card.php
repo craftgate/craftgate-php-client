@@ -9,10 +9,13 @@ use Craftgate\Util\Guid;
 $request = array(
     'price' => 100,
     'paidPrice' => 100,
+    'walletPrice' => 0,
+    'posAlias' => '6007-posAlias-1',
+    'installment' => 1,
     'currency' => Currency::TL,
     'paymentGroup' => PaymentGroup::LISTING_OR_SUBSCRIPTION,
     'conversationId' => '456d1297-908e-4bd6-a13b-4be31a6e47d5',
-    'callbackUrl' => 'https://www.your-website.com/craftgate-checkout-callback',
+    'externalId' => 'external_id-123456789',
     'items' => array(
         array(
             'externalId' => Guid::generate(),
@@ -29,9 +32,15 @@ $request = array(
             'name' => 'Item 3',
             'price' => 20
         )
-    )
+    ),
+    'additionalParams' => array(
+        'paymentProvider' => array(
+            'cardUserKey' => 'test-cardUserKey',
+            'cardToken' => 'tuz8imxv30'
+        )
+    ),
 );
 
-$response = SampleConfig::craftgate()->payment()->initCheckoutPayment($request);
+$response = SampleConfig::craftgate()->payment()->createPayment($request);
 
 print_r($response);
