@@ -62,7 +62,7 @@ class Curl
         $response = curl_exec($request);
 
         if ($response === false) {
-            throw new \UnexpectedValueException(curl_error($request), curl_errno($request));
+            throw new \Exception(curl_error($request), curl_errno($request));
         }
 
         curl_close($request);
