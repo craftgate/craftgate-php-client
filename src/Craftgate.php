@@ -26,7 +26,7 @@ class Craftgate
         }
 
         if (!$options instanceof CraftgateOptions) {
-            throw new \Exception(sprintf(
+            throw new \InvalidArgumentException(sprintf(
                 'Argument $options must be either instance of %s or an array, %s given',
                 'Craftgate\CraftgateOptions', gettype($options)
             ));
