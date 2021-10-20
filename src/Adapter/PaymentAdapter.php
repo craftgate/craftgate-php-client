@@ -125,4 +125,10 @@ class PaymentAdapter extends BaseAdapter
         $path = "/payment/v1/payment-transactions/disapprove";
         return $this->httpPost($path, $request);
     }
+
+    public function checkMasterpassUser(array $request)
+    {
+        $path = "/payment/v1/masterpass-payments/check-user";
+        return $this->httpPost($path, $request);
+    }
 }
