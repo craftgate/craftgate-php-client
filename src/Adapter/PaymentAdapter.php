@@ -66,6 +66,12 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
+    public function initGarantiPayPayment(array $request)
+    {
+        $path = "/payment/v1/garanti-pay-payments";
+        return $this->httpPost($path, $request);
+    }
+
     public function retrieveLoyalties(array $request)
     {
         $path = "/payment/v1/card-loyalties/retrieve";
