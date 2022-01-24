@@ -9,6 +9,6 @@ $request = array(
     'cvc' => '000'
 );
 
-$response = SampleConfig::craftgate()->wallet()->retrieveLoyalties($request);
+$response = SampleConfig::craftgate()->payment()->retrieveLoyalties($request);
 
 print_r($response);
