@@ -8,4 +8,5 @@ class PaymentStatus
     const SUCCESS = 'SUCCESS';
     const INIT_THREEDS = 'INIT_THREEDS';
     const CALLBACK_THREEDS = 'CALLBACK_THREEDS';
+    const WAITING = 'WAITING';
 }
