@@ -17,7 +17,7 @@ $request = array(
     'contactName' => 'Haluk',
     'contactSurname' => 'Demir',
     'address' => 'Suadiye Mah. Örnek Cd. No:23, 34740 Kadıköy/İstanbul',
-    'walletLowerLimit' => -50
+    'negativeWalletAmountLimit' => -50
 );
 
 $response = SampleConfig::craftgate()->onboarding()->createMember($request);
