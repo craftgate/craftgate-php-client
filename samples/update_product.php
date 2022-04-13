@@ -3,9 +3,7 @@
 require_once('config/sample_config.php');
 
 use Craftgate\Model\Currency;
-use Craftgate\Model\PaymentGroup;
 use Craftgate\Model\Status;
-use Craftgate\Util\Guid;
 
 $request = array(
     'status' => Status::PASSIVE,
