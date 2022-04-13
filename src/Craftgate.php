@@ -4,6 +4,7 @@ namespace Craftgate;
 
 use Craftgate\Adapter\InstallmentAdapter;
 use Craftgate\Adapter\OnboardingAdapter;
+use Craftgate\Adapter\PayByLinkAdapter;
 use Craftgate\Adapter\PaymentAdapter;
 use Craftgate\Adapter\PaymentReportingAdapter;
 use Craftgate\Adapter\SettlementAdapter;
@@ -75,5 +76,10 @@ class Craftgate
     public function paymentReporting()
     {
         return new PaymentReportingAdapter($this->options);
+    }
+
+    public function payByLink()
+    {
+        return new PayByLinkAdapter($this->options);
     }
 }
