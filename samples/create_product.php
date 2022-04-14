@@ -9,7 +9,7 @@ $request = array(
     'channel' => "API",
     'price' => 10,
     'currency' => Currency::TL,
-    'enabledInstallments' => "1,2,3,6"
+    'enabledInstallments' => array(1,2,3,6)
 );
 
 $response = SampleConfig::craftgate()->payByLink()->createProduct($request);

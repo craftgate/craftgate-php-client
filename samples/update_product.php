@@ -11,7 +11,7 @@ $request = array(
     'channel' => "API",
     'price' => 10,
     'currency' => Currency::TL,
-    'enabledInstallments' => "1,2,3,6"
+    'enabledInstallments' => array(1,2,3)
 );
 
 $response = SampleConfig::craftgate()->payByLink()->updateProduct(1, $request);
