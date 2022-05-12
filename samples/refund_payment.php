@@ -6,7 +6,7 @@ use Craftgate\Model\RefundDestinationType;
 
 $request = array(
     'paymentId' => 1,
-    'refundDestinationType' => RefundDestinationType::CARD
+    'refundDestinationType' => RefundDestinationType::PROVIDER
 );
 
 $response = SampleConfig::craftgate()->payment()->refundPayment($request);
