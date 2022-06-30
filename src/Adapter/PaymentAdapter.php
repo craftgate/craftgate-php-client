@@ -155,4 +155,10 @@ class PaymentAdapter extends BaseAdapter
         $path = "/payment/v1/masterpass-payments/check-user";
         return $this->httpPost($path, $request);
     }
+
+    public function updatePaymentTransaction($paymentTransactionId, array $request)
+    {
+        $path = "/payment/v1/payment-transactions/" .$paymentTransactionId;
+        return $this->httpPut($path, $request);
+    }
 }
