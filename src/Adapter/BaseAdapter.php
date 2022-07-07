@@ -16,45 +16,43 @@ class BaseAdapter
         $this->options = $options;
     }
 
-    protected function httpGet($path)
+    protected function httpGet($path, $headers = null)
     {
         $url = $this->prepareUrl($path);
-        $headers = $this->prepareHeaders($path);
+        $headers = $this->prepareHeaders($headers, $path);
 
         return Curl::get($url, $headers);
     }
 
-    protected function httpPost($path, $request = null)
+    protected function httpPost($path, $request = null, $headers = null)
     {
         $url = $this->prepareUrl($path);
-        $headers = $this->prepareHeaders($path, $request);
+        $headers = $this->prepareHeaders($headers, $path, $request);
 
         return Curl::post($url, $headers, $request);
     }
 
-    protected function httpPut($path, $request)
+    protected function httpPut($path, $request, $headers = null)
     {
         $url = $this->prepareUrl($path);
-        $headers = $this->prepareHeaders($path, $request);
+        $headers = $this->prepareHeaders($headers, $path, $request);
 
         return Curl::put($url, $headers, $request);
     }
 
-    protected function httpDelete($path)
+    protected function httpDelete($path, $headers = null)
     {
         $url = $this->prepareUrl($path);
-        $headers = $this->prepareHeaders($path);
+        $headers = $this->prepareHeaders($headers, $path);
 
         return Curl::delete($url, $headers);
     }
 
-    private function prepareHeaders($path, $request = null)
+    private function prepareHeaders($headers, $path, $request = null)
     {
-        $headers = array(
-            'accept: application/json',
-            'content-type: application/json'
-        );
-
+        if ($headers == null) {
+            $headers = array('accept: application/json', 'content-type: application/json');
+        }
         $headers[] = 'x-api-key: ' . $this->options->getApiKey();
         $headers[] = 'x-rnd-key: ' . ($randomString = Guid::generate());
         $headers[] = 'x-auth-version: v1';
@@ -62,7 +60,6 @@ class BaseAdapter
         $headers[] = 'x-signature: ' . Signature::generate(
                 $this->options, $path, $randomString, $request
             );
-
         return $headers;
     }
 
