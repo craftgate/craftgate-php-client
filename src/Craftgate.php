@@ -7,6 +7,7 @@ use Craftgate\Adapter\OnboardingAdapter;
 use Craftgate\Adapter\PayByLinkAdapter;
 use Craftgate\Adapter\PaymentAdapter;
 use Craftgate\Adapter\PaymentReportingAdapter;
+use Craftgate\Adapter\FileReportingAdapter;
 use Craftgate\Adapter\SettlementAdapter;
 use Craftgate\Adapter\SettlementReportingAdapter;
 use Craftgate\Adapter\WalletAdapter;
@@ -76,6 +77,11 @@ class Craftgate
     public function paymentReporting()
     {
         return new PaymentReportingAdapter($this->options);
+    }
+
+    public function fileReporting()
+    {
+        return new FileReportingAdapter($this->options);
     }
 
     public function payByLink()
