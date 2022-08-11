@@ -84,6 +84,12 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
+    public function completeApmPayment(array $request)
+    {
+        $path = "/payment/v1/apm-payments/complete";
+        return $this->httpPost($path, $request);
+    }
+
     public function retrieveLoyalties(array $request)
     {
         $path = "/payment/v1/card-loyalties/retrieve";
