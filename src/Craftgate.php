@@ -2,6 +2,7 @@
 
 namespace Craftgate;
 
+use Craftgate\Adapter\FraudAdapter;
 use Craftgate\Adapter\InstallmentAdapter;
 use Craftgate\Adapter\OnboardingAdapter;
 use Craftgate\Adapter\PayByLinkAdapter;
@@ -87,5 +88,10 @@ class Craftgate
     public function payByLink()
     {
         return new PayByLinkAdapter($this->options);
+    }
+
+    public function fraud()
+    {
+        return new FraudAdapter($this->options);
     }
 }
