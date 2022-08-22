@@ -12,6 +12,7 @@ class SampleConfig
             'apiKey' => 'api-key',
             'secretKey' => 'secret-key',
             'baseUrl' => 'https://sandbox-api.craftgate.io',
+            'lang' => 'en',
         ));
     }
 }

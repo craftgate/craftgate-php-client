@@ -60,6 +60,7 @@ class BaseAdapter
         $headers[] = 'x-signature: ' . Signature::generate(
                 $this->options, $path, $randomString, $request
             );
+        $headers[] = 'lang: ' . $this->options->getLang();
         return $headers;
     }
 
