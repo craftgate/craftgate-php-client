@@ -7,4 +7,5 @@ class ApmType
     const PAPARA = 'PAPARA';
     const PAYONEER = 'PAYONEER';
     const SODEXO = 'SODEXO';
+    const EDENRED = 'EDENRED';
 }
