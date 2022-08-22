@@ -56,7 +56,7 @@ class BaseAdapter
         $headers[] = 'x-api-key: ' . $this->options->getApiKey();
         $headers[] = 'x-rnd-key: ' . ($randomString = Guid::generate());
         $headers[] = 'x-auth-version: v1';
-        $headers[] = 'x-client-version: craftgate-php-client:1.0.21';
+        $headers[] = 'x-client-version: craftgate-php-client:1.0.22';
         $headers[] = 'x-signature: ' . Signature::generate(
                 $this->options, $path, $randomString, $request
             );
