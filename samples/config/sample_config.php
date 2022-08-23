@@ -11,8 +11,7 @@ class SampleConfig
         return new Craftgate(array(
             'apiKey' => 'api-key',
             'secretKey' => 'secret-key',
-            'baseUrl' => 'https://sandbox-api.craftgate.io',
-            'lang' => 'en',
+            'baseUrl' => 'https://sandbox-api.craftgate.io'
         ));
     }
 }
