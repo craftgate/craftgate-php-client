@@ -9,6 +9,7 @@ class CraftgateOptions
     private $apiKey;
     private $secretKey;
     private $baseUrl = self::API_URL;
+    private $language;
 
     public function __construct(array $options = null)
     {
@@ -16,6 +17,7 @@ class CraftgateOptions
             isset($options['apiKey']) && $this->apiKey = $options['apiKey'];
             isset($options['secretKey']) && $this->secretKey = $options['secretKey'];
             isset($options['baseUrl']) && $this->baseUrl = $options['baseUrl'];
+            isset($options['lang']) && $this->language = $options['lang'];
         }
     }
 
@@ -55,12 +57,23 @@ class CraftgateOptions
         return $this->baseUrl;
     }
 
+    public function getLanguage()
+    {
+        return $this->language;
+    }
+
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+    }
+
     public function toArray()
     {
         return array(
             'apiKey' => $this->apiKey,
             'secretKey' => $this->secretKey,
             'baseUrl' => $this->baseUrl,
+            'language' => $this->language,
         );
     }
 }
