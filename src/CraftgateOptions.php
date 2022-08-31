@@ -17,7 +17,7 @@ class CraftgateOptions
             isset($options['apiKey']) && $this->apiKey = $options['apiKey'];
             isset($options['secretKey']) && $this->secretKey = $options['secretKey'];
             isset($options['baseUrl']) && $this->baseUrl = $options['baseUrl'];
-            isset($options['lang']) && $this->language = $options['lang'];
+            isset($options['language']) && $this->language = $options['language'];
         }
     }
 
