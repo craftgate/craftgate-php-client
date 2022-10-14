@@ -8,4 +8,5 @@ class ApmType
     const PAYONEER = 'PAYONEER';
     const SODEXO = 'SODEXO';
     const EDENRED = 'EDENRED';
+    const PAYPAL = 'PAYPAL';
 }
