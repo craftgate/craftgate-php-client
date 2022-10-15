@@ -3,9 +3,9 @@
 require_once('config/sample_config.php');
 
 use Craftgate\Model\Currency;
+use Craftgate\Model\LoyaltyType;
 use Craftgate\Model\PaymentGroup;
 use Craftgate\Util\Guid;
-use Craftgate\Model\LoyaltyType;
 
 $request = array(
     'price' => 100,

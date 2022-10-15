@@ -8,17 +8,17 @@ jobs:
     strategy:
       matrix:
         operating-system: [ ubuntu-latest ]
-        php-versions: [ '5.3', '5.4', '5.5', '5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0' ]
+        php-versions: [ '5.3', '5.4', '5.5', '5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0', '8.1' ]
     name: Build with PHP ${{ matrix.php-versions }}
     steps:
       - name: Collect Workflow Telemetry
         uses: runforesight/foresight-workflow-kit-action@v1
         with:
           api_key: 90b23594-1167-4b71-bf24-874821363456
-    
+
       - name: Checkout
         uses: actions/checkout@v2
-        
+
       - name: Install PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -26,17 +26,17 @@ jobs:
           coverage: xdebug
           extensions: intl
           ini-values: "post_max_size=256M"
-          
+
       - name: Check PHP Version
         run: |
           php -v
           php -r "if(strpos(phpversion(), '${{ matrix.php-versions }}') === false) {throw new Exception('Wrong PHP version Installed');}"
-          
+
       - name: Testing Composer version
         run: |
           composer -V
           php -r "if(strpos(@exec('composer -V'), 'Composer version') === false) {throw new Exception('Composer not found');}"
-          
+
       - name: Run Unit Tests
         run: |
           composer update --prefer-stable
