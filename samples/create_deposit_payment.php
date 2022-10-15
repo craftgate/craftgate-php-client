@@ -2,8 +2,6 @@
 
 require_once('config/sample_config.php');
 
-use Craftgate\Model\Currency;
-
 $request = array(
     'price' => 100,
     'buyerMemberId' => 1,

@@ -164,7 +164,7 @@ class PaymentAdapter extends BaseAdapter
 
     public function updatePaymentTransaction($paymentTransactionId, array $request)
     {
-        $path = "/payment/v1/payment-transactions/" .$paymentTransactionId;
+        $path = "/payment/v1/payment-transactions/" . $paymentTransactionId;
         return $this->httpPut($path, $request);
     }
 }
