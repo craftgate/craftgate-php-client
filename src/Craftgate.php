@@ -2,13 +2,13 @@
 
 namespace Craftgate;
 
+use Craftgate\Adapter\FileReportingAdapter;
 use Craftgate\Adapter\FraudAdapter;
 use Craftgate\Adapter\InstallmentAdapter;
 use Craftgate\Adapter\OnboardingAdapter;
 use Craftgate\Adapter\PayByLinkAdapter;
 use Craftgate\Adapter\PaymentAdapter;
 use Craftgate\Adapter\PaymentReportingAdapter;
-use Craftgate\Adapter\FileReportingAdapter;
 use Craftgate\Adapter\SettlementAdapter;
 use Craftgate\Adapter\SettlementReportingAdapter;
 use Craftgate\Adapter\WalletAdapter;
