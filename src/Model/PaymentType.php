@@ -9,4 +9,5 @@ class PaymentType
     const WALLET_PAYMENT = 'WALLET_PAYMENT';
     const CARD_AND_WALLET_PAYMENT = 'CARD_AND_WALLET_PAYMENT';
     const BANK_TRANSFER = 'BANK_TRANSFER';
+    const APM = 'APM';
 }

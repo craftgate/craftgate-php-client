@@ -9,4 +9,6 @@ class ApmType
     const SODEXO = 'SODEXO';
     const EDENRED = 'EDENRED';
     const PAYPAL = 'PAYPAL';
+    const FUND_TRANSFER = 'FUND_TRANSFER';
+    const CASH_ON_DELIVERY = 'CASH_ON_DELIVERY';
 }
