@@ -146,8 +146,8 @@ class PaymentAdapter extends BaseAdapter
 
     public function deleteStoredCard(array $request)
     {
-        $path = "/payment/v1/cards" . QueryBuilder::build($request);
-        return $this->httpDelete($path);
+        $path = "/payment/v1/cards/delete";
+        return $this->httpPost($path, $request);
     }
 
     public function approvePaymentTransactions(array $request)
