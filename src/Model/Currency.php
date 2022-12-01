@@ -10,4 +10,5 @@ class Currency
     const GBP = 'GBP';
     const ARS = 'ARS';
     const BRL = 'BRL';
+    const CNY = 'CNY';
 }
