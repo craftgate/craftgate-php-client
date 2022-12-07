@@ -14,4 +14,9 @@ class Signature
 
         return base64_encode(hash('sha256', $hash, true));
     }
+
+    public static function generateHash($hashString)
+    {
+        return hash('sha256', $hashString, false);
+    }
 }
