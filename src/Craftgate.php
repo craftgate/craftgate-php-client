@@ -4,6 +4,7 @@ namespace Craftgate;
 
 use Craftgate\Adapter\FileReportingAdapter;
 use Craftgate\Adapter\FraudAdapter;
+use Craftgate\Adapter\HookAdapter;
 use Craftgate\Adapter\InstallmentAdapter;
 use Craftgate\Adapter\OnboardingAdapter;
 use Craftgate\Adapter\PayByLinkAdapter;
@@ -93,5 +94,10 @@ class Craftgate
     public function fraud()
     {
         return new FraudAdapter($this->options);
+    }
+
+    public function hook()
+    {
+        return new HookAdapter($this->options);
     }
 }
