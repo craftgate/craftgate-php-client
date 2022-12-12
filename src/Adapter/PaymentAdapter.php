@@ -3,6 +3,7 @@
 namespace Craftgate\Adapter;
 
 use Craftgate\Util\QueryBuilder;
+use Craftgate\Util\Signature;
 
 class PaymentAdapter extends BaseAdapter
 {
@@ -172,5 +173,24 @@ class PaymentAdapter extends BaseAdapter
     {
         $path = "/payment/v1/payment-transactions/" . $paymentTransactionId;
         return $this->httpPut($path, $request);
+    }
+
+    public function is3DSecureCallbackVerified($threeDSecureCallbackKey, $params)
+    {
+        $hash = $params["hash"];
+        $hashString = $threeDSecureCallbackKey .
+            "###" . $this->extractParam('status', $params) .
+            "###" . $this->extractParam('completeStatus', $params) .
+            "###" . $this->extractParam('paymentId', $params) .
+            "###" . $this->extractParam('conversationData', $params) .
+            "###" . $this->extractParam('conversationId', $params) .
+            "###" . $this->extractParam('callbackStatus', $params);
+
+        $hashed = Signature::generateHash($hashString);
+        return $hash == $hashed;
+    }
+
+    private function extractParam($key, $params){
+        return isset($params[$key]) ? $params[$key] : '';
     }
 }
