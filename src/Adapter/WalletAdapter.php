@@ -6,6 +6,13 @@ use Craftgate\Util\QueryBuilder;
 
 class WalletAdapter extends BaseAdapter
 {
+
+    public function createMemberWallet($memberId, array $request)
+    {
+        $path = "/wallet/v1/members/" . $memberId . "/wallets";
+        return $this->httpPost($path, $request);
+    }
+
     public function retrieveMemberWallet($memberId)
     {
         $path = "/wallet/v1/members/" . $memberId . "/wallet";
