@@ -6,6 +6,13 @@ use Craftgate\Util\QueryBuilder;
 
 class OnboardingAdapter extends BaseAdapter
 {
+
+    public function createMerchant(array $request)
+    {
+        $path = "/onboarding/v1/merchants";
+        return $this->httpPost($path, $request);
+    }
+
     public function createMember(array $request)
     {
         $path = "/onboarding/v1/members";
