@@ -8,7 +8,7 @@ use Craftgate\Util\Guid;
 $request = array(
     'name' => 'newMerchant',
     'legalCompanyTitle' => 'legalCompanyTitle',
-    'email' => 'new_merchant22@merchant.com',
+    'email' => 'new_merchant@merchant.com',
     'website' => 'www.merchant.com',
     'contactName' => 'newName',
     'contactSurname' => 'newSurname',
