@@ -61,13 +61,13 @@ class WalletAdapter extends BaseAdapter
         return $this->httpGet($path);
     }
 
-    public function refundWalletTransactionToCard($walletTransactionId, array $request)
+    public function refundWalletTransaction($walletTransactionId, array $request)
     {
         $path = "/payment/v1/wallet-transactions/" . $walletTransactionId . "/refunds";
         return $this->httpPost($path, $request);
     }
 
-    public function retrieveRefundWalletTransactionsToCard($walletTransactionId)
+    public function retrieveRefundWalletTransactions($walletTransactionId)
     {
         $path = "/payment/v1/wallet-transactions/" . $walletTransactionId . "/refunds";
         return $this->httpGet($path);
