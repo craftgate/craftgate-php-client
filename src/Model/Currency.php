@@ -11,4 +11,5 @@ class Currency
     const ARS = 'ARS';
     const BRL = 'BRL';
     const CNY = 'CNY';
+    const AED = 'AED';
 }
