@@ -12,4 +12,5 @@ class Currency
     const BRL = 'BRL';
     const CNY = 'CNY';
     const AED = 'AED';
+    const IQD = 'IQD';
 }
