@@ -73,6 +73,12 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
+    public function initApmDepositPayment(array $request)
+    {
+        $path = "/payment/v1/deposits/apm-init";
+        return $this->httpPost($path, $request);
+    }
+
     public function initGarantiPayPayment(array $request)
     {
         $path = "/payment/v1/garanti-pay-payments";
