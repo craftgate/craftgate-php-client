@@ -23,4 +23,10 @@ class SettlementReportingAdapter extends BaseAdapter
         $path = "/settlement-reporting/v1/settlement-file/payout-details/" . $id;
         return $this->httpGet($path);
     }
+
+    public function searchPayoutRows(array $request)
+    {
+        $path = "/settlement-reporting/v1/settlement-file-rows" . QueryBuilder::build($request);
+        return $this->httpGet($path);
+    }
 }
