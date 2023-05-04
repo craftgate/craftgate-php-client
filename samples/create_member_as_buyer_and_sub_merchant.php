@@ -21,8 +21,7 @@ $request = array(
     'memberExternalId' => Guid::generate(),
     'legalCompanyTitle' => 'Dem Zeytinyağı Üretim Ltd. Şti.',
     'taxNumber' => '1111111114',
-    'taxOffice' => 'Erenköy',
-    'settlementEarningsDestination' => SettlementEarningsDestination::IBAN
+    'taxOffice' => 'Erenköy'
 );
 
 $response = SampleConfig::craftgate()->onboarding()->createMember($request);

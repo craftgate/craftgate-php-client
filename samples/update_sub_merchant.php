@@ -20,7 +20,7 @@ $request = array(
     'taxNumber' => '1111111114',
     'taxOffice' => 'Erenköy',
     'memberType' => MemberType::LIMITED_OR_JOINT_STOCK_COMPANY,
-    'settlementEarningsDestination' => SettlementEarningsDestination::IBAN
+    'settlementEarningsDestination' => SettlementEarningsDestination::WALLET
 );
 
 $response = SampleConfig::craftgate()->onboarding()->updateMember(1, $request);
