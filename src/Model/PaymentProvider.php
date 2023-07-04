@@ -12,4 +12,7 @@ class PaymentProvider
     const  PAYONEER = "PAYONEER";
     const  SODEXO = "SODEXO";
     const  EDENRED = "EDENRED";
+    const  YKB_WORLD_PAY = "YKB_WORLD_PAY";
+    const  APPLEPAY = "APPLEPAY";
+    const  GOOGLEPAY = "GOOGLEPAY";
 }
