@@ -2,19 +2,14 @@
 
 require_once('config/sample_config.php');
 
-use Craftgate\Model\CardAssociation;
-use Craftgate\Model\CardType;
+use Craftgate\Model\Currency;
 
 $request = array(
-    'cardAlias' => 'My YKB Card',
-    'cardBankName' => 'YAPI VE KREDİ BANKASI A.Ş.',
-    'cardBrand' => 'World',
-    'cardAssociation' => CardAssociation::MASTER_CARD,
-    'cardToken' => 'd9b19d1a-243c-43dc-a498-add08162df72',
-    'cardUserKey' => 'c115ecdf-0afc-4d83-8a1b-719c2af19cbd',
-    'cardType' => CardType::CREDIT_CARD
+    'page' => 0,
+    'size' => 10,
+    'currency' => Currency::TL
 );
 
-$response = SampleConfig::craftgate()->payment()->searchStoredCards($request);
+$response = SampleConfig::craftgate()->bankAccountTracking()->searchRecords($request);
 
 print_r($response);
