@@ -49,6 +49,12 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpGet($path);
     }
 
+    public function expireCheckoutPayment($token)
+    {
+        $path = "/payment/v1/checkout-payments/" . $token;
+        return $this->httpDelete($path);
+    }
+
     public function createDepositPayment(array $request)
     {
         $path = "/payment/v1/deposits";
