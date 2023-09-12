@@ -187,12 +187,6 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
-    public function checkMasterpassUser(array $request)
-    {
-        $path = "/payment/v1/masterpass-payments/check-user";
-        return $this->httpPost($path, $request);
-    }
-
     public function updatePaymentTransaction($paymentTransactionId, array $request)
     {
         $path = "/payment/v1/payment-transactions/" . $paymentTransactionId;
@@ -214,7 +208,8 @@ class PaymentAdapter extends BaseAdapter
         return $hash == $hashed;
     }
 
-    private function extractParam($key, $params){
+    private function extractParam($key, $params)
+    {
         return isset($params[$key]) ? $params[$key] : '';
     }
 }
