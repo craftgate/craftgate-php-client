@@ -6,6 +6,6 @@ $request = array(
     'masterpassGsmNumber' => '903000000000',
 );
 
-$response = SampleConfig::craftgate()->payment()->checkMasterpassUser($request);
+$response = SampleConfig::craftgate()->masterpass()->checkMasterpassUser($request);
 
 print_r($response);
