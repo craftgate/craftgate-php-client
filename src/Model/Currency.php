@@ -14,4 +14,5 @@ class Currency
     const AED = 'AED';
     const IQD = 'IQD';
     const AZN = 'AZN';
+    const KZT = 'KZT';
 }
