@@ -193,6 +193,12 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpPut($path, $request);
     }
 
+    public function createApplePayMerchantSession(array $request)
+    {
+        $path = "/payment/v1/apple-pay/merchant-sessions";
+        return $this->httpPost($path, $request);
+    }
+
     public function is3DSecureCallbackVerified($threeDSecureCallbackKey, $params)
     {
         $hash = $params["hash"];
