@@ -14,6 +14,7 @@ class ApmType
     const AFTERPAY = 'AFTERPAY';
     const STRIPE = 'STRIPE';
     const KASPI = 'KASPI';
+    const TOMPAY = 'TOMPAY';
     const FUND_TRANSFER = 'FUND_TRANSFER';
     const CASH_ON_DELIVERY = 'CASH_ON_DELIVERY';
 }
