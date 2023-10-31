@@ -13,6 +13,7 @@ class PaymentMethod
     const EDENRED_GIFT = 'EDENRED_GIFT';
     const STRIPE = 'STRIPE';
     const KASPI = 'KASPI';
+    const TOMPAY = 'TOMPAY';
     const ALIPAY = 'ALIPAY';
     const PAYPAL = 'PAYPAL';
     const KLARNA = 'KLARNA';

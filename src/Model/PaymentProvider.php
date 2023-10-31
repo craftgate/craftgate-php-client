@@ -14,6 +14,7 @@ class PaymentProvider
     const  EDENRED = "EDENRED";
     const  STRIPE = "STRIPE";
     const  KASPI = "KASPI";
+    const  TOMPAY = "TOMPAY";
     const  YKB_WORLD_PAY = "YKB_WORLD_PAY";
     const  APPLEPAY = "APPLEPAY";
     const  GOOGLEPAY = "GOOGLEPAY";
