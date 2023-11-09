@@ -199,14 +199,15 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
-    public function initBnplPayment(array $request)
-    {
-        $path = "/payment/v1/bnpl-payments/init";
-        return $this->httpPost($path, $request);
-    }
     public function retrieveBnplOffers(array $request)
     {
         $path = "/payment/v1/bnpl-payments/offers";
+        return $this->httpPost($path, $request);
+    }
+
+    public function initBnplPayment(array $request)
+    {
+        $path = "/payment/v1/bnpl-payments/init";
         return $this->httpPost($path, $request);
     }
 
