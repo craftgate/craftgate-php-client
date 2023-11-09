@@ -30,6 +30,6 @@ $request = array(
     )
 );
 
-$response = SampleConfig::craftgate()->payment()->offerBnplPayment($request);
+$response = SampleConfig::craftgate()->payment()->retrieveBnplOffers($request);
 
 print_r($response);

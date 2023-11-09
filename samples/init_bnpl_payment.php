@@ -23,12 +23,12 @@ $request = array(
         array(
             'externalId' => '38983903',
             'name' => 'Item 1',
-            'price' => 3000,
+            'price' => 6000,
         ),
         array(
             'externalId' => '92983294',
             'name' => 'Item 2',
-            'price' => 7000,
+            'price' => 4000,
         )
     ),
     'cartItems' => array(
@@ -37,7 +37,7 @@ $request = array(
             'name' => 'Test Elektronik 2',
             'brandName' => 'iphone',
             'type' => BnplCartItemType::OTHER,
-            'unitPrice' => 7000,
+            'unitPrice' => 3000,
             'quantity' => 2,
         ),
         array(
@@ -45,7 +45,7 @@ $request = array(
             'name' => 'Test Elektronik 1',
             'brandName' => 'Samsung',
             'type' => BnplCartItemType::MOBILE_PHONE_OVER_5000_TRY,
-            'unitPrice' => 3000,
+            'unitPrice' => 4000,
             'quantity' => 1,
         )
     )
