@@ -49,6 +49,12 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpGet($path);
     }
 
+    public function expireCheckoutPayment($token)
+    {
+        $path = "/payment/v1/checkout-payments/" . $token;
+        return $this->httpDelete($path);
+    }
+
     public function createDepositPayment(array $request)
     {
         $path = "/payment/v1/deposits";
@@ -181,16 +187,16 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
-    public function checkMasterpassUser(array $request)
-    {
-        $path = "/payment/v1/masterpass-payments/check-user";
-        return $this->httpPost($path, $request);
-    }
-
     public function updatePaymentTransaction($paymentTransactionId, array $request)
     {
         $path = "/payment/v1/payment-transactions/" . $paymentTransactionId;
         return $this->httpPut($path, $request);
+    }
+
+    public function createApplePayMerchantSession(array $request)
+    {
+        $path = "/payment/v1/apple-pay/merchant-sessions";
+        return $this->httpPost($path, $request);
     }
 
     public function is3DSecureCallbackVerified($threeDSecureCallbackKey, $params)
@@ -208,7 +214,8 @@ class PaymentAdapter extends BaseAdapter
         return $hash == $hashed;
     }
 
-    private function extractParam($key, $params){
+    private function extractParam($key, $params)
+    {
         return isset($params[$key]) ? $params[$key] : '';
     }
 }

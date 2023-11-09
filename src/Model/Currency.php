@@ -13,4 +13,6 @@ class Currency
     const CNY = 'CNY';
     const AED = 'AED';
     const IQD = 'IQD';
+    const AZN = 'AZN';
+    const KZT = 'KZT';
 }

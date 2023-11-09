@@ -7,6 +7,7 @@ use Craftgate\Adapter\FileReportingAdapter;
 use Craftgate\Adapter\FraudAdapter;
 use Craftgate\Adapter\HookAdapter;
 use Craftgate\Adapter\InstallmentAdapter;
+use Craftgate\Adapter\MasterpassPaymentAdapter;
 use Craftgate\Adapter\OnboardingAdapter;
 use Craftgate\Adapter\PayByLinkAdapter;
 use Craftgate\Adapter\PaymentAdapter;
@@ -100,6 +101,11 @@ class Craftgate
     public function hook()
     {
         return new HookAdapter($this->options);
+    }
+
+    public function masterpass()
+    {
+        return new MasterpassPaymentAdapter($this->options);
     }
 
     public function bankAccountTracking()
