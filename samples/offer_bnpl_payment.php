@@ -16,7 +16,7 @@ $request = array(
             'name' => 'Test Elektronik 2',
             'brandName' => 'iphone',
             'type' => BnplCartItemType::OTHER,
-            'unitPrice' => 7000,
+            'unitPrice' => 3000,
             'quantity' => 2,
         ),
         array(
@@ -24,7 +24,7 @@ $request = array(
             'name' => 'Test Elektronik 1',
             'brandName' => 'Samsung',
             'type' => BnplCartItemType::MOBILE_PHONE_OVER_5000_TRY,
-            'unitPrice' => 3000,
+            'unitPrice' => 4000,
             'quantity' => 1,
         )
     )
