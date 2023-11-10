@@ -2,6 +2,7 @@
 
 namespace Craftgate;
 
+use Craftgate\Adapter\BankAccountTrackingAdapter;
 use Craftgate\Adapter\FileReportingAdapter;
 use Craftgate\Adapter\FraudAdapter;
 use Craftgate\Adapter\HookAdapter;
@@ -105,5 +106,10 @@ class Craftgate
     public function masterpass()
     {
         return new MasterpassPaymentAdapter($this->options);
+    }
+
+    public function bankAccountTracking()
+    {
+        return new BankAccountTrackingAdapter($this->options);
     }
 }
