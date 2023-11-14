@@ -15,6 +15,8 @@ class ApmType
     const STRIPE = 'STRIPE';
     const KASPI = 'KASPI';
     const TOMPAY = 'TOMPAY';
+    const MASLAK = 'MASLAK';
+    const ALFABANK = 'ALFABANK';
     const FUND_TRANSFER = 'FUND_TRANSFER';
     const CASH_ON_DELIVERY = 'CASH_ON_DELIVERY';
 }
