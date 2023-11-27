@@ -17,6 +17,7 @@ class ApmType
     const TOMPAY = 'TOMPAY';
     const MASLAK = 'MASLAK';
     const ALFABANK = 'ALFABANK';
+    const TOM_FINANCE = 'TOM_FINANCE';
     const FUND_TRANSFER = 'FUND_TRANSFER';
     const CASH_ON_DELIVERY = 'CASH_ON_DELIVERY';
 }
