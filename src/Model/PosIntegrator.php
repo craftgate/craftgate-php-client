@@ -38,4 +38,6 @@ class PosIntegrator
     const ELEKSE = 'ELEKSE';
     const ALGORITMA = 'ALGORITMA';
     const PAYCELL = 'PAYCELL';
+    const TAMI = 'TAMI';
+    const QNB_PAY = 'QNB_PAY';
 }
