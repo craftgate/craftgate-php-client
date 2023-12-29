@@ -41,4 +41,5 @@ class PosIntegrator
     const TAMI = 'TAMI';
     const QNB_PAY = 'QNB_PAY';
     const AKBANK_VPOS = 'AKBANK_VPOS';
+    const TAP = 'TAP';
 }
