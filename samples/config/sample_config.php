@@ -9,9 +9,9 @@ class SampleConfig
     public static function craftgate()
     {
         return new Craftgate(array(
-            'apiKey' => 'api-key',
+            'apiKey' => 'api-key-2',
             'secretKey' => 'secret-key',
-            'baseUrl' => 'https://sandbox-api.craftgate.io'
+            'baseUrl' => 'http://localhost:8000'
         ));
     }
 }
