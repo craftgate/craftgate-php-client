@@ -33,11 +33,12 @@ class FraudAdapter extends BaseAdapter
         return $this->httpGet($path);
     }
 
-    public function createValueList($listName)
+    public function createValueList($listName, $type)
     {
         $path = "/fraud/v1/value-lists";
         $request = array(
-            'listName' => $listName
+            'listName' => $listName,
+            'type' => $type
         );
         return $this->httpPost($path, $request);
     }
@@ -48,20 +49,15 @@ class FraudAdapter extends BaseAdapter
         return $this->httpDelete($path);
     }
 
-    public function addValueToValueList($listName, $value, $expireInSeconds = null)
+    public function addValueToValueList($request)
     {
         $path = "/fraud/v1/value-lists";
-        $request = array(
-            'listName' => $listName,
-            'value' => $value,
-            'durationInSeconds' => $expireInSeconds
-        );
         return $this->httpPost($path, $request);
     }
 
-    public function removeValueFromValueList($listName, $value)
+    public function removeValueFromValueList($listName, $valueId)
     {
-        $path = "/fraud/v1/value-lists/" . $listName . "/values/" . $value;
+        $path = "/fraud/v1/value-lists/" . $listName . "/values/" . $valueId;
         return $this->httpDelete($path);
     }
 }
