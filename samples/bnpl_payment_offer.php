@@ -23,7 +23,7 @@ $request = array(
             'id' => '100',
             'name' => 'Test Elektronik 1',
             'brandName' => 'Samsung',
-            'type' => BnplCartItemType::MOBILE_PHONE_OVER_5000_TRY,
+            'type' => BnplCartItemType::MOBILE_PHONE_PRICE_ABOVE_REGULATION_LIMIT,
             'unitPrice' => 4000,
             'quantity' => 1,
         )
