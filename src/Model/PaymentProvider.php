@@ -18,4 +18,5 @@ class PaymentProvider
     const  YKB_WORLD_PAY = "YKB_WORLD_PAY";
     const  APPLEPAY = "APPLEPAY";
     const  GOOGLEPAY = "GOOGLEPAY";
+    const  HASO = "HASO";
 }
