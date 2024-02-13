@@ -7,6 +7,7 @@ use Craftgate\Adapter\FileReportingAdapter;
 use Craftgate\Adapter\FraudAdapter;
 use Craftgate\Adapter\HookAdapter;
 use Craftgate\Adapter\InstallmentAdapter;
+use Craftgate\Adapter\JuzdanPaymentAdapter;
 use Craftgate\Adapter\MasterpassPaymentAdapter;
 use Craftgate\Adapter\MerchantAdapter;
 use Craftgate\Adapter\OnboardingAdapter;
@@ -117,5 +118,10 @@ class Craftgate
     public function merchant()
     {
         return new MerchantAdapter($this->options);
+    }
+
+    public function juzdan()
+    {
+        return new JuzdanPaymentAdapter($this->options);
     }
 }
