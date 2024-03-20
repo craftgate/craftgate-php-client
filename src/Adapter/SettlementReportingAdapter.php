@@ -8,7 +8,7 @@ class SettlementReportingAdapter extends BaseAdapter
 {
     public function searchPayoutCompletedTransactions(array $request)
     {
-        $path = "/settlement-reporting/v1/settlement-file/payout-completed-transactions" . QueryBuilder::build($request);
+        $path = "/settlement-reporting/v2/settlement-file/payout-completed-transactions" . QueryBuilder::build($request);
         return $this->httpGet($path);
     }
 
