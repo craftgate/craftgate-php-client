@@ -14,4 +14,10 @@ class Currency
     const AED = 'AED';
     const IQD = 'IQD';
     const AZN = 'AZN';
+    const KZT = 'KZT';
+    const KWD = 'KWD';
+    const SAR = 'SAR';
+    const BHD = 'BHD';
+    const RUB = 'RUB';
+    const JPY = 'JPY';
 }

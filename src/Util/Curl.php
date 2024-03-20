@@ -38,7 +38,7 @@ class Curl
             CURLOPT_TIMEOUT => self::READ_TIMEOUT,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_HTTPHEADER => $headers,
-            CURLOPT_POSTFIELDS => json_encode($content),
+            CURLOPT_POSTFIELDS => $content ? json_encode($content) : null,
         ));
     }
 

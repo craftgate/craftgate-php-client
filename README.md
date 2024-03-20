@@ -111,23 +111,6 @@ $response = $craftgate->payment()->createPayment($request);
 var_dump($response);
 ```
 
-### Advanced Usage: Adapters
-In reality, the `Craftgate` class serves as a provider of adapters that integrates with different parts of the API. While the intended usage for most use-cases is to instantiate a `Craftgate` instance (as illustrated in the examples above) and use its adapter initializers (e.g. `payment()`).
-
-**Note:** When instantiating an adapter, you can use the same options as you would when instantiating a `Craftgate`
-
-All adapters in the `Craftgate` have their purposes and initializers that listed below:
-
-| Adapter Name | Purpose | Initializer |
-|--------------|---------|----------|
-| `InstallmentAdapter` | Retrieving per-installment pricing information based on installment count or BIN number | `installment()` |
-| `OnboardingAdapter` | Conducting CRUD operations on buyers and sub merchants | `onboarding()` |
-| `PaymentAdapter` | Conducting payments, retrieving payment information, managing stored cards | `payment()` |
-| `WalletAdapter` | Managing remittance, retrieving wallet transactions | `wallet()` |
-| `SettlementAdapter` | Settlement operations like create instant wallet settlement | `settlement()` |
-| `SettlementReportingAdapter` | Settlement operations like search payout completed transactions, search bounced payout transactions | `settlementReporting()` |
-| `PaymentReportingAdapter` | Payment reporting operations like search payments | `paymentReporting()` |
-
 ### Contributions
 For all contributions to this client please see the contribution guide [here](CONTRIBUTING.md).
 

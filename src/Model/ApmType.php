@@ -12,8 +12,14 @@ class ApmType
     const PAYPAL = 'PAYPAL';
     const KLARNA = 'KLARNA';
     const AFTERPAY = 'AFTERPAY';
+    const STRIPE = 'STRIPE';
     const KASPI = 'KASPI';
     const COMPAY = 'COMPAY';
+    const TOMPAY = 'TOMPAY';
+    const MASLAK = 'MASLAK';
+    const ALFABANK = 'ALFABANK';
+    const TOM_FINANCE = 'TOM_FINANCE';
+    const HASO = 'HASO';
     const FUND_TRANSFER = 'FUND_TRANSFER';
     const CASH_ON_DELIVERY = 'CASH_ON_DELIVERY';
 }

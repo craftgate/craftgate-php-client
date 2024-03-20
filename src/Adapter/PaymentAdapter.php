@@ -193,6 +193,30 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpPut($path, $request);
     }
 
+    public function createApplePayMerchantSession(array $request)
+    {
+        $path = "/payment/v1/apple-pay/merchant-sessions";
+        return $this->httpPost($path, $request);
+    }
+
+    public function retrieveBnplOffers(array $request)
+    {
+        $path = "/payment/v1/bnpl-payments/offers";
+        return $this->httpPost($path, $request);
+    }
+
+    public function initBnplPayment(array $request)
+    {
+        $path = "/payment/v1/bnpl-payments/init";
+        return $this->httpPost($path, $request);
+    }
+
+    public function approveBnplPayment($paymentId)
+    {
+        $path =  "/payment/v1/bnpl-payments/" . $paymentId . "/approve";
+        return $this->httpPost($path);
+    }
+
     public function retrieveActiveBanks()
     {
         $path = "/payment/v1/instant-transfer-banks";

@@ -2,11 +2,14 @@
 
 namespace Craftgate;
 
+use Craftgate\Adapter\BankAccountTrackingAdapter;
 use Craftgate\Adapter\FileReportingAdapter;
 use Craftgate\Adapter\FraudAdapter;
 use Craftgate\Adapter\HookAdapter;
 use Craftgate\Adapter\InstallmentAdapter;
+use Craftgate\Adapter\JuzdanPaymentAdapter;
 use Craftgate\Adapter\MasterpassPaymentAdapter;
+use Craftgate\Adapter\MerchantAdapter;
 use Craftgate\Adapter\OnboardingAdapter;
 use Craftgate\Adapter\PayByLinkAdapter;
 use Craftgate\Adapter\PaymentAdapter;
@@ -105,5 +108,20 @@ class Craftgate
     public function masterpass()
     {
         return new MasterpassPaymentAdapter($this->options);
+    }
+
+    public function bankAccountTracking()
+    {
+        return new BankAccountTrackingAdapter($this->options);
+    }
+
+    public function merchant()
+    {
+        return new MerchantAdapter($this->options);
+    }
+
+    public function juzdan()
+    {
+        return new JuzdanPaymentAdapter($this->options);
     }
 }
