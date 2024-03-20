@@ -193,6 +193,12 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpPut($path, $request);
     }
 
+    public function retrieveActiveBanks()
+    {
+        $path = "/payment/v1/instant-transfer-banks";
+        return $this->httpGet($path);
+    }
+
     public function is3DSecureCallbackVerified($threeDSecureCallbackKey, $params)
     {
         $hash = $params["hash"];

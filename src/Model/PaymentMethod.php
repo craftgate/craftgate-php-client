@@ -15,4 +15,6 @@ class PaymentMethod
     const PAYPAL = 'PAYPAL';
     const KLARNA = 'KLARNA';
     const AFTERPAY = 'AFTERPAY';
+    const KASPI = 'KASPI';
+    const COMPAY = 'COMPAY';
 }
