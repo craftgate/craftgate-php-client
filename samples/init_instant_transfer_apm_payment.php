@@ -8,7 +8,7 @@ use Craftgate\Model\PaymentGroup;
 use Craftgate\Util\Guid;
 
 $request = array(
-    'apmType' => ApmType::COMPAY,
+    'apmType' => ApmType::INSTANT_TRANSFER,
     'price' => 1,
     'paidPrice' => 1,
     'currency' => Currency::TL,
