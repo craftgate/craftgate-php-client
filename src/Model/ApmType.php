@@ -20,6 +20,7 @@ class ApmType
     const ALFABANK = 'ALFABANK';
     const TOM_FINANCE = 'TOM_FINANCE';
     const HASO = 'HASO';
+    const PAYCELL = 'PAYCELL';
     const FUND_TRANSFER = 'FUND_TRANSFER';
     const CASH_ON_DELIVERY = 'CASH_ON_DELIVERY';
 }

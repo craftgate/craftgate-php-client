@@ -20,4 +20,5 @@ class PaymentProvider
     const  APPLEPAY = "APPLEPAY";
     const  GOOGLEPAY = "GOOGLEPAY";
     const  HASO = "HASO";
+    const  PAYCELL = "PAYCELL";
 }
