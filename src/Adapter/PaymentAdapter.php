@@ -163,6 +163,12 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
+    public function cloneCard(array $request)
+    {
+        $path = "/payment/v1/cards/clone";
+        return $this->httpPost($path, $request);
+    }
+
     public function searchStoredCards(array $request)
     {
         $path = "/payment/v1/cards" . QueryBuilder::build($request);
