@@ -16,7 +16,6 @@ $request = array(
     'phoneNumber' => '905551111111',
     'contactName' => 'Haluk',
     'contactSurname' => 'Demir',
-    'identityNumber' => '11111111110',
     'memberType' => MemberType::LIMITED_OR_JOINT_STOCK_COMPANY,
     'memberExternalId' => Guid::generate(),
     'legalCompanyTitle' => 'Dem Zeytinyağı Üretim Ltd. Şti.',
