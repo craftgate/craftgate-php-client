@@ -10,7 +10,6 @@ $request = array(
     'isSubMerchant' => false,
     'name' => 'Haluk Demir',
     'email' => 'haluk.demir@example.com',
-    'identityNumber' => '11111111110',
     'phoneNumber' => '905551111111',
     'memberExternalId' => Guid::generate(),
     'memberType' => MemberType::PERSONAL,
