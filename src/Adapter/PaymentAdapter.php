@@ -229,6 +229,12 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpGet($path);
     }
 
+    public function retrieveMultiPayment($token)
+    {
+        $path = "/payment/v1/multi-payments/" . $token;
+        return $this->httpGet($path);
+    }
+
     public function is3DSecureCallbackVerified($threeDSecureCallbackKey, $params)
     {
         $hash = $params["hash"];
