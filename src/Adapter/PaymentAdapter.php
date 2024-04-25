@@ -223,6 +223,12 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpPost($path);
     }
 
+    public function verifyBnplPayment(array $request)
+    {
+        $path =  "/payment/v1/bnpl-payments/verify";
+        return $this->httpPost($path, $request);
+    }
+
     public function retrieveActiveBanks()
     {
         $path = "/payment/v1/instant-transfer-banks";

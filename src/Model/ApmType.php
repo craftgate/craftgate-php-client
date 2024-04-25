@@ -21,6 +21,7 @@ class ApmType
     const TOM_FINANCE = 'TOM_FINANCE';
     const HASO = 'HASO';
     const PAYCELL = 'PAYCELL';
+    const ZIP = 'ZIP';
     const FUND_TRANSFER = 'FUND_TRANSFER';
     const CASH_ON_DELIVERY = 'CASH_ON_DELIVERY';
 }
