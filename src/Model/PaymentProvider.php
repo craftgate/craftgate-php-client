@@ -21,4 +21,5 @@ class PaymentProvider
     const  GOOGLEPAY = "GOOGLEPAY";
     const  HASO = "HASO";
     const  PAYCELL = "PAYCELL";
+    const  ZIP = "ZIP";
 }
