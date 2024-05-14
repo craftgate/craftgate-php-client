@@ -12,6 +12,7 @@ class PaymentProvider
     const  PAYONEER = "PAYONEER";
     const  SODEXO = "SODEXO";
     const  EDENRED = "EDENRED";
+    const  METROPOL = "METROPOL";
     const  STRIPE = "STRIPE";
     const  KASPI = "KASPI";
     const  INSTANT_TRANSFER = "INSTANT_TRANSFER";

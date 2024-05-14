@@ -9,6 +9,7 @@ class ApmType
     const SODEXO = 'SODEXO';
     const EDENRED = 'EDENRED';
     const EDENRED_GIFT = 'EDENRED_GIFT';
+    const METROPOL = 'METROPOL';
     const PAYPAL = 'PAYPAL';
     const KLARNA = 'KLARNA';
     const AFTERPAY = 'AFTERPAY';
