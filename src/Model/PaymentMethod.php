@@ -11,11 +11,8 @@ class PaymentMethod
     const SODEXO = 'SODEXO';
     const EDENRED = 'EDENRED';
     const EDENRED_GIFT = 'EDENRED_GIFT';
-    const METROPOL = 'METROPOL';
     const STRIPE = 'STRIPE';
-    const KASPI = 'KASPI';
     const INSTANT_TRANSFER = 'INSTANT_TRANSFER';
-    const TOMPAY = 'TOMPAY';
     const ALIPAY = 'ALIPAY';
     const PAYPAL = 'PAYPAL';
     const KLARNA = 'KLARNA';
