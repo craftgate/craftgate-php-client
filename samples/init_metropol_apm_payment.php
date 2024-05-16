@@ -28,7 +28,7 @@ $request = array(
                 )
         ),
         'additionalParams' => array(
-                'apmUserIdentity' => '6375780115068760'
+                'cardNumber' => '6375780115068760'
         )
 );
 
