@@ -17,4 +17,6 @@ class PaymentMethod
     const PAYPAL = 'PAYPAL';
     const KLARNA = 'KLARNA';
     const AFTERPAY = 'AFTERPAY';
+    const MULTINET = 'MULTINET';
+    const MULTINET_GIFT = 'MULTINET_GIFT';
 }
