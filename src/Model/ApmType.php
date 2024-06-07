@@ -23,6 +23,8 @@ class ApmType
     const HASO = 'HASO';
     const PAYCELL = 'PAYCELL';
     const ZIP = 'ZIP';
+    const MULTINET = 'MULTINET';
+    const MULTINET_GIFT = 'MULTINET_GIFT';
     const FUND_TRANSFER = 'FUND_TRANSFER';
     const CASH_ON_DELIVERY = 'CASH_ON_DELIVERY';
 }
