@@ -241,6 +241,12 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpGet($path);
     }
 
+    public function retrieveProviderCard(array $request)
+    {
+        $path = "/payment/v1/cards/provider-card-mappings" . QueryBuilder::build($request);
+        return $this->httpGet($path);
+    }
+
     public function is3DSecureCallbackVerified($threeDSecureCallbackKey, $params)
     {
         $hash = $params["hash"];
