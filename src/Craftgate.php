@@ -3,6 +3,7 @@
 namespace Craftgate;
 
 use Craftgate\Adapter\BankAccountTrackingAdapter;
+use Craftgate\Adapter\BkmExpressPaymentAdapter;
 use Craftgate\Adapter\FileReportingAdapter;
 use Craftgate\Adapter\FraudAdapter;
 use Craftgate\Adapter\HookAdapter;
@@ -123,5 +124,9 @@ class Craftgate
     public function juzdan()
     {
         return new JuzdanPaymentAdapter($this->options);
+    }
+    public function bkmExpress()
+    {
+        return new BkmExpressPaymentAdapter($this->options);
     }
 }
