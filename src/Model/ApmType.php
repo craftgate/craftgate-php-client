@@ -32,6 +32,7 @@ class ApmType
     const HEPSIPAY_SHOPPING_LOAN = "HEPSIPAY_SHOPPING_LOAN";
     const CHIPPIN = "CHIPPIN";
     const ISPAY = "ISPAY";
+    const VODAFONE_DCB = "VODAFONE_DCB";
     const FUND_TRANSFER = 'FUND_TRANSFER';
     const CASH_ON_DELIVERY = 'CASH_ON_DELIVERY';
 }
