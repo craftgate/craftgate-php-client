@@ -20,4 +20,5 @@ class Currency
     const BHD = 'BHD';
     const RUB = 'RUB';
     const JPY = 'JPY';
+    const EGP = 'EGP';
 }

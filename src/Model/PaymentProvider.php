@@ -24,7 +24,6 @@ class PaymentProvider
     const PAYCELL = "PAYCELL";
     const ZIP = "ZIP";
     const MULTINET = "MULTINET";
-    const YKB_WORLD_PAY_SHOPPING_LOAN = "YKB_WORLD_PAY_SHOPPING_LOAN";
     const ALIPAY = "ALIPAY";
     const PAYPAL = "PAYPAL";
     const KLARNA = "KLARNA";
@@ -35,5 +34,6 @@ class PaymentProvider
     const ALFABANK = "ALFABANK";
     const CHIPPIN = "CHIPPIN";
     const ISPAY = "ISPAY";
+    const PAYMOB = "PAYMOB";
     const OFFLINE = "OFFLINE";
 }
