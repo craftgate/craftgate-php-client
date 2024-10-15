@@ -35,5 +35,6 @@ class PaymentProvider
     const ALFABANK = "ALFABANK";
     const CHIPPIN = "CHIPPIN";
     const ISPAY = "ISPAY";
+    const PAYMOB = "PAYMOB";
     const OFFLINE = "OFFLINE";
 }
