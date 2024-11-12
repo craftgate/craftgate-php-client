@@ -36,5 +36,6 @@ class PaymentProvider
     const CHIPPIN = "CHIPPIN";
     const ISPAY = "ISPAY";
     const PAYMOB = "PAYMOB";
+    const BIZUM = "BIZUM";
     const OFFLINE = "OFFLINE";
 }
