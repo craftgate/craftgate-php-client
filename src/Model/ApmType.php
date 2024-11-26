@@ -33,6 +33,7 @@ class ApmType
     const CHIPPIN = "CHIPPIN";
     const ISPAY = "ISPAY";
     const PAYMOB = "PAYMOB";
+    const BIZUM = "BIZUM";
     const FUND_TRANSFER = 'FUND_TRANSFER';
     const CASH_ON_DELIVERY = 'CASH_ON_DELIVERY';
 }
