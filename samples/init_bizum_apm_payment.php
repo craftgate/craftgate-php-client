@@ -15,7 +15,6 @@ $request = array(
     'paymentGroup' => PaymentGroup::LISTING_OR_SUBSCRIPTION,
     'conversationId' => 'conversationId',
     'externalId' => 'externalId',
-    'callbackUrl' => 'https://www.your-website.com/craftgate-apm-callback',
     'items' => array(
         array(
             'externalId' => Guid::generate(),
