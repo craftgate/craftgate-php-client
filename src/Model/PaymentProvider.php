@@ -37,5 +37,6 @@ class PaymentProvider
     const ISPAY = "ISPAY";
     const PAYMOB = "PAYMOB";
     const BIZUM = "BIZUM";
+    const IWALLET = "IWALLET";
     const OFFLINE = "OFFLINE";
 }
