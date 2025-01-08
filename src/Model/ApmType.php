@@ -34,6 +34,7 @@ class ApmType
     const ISPAY = "ISPAY";
     const PAYMOB = "PAYMOB";
     const BIZUM = "BIZUM";
+    const PAYCELL_DCB = "PAYCELL_DCB";
     const FUND_TRANSFER = 'FUND_TRANSFER';
     const CASH_ON_DELIVERY = 'CASH_ON_DELIVERY';
 }
