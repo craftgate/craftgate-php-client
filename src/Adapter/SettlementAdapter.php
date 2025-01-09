@@ -18,7 +18,7 @@ class SettlementAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
-    public function updatePayoutAccount($id,array $request)
+    public function updatePayoutAccount($id, array $request)
     {
         $path = "/settlement/v1/payout-accounts/" . $id;
         return $this->httpPut($path, $request);
