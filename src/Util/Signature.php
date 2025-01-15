@@ -22,6 +22,6 @@ class Signature
 
     public static function generateWebhookSignature($merchantHookKey, $hashString)
     {
-        return base64_encode(hash_hmac('sha256', $hashString, $merchantHookKey,true));
+        return base64_encode(hash_hmac('sha256', $hashString, $merchantHookKey, true));
     }
 }

@@ -2,9 +2,6 @@
 
 namespace Craftgate\Adapter;
 
-use Craftgate\Util\QueryBuilder;
-use Craftgate\Util\Signature;
-
 class MasterpassPaymentAdapter extends BaseAdapter
 {
     public function checkMasterpassUser(array $request)

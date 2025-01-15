@@ -18,7 +18,7 @@ $request = array(
     'callbackUrl' => 'https://www.your-website.com/craftgate-apm-callback',
     'apmUserIdentity' => '1111222233334444',
     'additionalParams' => array(
-      "otpCode" => "1122"
+        "otpCode" => "1122"
     ),
     'items' => array(
         array(
