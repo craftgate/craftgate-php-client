@@ -28,7 +28,7 @@ $request = array(
         )
     ),
     'additionalParams' => array(
-            'buyerPhoneNumber' => "34700000000",
+        'buyerPhoneNumber' => "34700000000",
     )
 );
 
