@@ -30,7 +30,7 @@ $request = array(
     ),
     'additionalParams' => array(
         'integrationId' => '11223344'
-     ),
+    ),
 );
 
 $response = SampleConfig::craftgate()->payment()->initApmPayment($request);

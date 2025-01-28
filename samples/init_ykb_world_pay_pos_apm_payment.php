@@ -3,8 +3,8 @@
 require_once('config/sample_config.php');
 
 use Craftgate\Model\Currency;
-use Craftgate\Model\PosApmPaymentProvider;
 use Craftgate\Model\PaymentGroup;
+use Craftgate\Model\PosApmPaymentProvider;
 use Craftgate\Util\Guid;
 
 $request = array(

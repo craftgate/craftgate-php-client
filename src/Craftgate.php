@@ -125,6 +125,7 @@ class Craftgate
     {
         return new JuzdanPaymentAdapter($this->options);
     }
+
     public function bkmExpress()
     {
         return new BkmExpressPaymentAdapter($this->options);

@@ -8,18 +8,14 @@ use Craftgate\Model\PaymentGroup;
 use Craftgate\Util\Guid;
 
 $request = array(
-    'apmType' => ApmType::IWALLET,
+    'apmType' => ApmType::PAYCELL_DCB,
     'price' => 1,
     'paidPrice' => 1,
     'currency' => Currency::TL,
     'paymentGroup' => PaymentGroup::LISTING_OR_SUBSCRIPTION,
-    'conversationId' => '456d1297-908e-4bd6-a13b-4be31a6e47d5',
-    'externalId' => 'optional-externalId',
-    'callbackUrl' => 'https://www.your-website.com/craftgate-apm-callback',
-    'apmUserIdentity' => '1111222233334444',
-    'additionalParams' => array(
-        "passCode" => "1122"
-    ),
+    'conversationId' => 'conversationId',
+    'externalId' => 'externalId',
+    'callbackUrl' => 'callback',
     'items' => array(
         array(
             'externalId' => Guid::generate(),
@@ -31,6 +27,9 @@ $request = array(
             'name' => 'Item 2',
             'price' => 0.60
         )
+    ),
+    'additionalParams' => array(
+            'paycellGsmNumber' => "5305289290",
     )
 );
 
