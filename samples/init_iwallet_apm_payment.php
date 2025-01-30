@@ -17,6 +17,9 @@ $request = array(
     'externalId' => 'optional-externalId',
     'callbackUrl' => 'https://www.your-website.com/craftgate-apm-callback',
     'apmUserIdentity' => '6036819041742253',
+    'additionalParams' => array(
+      'cardNumber' => '1111222233334444'
+    ),
     'items' => array(
         array(
             'externalId' => Guid::generate(),

@@ -5,7 +5,7 @@ require_once('config/sample_config.php');
 $request = array(
     'paymentId' => 1,
     'additionalParams' => array(
-        'otpCode' => '1122'
+        'passCode' => '1122'
     )
 );
 
