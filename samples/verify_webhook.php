@@ -12,6 +12,6 @@ $webhookData = array(
     'payloadId' => '584'
 );
 
-$isVerified = SampleConfig::craftgate()->hook()->isWebhookVerified($merchantHookKey,$incomingSignature, $webhookData);
+$isVerified = SampleConfig::craftgate()->hook()->isWebhookVerified($merchantHookKey, $incomingSignature, $webhookData);
 
 print_r($isVerified);

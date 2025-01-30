@@ -219,13 +219,13 @@ class PaymentAdapter extends BaseAdapter
 
     public function approveBnplPayment($paymentId)
     {
-        $path =  "/payment/v1/bnpl-payments/" . $paymentId . "/approve";
+        $path = "/payment/v1/bnpl-payments/" . $paymentId . "/approve";
         return $this->httpPost($path);
     }
 
     public function verifyBnplPayment(array $request)
     {
-        $path =  "/payment/v1/bnpl-payments/verify";
+        $path = "/payment/v1/bnpl-payments/verify";
         return $this->httpPost($path, $request);
     }
 

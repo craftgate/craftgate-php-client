@@ -36,5 +36,9 @@ class PaymentProvider
     const CHIPPIN = "CHIPPIN";
     const ISPAY = "ISPAY";
     const VODAFONE = "VODAFONE";
+    const PAYMOB = "PAYMOB";
+    const BIZUM = "BIZUM";
+    const PAYCELL_DCB = "PAYCELL_DCB";
+    const IWALLET = "IWALLET";
     const OFFLINE = "OFFLINE";
 }

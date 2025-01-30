@@ -8,13 +8,14 @@ use Craftgate\Model\PaymentGroup;
 use Craftgate\Util\Guid;
 
 $request = array(
-    'apmType' => ApmType::METROPOL,
+    'apmType' => ApmType::PAYCELL_DCB,
     'price' => 1,
     'paidPrice' => 1,
     'currency' => Currency::TL,
     'paymentGroup' => PaymentGroup::LISTING_OR_SUBSCRIPTION,
-    'conversationId' => 'myConversationId',
-    'externalId' => 'optional-externalId',
+    'conversationId' => 'conversationId',
+    'externalId' => 'externalId',
+    'callbackUrl' => 'callback',
     'items' => array(
         array(
             'externalId' => Guid::generate(),
@@ -28,7 +29,7 @@ $request = array(
         )
     ),
     'additionalParams' => array(
-        'cardNumber' => '6375780115068760'
+            'paycellGsmNumber' => "5305289290",
     )
 );
 

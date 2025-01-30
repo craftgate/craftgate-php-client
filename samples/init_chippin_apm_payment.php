@@ -8,13 +8,15 @@ use Craftgate\Model\PaymentGroup;
 use Craftgate\Util\Guid;
 
 $request = array(
-    'apmType' => ApmType::METROPOL,
+    'apmType' => ApmType::CHIPPIN,
+    'apmUserIdentity' => 1000000,  // Chippin Kullanıcı No
     'price' => 1,
     'paidPrice' => 1,
     'currency' => Currency::TL,
     'paymentGroup' => PaymentGroup::LISTING_OR_SUBSCRIPTION,
-    'conversationId' => 'myConversationId',
-    'externalId' => 'optional-externalId',
+    'conversationId' => 'conversationId',
+    'externalId' => 'externalId',
+    'callbackUrl' => 'https://www.your-website.com/craftgate-apm-callback',
     'items' => array(
         array(
             'externalId' => Guid::generate(),
@@ -26,9 +28,6 @@ $request = array(
             'name' => 'Item 2',
             'price' => 0.60
         )
-    ),
-    'additionalParams' => array(
-        'cardNumber' => '6375780115068760'
     )
 );
 

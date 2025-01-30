@@ -33,6 +33,10 @@ class ApmType
     const CHIPPIN = "CHIPPIN";
     const ISPAY = "ISPAY";
     const VODAFONE_DCB = "VODAFONE_DCB";
+    const PAYMOB = "PAYMOB";
+    const BIZUM = "BIZUM";
+    const PAYCELL_DCB = "PAYCELL_DCB";
+    const IWALLET = "IWALLET";
     const FUND_TRANSFER = 'FUND_TRANSFER';
     const CASH_ON_DELIVERY = 'CASH_ON_DELIVERY';
 }

@@ -4,8 +4,6 @@ require_once('config/sample_config.php');
 
 use Craftgate\Model\ApmType;
 use Craftgate\Model\Currency;
-use Craftgate\Model\PaymentGroup;
-use Craftgate\Util\Guid;
 
 $request = array(
     'apmType' => ApmType::PAPARA,
