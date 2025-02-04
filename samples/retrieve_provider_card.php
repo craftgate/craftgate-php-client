@@ -8,6 +8,6 @@ $request = array(
     'providerCardUserId' => '0309ac2d-c5a5-4b4f-a91f-5c444ba07b24',
 );
 
-$response = SampleConfig::craftgate()->payment()->retrieveProviderCard($request);
+$response = SampleConfig::craftgate()->payment()->retrieveProviderCards($request);
 
 print_r($response);
