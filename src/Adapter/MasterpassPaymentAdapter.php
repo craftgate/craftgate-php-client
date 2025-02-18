@@ -33,4 +33,10 @@ class MasterpassPaymentAdapter extends BaseAdapter
         $path = "/payment/v2/masterpass-payments/3ds-complete";
         return $this->httpPost($path, $request);
     }
+
+    public function retrieveLoyalties(array $request)
+    {
+        $path = "/payment/v2/masterpass-payments/loyalties/retrieve";
+        return $this->httpPost($path, $request);
+    }
 }
