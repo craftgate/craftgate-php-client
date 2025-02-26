@@ -12,11 +12,13 @@ class PaymentMethod
     const EDENRED = 'EDENRED';
     const EDENRED_GIFT = 'EDENRED_GIFT';
     const STRIPE = 'STRIPE';
-    const KASPI = 'KASPI';
     const INSTANT_TRANSFER = 'INSTANT_TRANSFER';
-    const TOMPAY = 'TOMPAY';
     const ALIPAY = 'ALIPAY';
     const PAYPAL = 'PAYPAL';
     const KLARNA = 'KLARNA';
     const AFTERPAY = 'AFTERPAY';
+    const MULTINET = 'MULTINET';
+    const MULTINET_GIFT = 'MULTINET_GIFT';
+    const BIZUM = 'BIZUM';
+    const PAYCELL_DCB = 'PAYCELL_DCB';
 }

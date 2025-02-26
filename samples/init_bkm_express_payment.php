@@ -4,7 +4,6 @@ require_once('config/sample_config.php');
 
 use Craftgate\Model\Currency;
 use Craftgate\Model\PaymentGroup;
-use Craftgate\Model\PosApmPaymentProvider;
 use Craftgate\Util\Guid;
 
 $request = array(
@@ -12,9 +11,7 @@ $request = array(
     'paidPrice' => 100,
     'currency' => Currency::TL,
     'paymentGroup' => PaymentGroup::LISTING_OR_SUBSCRIPTION,
-    'conversationId' => '456d1297-908e-4bd6',
-    'paymentProvider' => PosApmPaymentProvider::YKB_WORLD_PAY,
-    'callbackUrl' => 'https://www.your-website.com/craftgate-pos-apm-callback',
+    'conversationId' => '456d1297-908e-4bd6-a13b-4be31a6e47d5',
     'items' => array(
         array(
             'externalId' => Guid::generate(),
@@ -31,12 +28,9 @@ $request = array(
             'name' => 'Item 3',
             'price' => 20
         )
-    ),
-    'additionalParams' => array(
-        'sourceCode' => "WEB2QR",
     )
 );
 
-$response = SampleConfig::craftgate()->payment()->initPosApmPayment($request);
+$response = SampleConfig::craftgate()->bkmExpress()->init($request);
 
 print_r($response);

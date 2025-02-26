@@ -9,6 +9,7 @@ class ApmType
     const SODEXO = 'SODEXO';
     const EDENRED = 'EDENRED';
     const EDENRED_GIFT = 'EDENRED_GIFT';
+    const METROPOL = 'METROPOL';
     const PAYPAL = 'PAYPAL';
     const KLARNA = 'KLARNA';
     const AFTERPAY = 'AFTERPAY';
@@ -22,6 +23,20 @@ class ApmType
     const HASO = 'HASO';
     const PAYCELL = 'PAYCELL';
     const ZIP = 'ZIP';
+    const MULTINET = 'MULTINET';
+    const MULTINET_GIFT = 'MULTINET_GIFT';
+    const ALIPAY = "ALIPAY";
+    const APPLEPAY = "APPLEPAY";
+    const GOOGLEPAY = "GOOGLEPAY";
+    const HEPSIPAY_WALLET = "HEPSIPAY_WALLET";
+    const HEPSIPAY_SHOPPING_LOAN = "HEPSIPAY_SHOPPING_LOAN";
+    const CHIPPIN = "CHIPPIN";
+    const ISPAY = "ISPAY";
+    const VODAFONE_DCB = "VODAFONE_DCB";
+    const PAYMOB = "PAYMOB";
+    const BIZUM = "BIZUM";
+    const PAYCELL_DCB = "PAYCELL_DCB";
+    const IWALLET = "IWALLET";
     const FUND_TRANSFER = 'FUND_TRANSFER';
     const CASH_ON_DELIVERY = 'CASH_ON_DELIVERY';
 }
