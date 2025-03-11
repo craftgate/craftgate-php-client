@@ -38,6 +38,7 @@ class PaymentProvider
     const VODAFONE = "VODAFONE";
     const PAYMOB = "PAYMOB";
     const BIZUM = "BIZUM";
+    const PAYLANDS_MB_WAY = "PAYLANDS_MB_WAY";
     const PAYCELL_DCB = "PAYCELL_DCB";
     const IWALLET = "IWALLET";
     const OFFLINE = "OFFLINE";

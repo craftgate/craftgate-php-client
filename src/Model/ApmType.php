@@ -35,6 +35,7 @@ class ApmType
     const VODAFONE_DCB = "VODAFONE_DCB";
     const PAYMOB = "PAYMOB";
     const BIZUM = "BIZUM";
+    const PAYLANDS_MB_WAY = "PAYLANDS_MB_WAY";
     const PAYCELL_DCB = "PAYCELL_DCB";
     const IWALLET = "IWALLET";
     const FUND_TRANSFER = 'FUND_TRANSFER';
