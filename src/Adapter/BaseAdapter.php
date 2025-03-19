@@ -58,7 +58,7 @@ class BaseAdapter
         $headers[] = 'x-auth-version: v1';
         $headers[] = 'x-client-version: craftgate-php-client:1.0.46';
         $headers[] = 'x-signature: ' . Signature::generate(
-                $this->options, $path, $randomString, $request
+                $this->options, $this->trimPath($path), $randomString, $request
             );
         $language = $this->options->getLanguage();
         if (isset($language)) {
@@ -69,6 +69,11 @@ class BaseAdapter
 
     private function prepareUrl($path)
     {
-        return $this->options->getBaseUrl() . '/' . trim($path, '/');
+        return $this->options->getBaseUrl() . $this->trimPath($path);
+    }
+
+    private function trimPath($path)
+    {
+        return '/' . trim($path, '/');
     }
 }
