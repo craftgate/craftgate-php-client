@@ -19,6 +19,7 @@ class PaymentMethod
     const AFTERPAY = 'AFTERPAY';
     const MULTINET = 'MULTINET';
     const MULTINET_GIFT = 'MULTINET_GIFT';
+    const MULTINET_NEO_GIFT = 'MULTINET_NEO_GIFT';
     const BIZUM = 'BIZUM';
     const PAYCELL_DCB = 'PAYCELL_DCB';
 }

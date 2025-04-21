@@ -25,6 +25,7 @@ class ApmType
     const ZIP = 'ZIP';
     const MULTINET = 'MULTINET';
     const MULTINET_GIFT = 'MULTINET_GIFT';
+    const MULTINET_NEO_GIFT = 'MULTINET_NEO_GIFT';
     const ALIPAY = "ALIPAY";
     const APPLEPAY = "APPLEPAY";
     const GOOGLEPAY = "GOOGLEPAY";
