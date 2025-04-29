@@ -2,10 +2,10 @@
 
 require_once('config/sample_config.php');
 
+use Craftgate\Model\ClientType;
 use Craftgate\Model\Currency;
 use Craftgate\Model\PaymentGroup;
 use Craftgate\Model\PaymentPhase;
-use Craftgate\Model\ClientType;
 use Craftgate\Util\Guid;
 
 $request = array(
@@ -47,6 +47,6 @@ $request = array(
     'loanCampaignId' => 1
 );
 
-$response = SampleConfig::craftgate()->juzdan()-> initJuzdanPayment($request);
+$response = SampleConfig::craftgate()->juzdan()->initJuzdanPayment($request);
 
 print_r($response);

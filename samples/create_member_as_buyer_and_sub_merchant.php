@@ -3,7 +3,6 @@
 require_once('config/sample_config.php');
 
 use Craftgate\Model\MemberType;
-use Craftgate\Model\SettlementEarningsDestination;
 use Craftgate\Util\Guid;
 
 $request = array(

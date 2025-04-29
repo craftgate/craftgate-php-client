@@ -219,13 +219,13 @@ class PaymentAdapter extends BaseAdapter
 
     public function approveBnplPayment($paymentId)
     {
-        $path =  "/payment/v1/bnpl-payments/" . $paymentId . "/approve";
+        $path = "/payment/v1/bnpl-payments/" . $paymentId . "/approve";
         return $this->httpPost($path);
     }
 
     public function verifyBnplPayment(array $request)
     {
-        $path =  "/payment/v1/bnpl-payments/verify";
+        $path = "/payment/v1/bnpl-payments/verify";
         return $this->httpPost($path, $request);
     }
 
@@ -241,7 +241,7 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpGet($path);
     }
 
-    public function retrieveProviderCard(array $request)
+    public function retrieveProviderCards(array $request)
     {
         $path = "/payment/v1/cards/provider-card-mappings" . QueryBuilder::build($request);
         return $this->httpGet($path);

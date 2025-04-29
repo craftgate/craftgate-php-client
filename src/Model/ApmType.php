@@ -32,8 +32,12 @@ class ApmType
     const HEPSIPAY_SHOPPING_LOAN = "HEPSIPAY_SHOPPING_LOAN";
     const CHIPPIN = "CHIPPIN";
     const ISPAY = "ISPAY";
+    const VODAFONE_DCB = "VODAFONE_DCB";
     const PAYMOB = "PAYMOB";
     const BIZUM = "BIZUM";
+    const PAYLANDS_MB_WAY = "PAYLANDS_MB_WAY";
+    const PAYCELL_DCB = "PAYCELL_DCB";
+    const IWALLET = "IWALLET";
     const FUND_TRANSFER = 'FUND_TRANSFER';
     const CASH_ON_DELIVERY = 'CASH_ON_DELIVERY';
     const SETCARD = 'SETCARD';

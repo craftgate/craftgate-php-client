@@ -2,9 +2,6 @@
 
 namespace Craftgate\Adapter;
 
-use Craftgate\Util\QueryBuilder;
-use Craftgate\Util\Signature;
-
 class MasterpassPaymentAdapter extends BaseAdapter
 {
     public function checkMasterpassUser(array $request)
@@ -34,6 +31,12 @@ class MasterpassPaymentAdapter extends BaseAdapter
     public function complete3DSMasterpassPayment(array $request)
     {
         $path = "/payment/v2/masterpass-payments/3ds-complete";
+        return $this->httpPost($path, $request);
+    }
+
+    public function retrieveLoyalties(array $request)
+    {
+        $path = "/payment/v2/masterpass-payments/loyalties/retrieve";
         return $this->httpPost($path, $request);
     }
 }
