@@ -41,5 +41,6 @@ class PaymentProvider
     const PAYLANDS_MB_WAY = "PAYLANDS_MB_WAY";
     const PAYCELL_DCB = "PAYCELL_DCB";
     const IWALLET = "IWALLET";
+    const SETCARD = "SETCARD";
     const OFFLINE = "OFFLINE";
 }

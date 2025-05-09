@@ -41,4 +41,5 @@ class ApmType
     const IWALLET = "IWALLET";
     const FUND_TRANSFER = 'FUND_TRANSFER';
     const CASH_ON_DELIVERY = 'CASH_ON_DELIVERY';
+    const SETCARD = 'SETCARD';
 }
