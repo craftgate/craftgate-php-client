@@ -21,4 +21,5 @@ class Currency
     const RUB = 'RUB';
     const JPY = 'JPY';
     const EGP = 'EGP';
+    const MXN = 'MXN';
 }
