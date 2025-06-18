@@ -2,10 +2,8 @@
 
 require_once('config/sample_config.php');
 
-$request = array(
-    'paymentId' => 1,
-);
+$paymentId = 1;
 
-$response = SampleConfig::craftgate()->payment()->verifyBnplPayment($request);
+$response = SampleConfig::craftgate()->payment()->verifyBnplPayment($paymentId);
 
 print_r($response);
