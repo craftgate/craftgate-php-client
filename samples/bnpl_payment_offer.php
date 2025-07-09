@@ -5,11 +5,13 @@ require_once('config/sample_config.php');
 use Craftgate\Model\ApmType;
 use Craftgate\Model\BnplCartItemType;
 use Craftgate\Model\Currency;
+use Craftgate\Util\Guid;
 
 $request = array(
     'apmType' => ApmType::MASLAK,
     'price' => 10000,
     'currency' => Currency::TL,
+    'apmOrderId' => Guid::generate(),
     'items' => array(
         array(
             'id' => '200',
