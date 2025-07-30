@@ -11,6 +11,7 @@ use Craftgate\Adapter\InstallmentAdapter;
 use Craftgate\Adapter\JuzdanPaymentAdapter;
 use Craftgate\Adapter\MasterpassPaymentAdapter;
 use Craftgate\Adapter\MerchantAdapter;
+use Craftgate\Adapter\MerchantApmAdapter;
 use Craftgate\Adapter\OnboardingAdapter;
 use Craftgate\Adapter\PayByLinkAdapter;
 use Craftgate\Adapter\PaymentAdapter;
@@ -119,6 +120,11 @@ class Craftgate
     public function merchant()
     {
         return new MerchantAdapter($this->options);
+    }
+
+    public function merchantApm()
+    {
+        return new MerchantApmAdapter($this->options);
     }
 
     public function juzdan()
