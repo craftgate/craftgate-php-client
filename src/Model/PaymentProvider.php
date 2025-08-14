@@ -23,6 +23,7 @@ class PaymentProvider
     const HASO = "HASO";
     const PAYCELL = "PAYCELL";
     const ZIP = "ZIP";
+    const DKB = "DKB";
     const MULTINET = "MULTINET";
     const YKB_WORLD_PAY_SHOPPING_LOAN = "YKB_WORLD_PAY_SHOPPING_LOAN";
     const ALIPAY = "ALIPAY";
