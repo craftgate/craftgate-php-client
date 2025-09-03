@@ -9,6 +9,7 @@ class PaymentMethod
     const PAPARA = 'PAPARA';
     const PAYONEER = 'PAYONEER';
     const SODEXO = 'SODEXO';
+    const SODEXO_GIFT = 'SODEXO_GIFT';
     const EDENRED = 'EDENRED';
     const EDENRED_GIFT = 'EDENRED_GIFT';
     const STRIPE = 'STRIPE';
