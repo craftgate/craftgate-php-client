@@ -55,6 +55,12 @@ class FraudAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
+    public function addCardFingerprintToValueList($listName, $request)
+    {
+        $path = "/fraud/v1/value-lists/".$listName. "/card-fingerprints";
+        return $this->httpPost($path, $request);
+    }
+
     public function removeValueFromValueList($listName, $valueId)
     {
         $path = "/fraud/v1/value-lists/" . $listName . "/values/" . $valueId;
