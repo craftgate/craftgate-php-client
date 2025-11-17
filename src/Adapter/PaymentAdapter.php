@@ -145,6 +145,12 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
+    public function refundWaitingPayment(array $request)
+    {
+        $path = "/payment/v1/refunds/refund-waiting-payment";
+        return $this->httpPost($path, $request);
+    }
+
     public function retrievePaymentRefund($refundId)
     {
         $path = "/payment/v1/refunds/" . $refundId;
