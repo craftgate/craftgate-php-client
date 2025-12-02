@@ -1,14 +1,12 @@
 <?php
 
-use Craftgate\Model\FraudValueType;
-
 require_once('config/sample_config.php');
 
-$response = SampleConfig::craftgate()->fraud()->addValueToValueList(array(
-    'listName' => "cardList",
-    'type' => FraudValueType::CARD,
+$response = SampleConfig::craftgate()->fraud()->addCardFingerprintToValueList("cardList", array(
     'label' => "John Doe's Card",
-    'paymentId' => 11675,
+    'operation' => "PAYMENT",
+    'operationId' => "12420", //paymentId
+    'durationInSeconds' => 60,
 ));
 
 print_r($response);
