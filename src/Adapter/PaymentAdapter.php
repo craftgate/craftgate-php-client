@@ -133,6 +133,12 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
+    public function refundPaymentTransactionMarkAsRefunded(array $request)
+    {
+        $path = "/payment/v1/refund-transactions/mark-as-refunded";
+        return $this->httpPost($path, $request);
+    }
+
     public function retrievePaymentTransactionRefund($refundTransactionId)
     {
         $path = "/payment/v1/refund-transactions/" . $refundTransactionId;
@@ -142,6 +148,12 @@ class PaymentAdapter extends BaseAdapter
     public function refundPayment(array $request)
     {
         $path = "/payment/v1/refunds";
+        return $this->httpPost($path, $request);
+    }
+
+    public function refundPaymentMarkAsRefunded(array $request)
+    {
+        $path = "/payment/v1/refunds/mark-as-refunded";
         return $this->httpPost($path, $request);
     }
 
