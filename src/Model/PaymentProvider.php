@@ -43,5 +43,6 @@ class PaymentProvider
     const PAYCELL_DCB = "PAYCELL_DCB";
     const IWALLET = "IWALLET";
     const SETCARD = "SETCARD";
+    const BKM_EXPRESS = "BKM_EXPRESS";
     const OFFLINE = "OFFLINE";
 }
