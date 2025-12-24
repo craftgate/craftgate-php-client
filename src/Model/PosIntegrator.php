@@ -43,4 +43,5 @@ class PosIntegrator
     const AKBANK_VPOS = 'AKBANK_VPOS';
     const TAP = 'TAP';
     const RUBIK = 'RUBIK';
+    const BIN_PAY = 'BIN_PAY';
 }
