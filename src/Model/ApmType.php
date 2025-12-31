@@ -31,6 +31,7 @@ class ApmType
     const ALIPAY = "ALIPAY";
     const APPLEPAY = "APPLEPAY";
     const GOOGLEPAY = "GOOGLEPAY";
+    const HEPSIPAY_FINANCE = "HEPSIPAY_FINANCE";
     const HEPSIPAY_WALLET = "HEPSIPAY_WALLET";
     const HEPSIPAY_SHOPPING_LOAN = "HEPSIPAY_SHOPPING_LOAN";
     const CHIPPIN = "CHIPPIN";
@@ -44,4 +45,5 @@ class ApmType
     const FUND_TRANSFER = 'FUND_TRANSFER';
     const CASH_ON_DELIVERY = 'CASH_ON_DELIVERY';
     const SETCARD = 'SETCARD';
+    const PAPEL = 'PAPEL';
 }
