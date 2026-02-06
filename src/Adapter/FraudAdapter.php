@@ -66,4 +66,10 @@ class FraudAdapter extends BaseAdapter
         $path = "/fraud/v1/value-lists/" . $listName . "/values/" . $valueId;
         return $this->httpDelete($path);
     }
+
+    public function searchFraudRules(array $request)
+    {
+        $path = "/fraud/v1/rules" . QueryBuilder::build($request);
+        return $this->httpGet($path);
+    }
 }
