@@ -49,6 +49,12 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
+    public function retrieveCheckoutCardVerify($token)
+    {
+        $path = "/payment/v1/checkout-card-verify/" . $token;
+        return $this->httpGet($path);
+    }
+
     public function retrieveCheckoutPayment($token)
     {
         $path = "/payment/v1/checkout-payments/" . $token;
