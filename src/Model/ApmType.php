@@ -26,7 +26,7 @@ class ApmType
     const HASO = 'HASO';
     const PAYCELL = 'PAYCELL';
     const ZIP = 'ZIP';
-    const DKB = 'DKB';
+    const KARACA_FINANS = 'KARACA_FINANS';
     const MULTINET = 'MULTINET';
     const MULTINET_GIFT = 'MULTINET_GIFT';
     const MULTINET_NEO_GIFT = 'MULTINET_NEO_GIFT';
