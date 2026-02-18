@@ -43,6 +43,18 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
+    public function initCheckoutCardVerify(array $request)
+    {
+        $path = "/payment/v1/checkout-card-verify/init";
+        return $this->httpPost($path, $request);
+    }
+
+    public function retrieveCheckoutCardVerify($token)
+    {
+        $path = "/payment/v1/checkout-card-verify/" . $token;
+        return $this->httpGet($path);
+    }
+
     public function retrieveCheckoutPayment($token)
     {
         $path = "/payment/v1/checkout-payments/" . $token;
@@ -196,6 +208,12 @@ class PaymentAdapter extends BaseAdapter
     public function deleteStoredCard(array $request)
     {
         $path = "/payment/v1/cards/delete";
+        return $this->httpPost($path, $request);
+    }
+
+    public function verifyCard(array $request)
+    {
+        $path = "/payment/v1/cards/verify";
         return $this->httpPost($path, $request);
     }
 
