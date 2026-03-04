@@ -271,6 +271,12 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpGet($path);
     }
 
+    public function initMultiPayment(array $request)
+    {
+        $path = "/payment/v1/multi-payments/init";
+        return $this->httpPost($path, $request);
+    }
+
     public function retrieveMultiPayment($token)
     {
         $path = "/payment/v1/multi-payments/" . $token;
