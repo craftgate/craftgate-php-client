@@ -265,6 +265,18 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpPost($path);
     }
 
+    public function initBnplLimitInquiry(array $request)
+    {
+        $path = "/payment/v1/bnpl-payments/limit-inquiry/init";
+        return $this->httpPost($path, $request);
+    }
+
+    public function completeBnplLimitInquiry(array $request)
+    {
+        $path = "/payment/v1/bnpl-payments/limit-inquiry/complete";
+        return $this->httpPost($path, $request);
+    }
+
     public function retrieveActiveBanks()
     {
         $path = "/payment/v1/instant-transfer-banks";
