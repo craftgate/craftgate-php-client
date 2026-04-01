@@ -273,7 +273,7 @@ class PaymentAdapter extends BaseAdapter
 
     public function completeBnplLimitInquiry(array $request)
     {
-        $path = "/payment/v1/bnpl-payments/limit-inquiry/complete";
+        $path = "/payment/v1/bnpl-payments/limit-inquiry";
         return $this->httpPost($path, $request);
     }
 
