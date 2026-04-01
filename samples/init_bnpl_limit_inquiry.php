@@ -13,6 +13,6 @@ $request = array(
     )
 );
 
-$response = SampleConfig::craftgate()->payment()->initBnplLimitInquiry($request);
+$response = SampleConfig::craftgate()->payment()->bnplLimitInquiryInit($request);
 
 print_r($response);
