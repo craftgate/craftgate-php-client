@@ -2,10 +2,10 @@
 
 require_once('config/sample_config.php');
 
-$sessionId = '8340ef48-faad-475c-9185-3f5381623e2f';
+$sessionId = '$sessionId';
 
 $request = array(
-    'validationCode' => '412289'
+    'validationCode' => '111111'
 );
 
 $response = SampleConfig::craftgate()->mealVoucherCardTokenization()->complete($sessionId, $request);
