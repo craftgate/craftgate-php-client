@@ -16,12 +16,6 @@ class BkmExpressPaymentAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
-    public function retrievePayment($ticketId)
-    {
-        $path = "/payment/v1/bkm-express/payments/" . $ticketId;
-        return $this->httpGet($path);
-    }
-
     public function retrievePaymentByToken($token)
     {
         $path = "/payment/v1/bkm-express/" . $token;
