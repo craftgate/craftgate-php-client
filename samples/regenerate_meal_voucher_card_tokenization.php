@@ -6,10 +6,10 @@ $sessionId = 'session-id';
 
 $request = array(
     'mealVoucherCardTokenizationData' => array(
-        'callbackUrl' => 'https://webhook.site/e806070a-da76-4d02-a67b-54ba9e8332d3'
+        'callbackUrl' => 'https://www.yourdomain.com/callback'
     )
 );
 
-$response = SampleConfig::craftgate()->mealVoucherCardTokenization()->regenerate($sessionId, $request);
+$response = SampleConfig::craftgate()->mealVoucherCardTokenization()->regenerate(session-id, $request);
 
 print_r($response);
