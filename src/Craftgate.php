@@ -10,6 +10,7 @@ use Craftgate\Adapter\HookAdapter;
 use Craftgate\Adapter\InstallmentAdapter;
 use Craftgate\Adapter\JuzdanPaymentAdapter;
 use Craftgate\Adapter\MasterpassPaymentAdapter;
+use Craftgate\Adapter\MealVoucherCardTokenizationAdapter;
 use Craftgate\Adapter\MerchantAdapter;
 use Craftgate\Adapter\MerchantApmAdapter;
 use Craftgate\Adapter\OnboardingAdapter;
@@ -135,5 +136,10 @@ class Craftgate
     public function bkmExpress()
     {
         return new BkmExpressPaymentAdapter($this->options);
+    }
+
+    public function mealVoucherCardTokenization()
+    {
+        return new MealVoucherCardTokenizationAdapter($this->options);
     }
 }
