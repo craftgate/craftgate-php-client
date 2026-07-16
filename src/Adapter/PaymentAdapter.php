@@ -301,6 +301,12 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpGet($path);
     }
 
+    public function retrieveCardFromIvr(array $request)
+    {
+        $path = "/payment/v1/ivr-cards" . QueryBuilder::build($request);
+        return $this->httpGet($path);
+    }
+
     public function is3DSecureCallbackVerified($threeDSecureCallbackKey, $params)
     {
         $hash = $params["hash"];
