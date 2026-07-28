@@ -12,9 +12,9 @@ class InstallmentAdapter extends BaseAdapter
         return $this->httpGet($path);
     }
 
-    public function retrieveBinNumber($binNumber)
+    public function retrieveBinNumber($binNumber, $includeGlobalBins = false)
     {
-        $path = "/installment/v1/bins/" . $binNumber;
+        $path = "/installment/v1/bins/" . $binNumber . ($includeGlobalBins ? "?includeGlobalBins=true" : "");
         return $this->httpGet($path);
     }
 }
