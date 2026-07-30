@@ -27,7 +27,7 @@ class MerchantAdapter extends BaseAdapter
     public function deleteMerchantPos(array $request)
     {
         $path = "/merchant/v1/merchant-poses/" . $request['merchantPosId'];
-        return $this->httpDelete($path, null, $this->idempotencyKeyOf($request));
+        return $this->httpDelete($path, null, $request);
     }
 
     public function searchMerchantPos(array $request)
@@ -51,7 +51,7 @@ class MerchantAdapter extends BaseAdapter
     public function updateMerchantPosStatus(array $request)
     {
         $path = "/merchant/v1/merchant-poses/" . $request['merchantPosId'] . "/status/" . $request['posStatus'];
-        return $this->httpPut($path, null, null, $this->idempotencyKeyOf($request));
+        return $this->httpPut($path, null, null, $request);
     }
 
     public function updateMember($memberId, array $request)

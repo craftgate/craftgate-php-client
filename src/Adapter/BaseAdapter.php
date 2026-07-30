@@ -25,54 +25,42 @@ class BaseAdapter
         return Curl::get($url, $headers);
     }
 
-    protected function httpPost($path, $request = null, $headers = null, $idempotencyKey = null)
+    protected function httpPost($path, $request = null, $headers = null, $options = null)
     {
-        // Lifted out before signing, or the key ends up in the body and the signature.
-        if (!isset($idempotencyKey)) {
-            $idempotencyKey = BaseRequest::takeIdempotencyKey($request);
-        }
+        // Lifted out before signing, or the reserved keys end up in the body and the signature.
+        $scopedOptions = isset($options)
+            ? BaseRequest::optionsOf($options)
+            : BaseRequest::takeOptions($request);
         $url = $this->prepareUrl($path);
-        $headers = $this->prepareHeaders($headers, $path, $request, $idempotencyKey);
+        $headers = $this->prepareHeaders($headers, $path, $request, $scopedOptions);
 
         return Curl::post($url, $headers, $request);
     }
 
-    protected function httpPut($path, $request, $headers = null, $idempotencyKey = null)
+    protected function httpPut($path, $request, $headers = null, $options = null)
     {
-        if (!isset($idempotencyKey)) {
-            $idempotencyKey = BaseRequest::takeIdempotencyKey($request);
-        }
+        $scopedOptions = isset($options)
+            ? BaseRequest::optionsOf($options)
+            : BaseRequest::takeOptions($request);
         $url = $this->prepareUrl($path);
-        $headers = $this->prepareHeaders($headers, $path, $request, $idempotencyKey);
+        $headers = $this->prepareHeaders($headers, $path, $request, $scopedOptions);
 
         return Curl::put($url, $headers, $request);
     }
 
-    protected function httpDelete($path, $headers = null, $idempotencyKey = null)
+    /**
+     * Sends a body-less DELETE. $options is a request wrapper whose reserved keys become headers;
+     * it is never sent as a body, so the signature stays that of a body-less call.
+     */
+    protected function httpDelete($path, $headers = null, $options = null)
     {
         $url = $this->prepareUrl($path);
-        $headers = $this->prepareHeaders($headers, $path, null, $idempotencyKey);
+        $headers = $this->prepareHeaders($headers, $path, null, BaseRequest::optionsOf($options));
 
         return Curl::delete($url, $headers);
     }
 
-    /**
-     * Reads the idempotency key out of a path-only request wrapper.
-     *
-     * Such calls must pass null as the request: the wrapper's other keys are path variables, and
-     * sending them as a body would change the signature.
-     *
-     * @param mixed $request request wrapper array
-     * @return string|null
-     */
-    protected function idempotencyKeyOf($request)
-    {
-        return is_array($request) && isset($request[BaseRequest::IDEMPOTENCY_KEY])
-            ? $request[BaseRequest::IDEMPOTENCY_KEY]
-            : null;
-    }
-
-    protected function prepareHeaders($headers, $path, $request = null, $idempotencyKey = null)
+    protected function prepareHeaders($headers, $path, $request = null, array $scopedOptions = array())
     {
         if ($headers == null) {
             $headers = array('accept: application/json', 'content-type: application/json');
@@ -88,10 +76,7 @@ class BaseAdapter
         if (isset($language)) {
             $headers[] = 'lang: ' . $language;
         }
-        if (isset($idempotencyKey)) {
-            $headers[] = 'x-idempotency-key: ' . $idempotencyKey;
-        }
-        return $headers;
+        return array_merge($headers, BaseRequest::toHeaders($scopedOptions));
     }
 
     private function prepareUrl($path)

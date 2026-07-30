@@ -27,7 +27,7 @@ class SettlementAdapter extends BaseAdapter
     public function deletePayoutAccount(array $request)
     {
         $path = "/settlement/v1/payout-accounts/" . $request['id'];
-        return $this->httpDelete($path, null, $this->idempotencyKeyOf($request));
+        return $this->httpDelete($path, null, $request);
     }
 
     public function searchPayoutAccount(array $request)

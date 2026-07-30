@@ -19,7 +19,7 @@ class FraudAdapter extends BaseAdapter
         $body = array(
             'checkStatus' => $request['checkStatus']
         );
-        return $this->httpPut($path, $body, null, $this->idempotencyKeyOf($request));
+        return $this->httpPut($path, $body, null, $request);
     }
 
     public function retrieveAllValueLists()
@@ -47,7 +47,7 @@ class FraudAdapter extends BaseAdapter
     public function deleteValueList(array $request)
     {
         $path = "/fraud/v1/value-lists/" . $request['listName'];
-        return $this->httpDelete($path, null, $this->idempotencyKeyOf($request));
+        return $this->httpDelete($path, null, $request);
     }
 
     public function addValueToValueList($request)
@@ -65,7 +65,7 @@ class FraudAdapter extends BaseAdapter
     public function removeValueFromValueList(array $request)
     {
         $path = "/fraud/v1/value-lists/" . $request['listName'] . "/values/" . $request['valueId'];
-        return $this->httpDelete($path, null, $this->idempotencyKeyOf($request));
+        return $this->httpDelete($path, null, $request);
     }
 
     public function searchFraudRules(array $request)

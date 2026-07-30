@@ -11,14 +11,9 @@ use Craftgate\Util\Signature;
 /** Exposes the protected header builder so headers can be asserted without a request. */
 class HeaderProbeAdapter extends BaseAdapter
 {
-    public function headersFor($path, $request = null, $idempotencyKey = null)
+    public function headersFor($path, $request = null, $options = null)
     {
-        return $this->prepareHeaders(null, $path, $request, $idempotencyKey);
-    }
-
-    public function keyOf($request)
-    {
-        return $this->idempotencyKeyOf($request);
+        return $this->prepareHeaders(null, $path, $request, BaseRequest::optionsOf($options));
     }
 }
 
@@ -43,28 +38,28 @@ class IdempotencyTest extends \TestCase
         return null;
     }
 
-    public function test_should_take_idempotency_key_out_of_request()
+    public function test_should_take_reserved_options_out_of_request()
     {
         $request = array('cardUserKey' => 'user-key', 'idempotencyKey' => 'idempotency-key-1');
 
-        $key = BaseRequest::takeIdempotencyKey($request);
+        $options = BaseRequest::takeOptions($request);
 
-        $this->assertEquals('idempotency-key-1', $key);
+        $this->assertEquals(array('idempotencyKey' => 'idempotency-key-1'), $options);
         $this->assertEquals(array('cardUserKey' => 'user-key'), $request);
     }
 
-    public function test_should_return_null_when_request_has_no_idempotency_key()
+    public function test_should_return_no_options_when_request_has_none()
     {
         $request = array('cardUserKey' => 'user-key');
 
-        $this->assertNull(BaseRequest::takeIdempotencyKey($request));
+        $this->assertEquals(array(), BaseRequest::takeOptions($request));
         $this->assertEquals(array('cardUserKey' => 'user-key'), $request);
     }
 
-    public function test_should_return_null_for_non_array_request()
+    public function test_should_return_no_options_for_non_array_request()
     {
         $request = null;
-        $this->assertNull(BaseRequest::takeIdempotencyKey($request));
+        $this->assertEquals(array(), BaseRequest::takeOptions($request));
     }
 
     public function test_should_send_idempotency_key_header_for_body_request()
@@ -72,7 +67,7 @@ class IdempotencyTest extends \TestCase
         $adapter = new HeaderProbeAdapter($this->options());
         $request = array('cardUserKey' => 'user-key');
 
-        $headers = $adapter->headersFor('/payment/v1/cards', $request, 'idempotency-key-1');
+        $headers = $adapter->headersFor('/payment/v1/cards', $request, array('idempotencyKey' => 'idempotency-key-1'));
 
         $this->assertEquals('idempotency-key-1', $this->headerValue($headers, 'x-idempotency-key'));
     }
@@ -87,14 +82,12 @@ class IdempotencyTest extends \TestCase
         $this->assertNull($this->headerValue($headers, 'x-idempotency-key'));
     }
 
-    public function test_should_read_idempotency_key_off_a_path_only_wrapper()
+    public function test_should_read_reserved_options_off_a_path_only_wrapper()
     {
-        $adapter = new HeaderProbeAdapter($this->options());
-
-        $this->assertEquals('idempotency-key-1',
-            $adapter->keyOf(array('token' => 'token-1', 'idempotencyKey' => 'idempotency-key-1')));
-        $this->assertNull($adapter->keyOf(array('token' => 'token-1')));
-        $this->assertNull($adapter->keyOf(null));
+        $this->assertEquals(array('idempotencyKey' => 'idempotency-key-1'),
+            BaseRequest::optionsOf(array('token' => 'token-1', 'idempotencyKey' => 'idempotency-key-1')));
+        $this->assertEquals(array(), BaseRequest::optionsOf(array('token' => 'token-1')));
+        $this->assertEquals(array(), BaseRequest::optionsOf(null));
     }
 
     /** A regression here rejects every delete/approve/cancel call at the API. */
@@ -102,7 +95,7 @@ class IdempotencyTest extends \TestCase
     {
         $adapter = new HeaderProbeAdapter($this->options());
 
-        $headers = $adapter->headersFor('/installment/v1/installments', null, 'idempotency-key-1');
+        $headers = $adapter->headersFor('/installment/v1/installments', null, array('idempotencyKey' => 'idempotency-key-1'));
 
         $expected = Signature::generate($this->options(), '/installment/v1/installments',
             $this->headerValue($headers, 'x-rnd-key'), null);
@@ -114,7 +107,7 @@ class IdempotencyTest extends \TestCase
         $adapter = new HeaderProbeAdapter($this->options());
         $request = array('cardUserKey' => 'de050909-39a9-473c-a81a-f186dd55cfef');
 
-        $headers = $adapter->headersFor('/payment/v1/cards', $request, 'idempotency-key-1');
+        $headers = $adapter->headersFor('/payment/v1/cards', $request, array('idempotencyKey' => 'idempotency-key-1'));
 
         $expected = Signature::generate($this->options(), '/payment/v1/cards',
             $this->headerValue($headers, 'x-rnd-key'), $request);

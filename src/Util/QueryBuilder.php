@@ -13,7 +13,7 @@ class QueryBuilder
         }
 
         // The signature covers the full URL, so a leak here would ship silently.
-        BaseRequest::takeIdempotencyKey($params);
+        BaseRequest::takeOptions($params);
         if (empty($params)) {
             return '';
         }

@@ -27,7 +27,7 @@ class PayByLinkAdapter extends BaseAdapter
     public function deleteProduct(array $request)
     {
         $path = "/craftlink/v1/products/" . $request['id'];
-        return $this->httpDelete($path, null, $this->idempotencyKeyOf($request));
+        return $this->httpDelete($path, null, $request);
     }
 
     public function searchProducts(array $request)

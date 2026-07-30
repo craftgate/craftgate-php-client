@@ -88,7 +88,7 @@ class WalletAdapter extends BaseAdapter
     public function cancelWithdraw(array $request)
     {
         $path = "/wallet/v1/withdraws/" . $request['withdrawId'] . "/cancel";
-        return $this->httpPost($path, null, null, $this->idempotencyKeyOf($request));
+        return $this->httpPost($path, null, null, $request);
     }
 
     public function retrieveWithdraw($withdrawId)
