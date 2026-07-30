@@ -25,11 +25,11 @@ class BaseAdapter
         return Curl::get($url, $headers);
     }
 
-    protected function httpPost($path, $request = null, $headers = null, $options = null)
+    protected function httpPost($path, $request = null, $headers = null, $headerOptions = null)
     {
         // Lifted out before signing, or the reserved keys end up in the body and the signature.
-        $scopedOptions = isset($options)
-            ? BaseRequest::optionsOf($options)
+        $scopedOptions = isset($headerOptions)
+            ? BaseRequest::optionsOf($headerOptions)
             : BaseRequest::takeOptions($request);
         $url = $this->prepareUrl($path);
         $headers = $this->prepareHeaders($headers, $path, $request, $scopedOptions);
@@ -37,10 +37,10 @@ class BaseAdapter
         return Curl::post($url, $headers, $request);
     }
 
-    protected function httpPut($path, $request, $headers = null, $options = null)
+    protected function httpPut($path, $request, $headers = null, $headerOptions = null)
     {
-        $scopedOptions = isset($options)
-            ? BaseRequest::optionsOf($options)
+        $scopedOptions = isset($headerOptions)
+            ? BaseRequest::optionsOf($headerOptions)
             : BaseRequest::takeOptions($request);
         $url = $this->prepareUrl($path);
         $headers = $this->prepareHeaders($headers, $path, $request, $scopedOptions);
@@ -49,13 +49,13 @@ class BaseAdapter
     }
 
     /**
-     * Sends a body-less DELETE. $options is a request wrapper whose reserved keys become headers;
+     * Sends a body-less DELETE. \$headerOptions is a request wrapper whose reserved keys become headers;
      * it is never sent as a body, so the signature stays that of a body-less call.
      */
-    protected function httpDelete($path, $headers = null, $options = null)
+    protected function httpDelete($path, $headers = null, $headerOptions = null)
     {
         $url = $this->prepareUrl($path);
-        $headers = $this->prepareHeaders($headers, $path, null, BaseRequest::optionsOf($options));
+        $headers = $this->prepareHeaders($headers, $path, null, BaseRequest::optionsOf($headerOptions));
 
         return Curl::delete($url, $headers);
     }
