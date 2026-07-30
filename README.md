@@ -113,7 +113,7 @@ var_dump($response);
 
 ## Idempotency
 
-Mutating operations (`POST`/`PUT`/`DELETE`) accept an optional idempotency key. Add an `idempotencyKey` entry to the request and the client sends it as the `x-idempotency-key` header, so a request can be safely retried (e.g. after a timeout) without the operation being performed twice — the server returns the result of the first request when it sees a repeated key.
+Mutating operations accept an optional idempotency key. Add an `idempotencyKey` entry to the request and the client sends it as the `x-idempotency-key` header, so a request can be safely retried (e.g. after a timeout) without the operation being performed twice — the server returns the result of the first request when it sees a repeated key.
 
 `idempotencyKey` is a reserved request key, accepted on any request:
 
@@ -138,6 +138,8 @@ $craftgate->payment()->expireCheckoutPayment(array(
 ```
 
 > Use a fresh key per distinct operation, and reuse the same key when retrying that operation.
+
+> The API honours the key on `POST`, `PATCH` and `DELETE` only. It is ignored on `PUT` endpoints, so retrying one of those is not de-duplicated.
 
 The key is sent as a header only — it is removed from the request before it is signed and sent, so it never reaches the request body, the query string, or the signature. Your array is left intact, so the same array can be passed again to retry.
 
