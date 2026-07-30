@@ -12,13 +12,14 @@ class FraudAdapter extends BaseAdapter
         return $this->httpGet($path);
     }
 
-    public function updateFraudChecks($id, $fraudCheckStatus)
+    public function updateFraudChecks(array $request)
     {
-        $path = "/fraud/v1/fraud-checks/" . $id . "/check-status";
-        $request = array(
-            'checkStatus' => $fraudCheckStatus
+        $path = "/fraud/v1/fraud-checks/" . $request['id'] . "/check-status";
+        // The id belongs in the path, so only the status is sent as the body.
+        $body = array(
+            'checkStatus' => $request['checkStatus']
         );
-        return $this->httpPut($path, $request);
+        return $this->httpPut($path, $body, null, $this->idempotencyKeyOf($request));
     }
 
     public function retrieveAllValueLists()
@@ -43,10 +44,10 @@ class FraudAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
-    public function deleteValueList($listName)
+    public function deleteValueList(array $request)
     {
-        $path = "/fraud/v1/value-lists/" . $listName;
-        return $this->httpDelete($path);
+        $path = "/fraud/v1/value-lists/" . $request['listName'];
+        return $this->httpDelete($path, null, $this->idempotencyKeyOf($request));
     }
 
     public function addValueToValueList($request)
@@ -61,10 +62,10 @@ class FraudAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
-    public function removeValueFromValueList($listName, $valueId)
+    public function removeValueFromValueList(array $request)
     {
-        $path = "/fraud/v1/value-lists/" . $listName . "/values/" . $valueId;
-        return $this->httpDelete($path);
+        $path = "/fraud/v1/value-lists/" . $request['listName'] . "/values/" . $request['valueId'];
+        return $this->httpDelete($path, null, $this->idempotencyKeyOf($request));
     }
 
     public function searchFraudRules(array $request)

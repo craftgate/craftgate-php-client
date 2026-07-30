@@ -24,10 +24,10 @@ class MerchantAdapter extends BaseAdapter
         return $this->httpGet($path);
     }
 
-    public function deleteMerchantPos($id)
+    public function deleteMerchantPos(array $request)
     {
-        $path = "/merchant/v1/merchant-poses/" . $id;
-        return $this->httpDelete($path);
+        $path = "/merchant/v1/merchant-poses/" . $request['merchantPosId'];
+        return $this->httpDelete($path, null, $this->idempotencyKeyOf($request));
     }
 
     public function searchMerchantPos(array $request)
@@ -48,10 +48,10 @@ class MerchantAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
-    public function updateMerchantPosStatus($id, $status)
+    public function updateMerchantPosStatus(array $request)
     {
-        $path = "/merchant/v1/merchant-poses/" . $id . "/status/" . $status;
-        return $this->httpPut($path, null);
+        $path = "/merchant/v1/merchant-poses/" . $request['merchantPosId'] . "/status/" . $request['posStatus'];
+        return $this->httpPut($path, null, null, $this->idempotencyKeyOf($request));
     }
 
     public function updateMember($memberId, array $request)
