@@ -2,22 +2,10 @@
 
 namespace Craftgate\Request;
 
-/**
- * Reserved request keys sent as headers rather than in the body. Requests here are plain arrays,
- * so this holds the key names and the helpers that lift them out before signing.
- *
- * New request-scoped options are added to the map below and nowhere else.
- */
 class BaseRequest
 {
-    /** Sent as the x-idempotency-key header so a mutating call can be safely retried. */
     const IDEMPOTENCY_KEY = 'idempotencyKey';
 
-    /**
-     * Reserved request key => the header it is sent as.
-     *
-     * @return array
-     */
     private static function reservedKeys()
     {
         return array(
@@ -25,12 +13,6 @@ class BaseRequest
         );
     }
 
-    /**
-     * Returns the reserved options carried by $request, leaving $request untouched.
-     *
-     * @param mixed $request request array
-     * @return array
-     */
     public static function optionsOf($request)
     {
         $options = array();
@@ -45,14 +27,6 @@ class BaseRequest
         return $options;
     }
 
-    /**
-     * Removes the reserved options from $request and returns them.
-     *
-     * Copy-on-write leaves the caller's own array intact, so it can be passed again to retry.
-     *
-     * @param mixed $request request array, modified in place
-     * @return array
-     */
     public static function takeOptions(&$request)
     {
         $options = self::optionsOf($request);
@@ -64,12 +38,6 @@ class BaseRequest
         return $options;
     }
 
-    /**
-     * Renders reserved options as header lines.
-     *
-     * @param array $options
-     * @return array
-     */
     public static function toHeaders(array $options)
     {
         $headers = array();

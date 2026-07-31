@@ -8,7 +8,6 @@ use Craftgate\Request\BaseRequest;
 use Craftgate\Util\QueryBuilder;
 use Craftgate\Util\Signature;
 
-/** Exposes the protected header builder so headers can be asserted without a request. */
 class HeaderProbeAdapter extends BaseAdapter
 {
     public function headersFor($path, $request = null, $options = null)
@@ -90,7 +89,6 @@ class IdempotencyTest extends \TestCase
         $this->assertEquals(array(), BaseRequest::optionsOf(null));
     }
 
-    /** A regression here rejects every delete/approve/cancel call at the API. */
     public function test_should_not_change_bodyless_signature()
     {
         $adapter = new HeaderProbeAdapter($this->options());
@@ -114,7 +112,6 @@ class IdempotencyTest extends \TestCase
         $this->assertEquals($expected, $this->headerValue($headers, 'x-signature'));
     }
 
-    /** An empty array must hash like a null one, so lifting the key out changes nothing. */
     public function test_empty_request_signs_like_a_null_request()
     {
         $options = $this->options();
@@ -130,7 +127,6 @@ class IdempotencyTest extends \TestCase
         $query = QueryBuilder::build(array('foo' => 'bar', 'idempotencyKey' => 'idempotency-key-1'));
 
         $this->assertEquals('?foo=bar', $query);
-        // strpos, because string-contains assertions differ across supported PHPUnit versions.
         $this->assertFalse(strpos($query, 'idempotencyKey'));
         $this->assertFalse(strpos($query, 'idempotency-key-1'));
     }
@@ -146,7 +142,6 @@ class IdempotencyTest extends \TestCase
 
         QueryBuilder::build($params);
 
-        // Copy-on-write means the caller keeps its key.
         $this->assertEquals('idempotency-key-1', $params['idempotencyKey']);
     }
 }

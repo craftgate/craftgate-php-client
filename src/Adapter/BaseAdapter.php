@@ -27,7 +27,6 @@ class BaseAdapter
 
     protected function httpPost($path, $request = null, $headers = null, $headerOptions = null)
     {
-        // Lifted out before signing, or the reserved keys end up in the body and the signature.
         $scopedOptions = isset($headerOptions)
             ? BaseRequest::optionsOf($headerOptions)
             : BaseRequest::takeOptions($request);
@@ -48,10 +47,6 @@ class BaseAdapter
         return Curl::put($url, $headers, $request);
     }
 
-    /**
-     * Sends a body-less DELETE. \$headerOptions is a request wrapper whose reserved keys become headers;
-     * it is never sent as a body, so the signature stays that of a body-less call.
-     */
     protected function httpDelete($path, $headers = null, $headerOptions = null)
     {
         $url = $this->prepareUrl($path);

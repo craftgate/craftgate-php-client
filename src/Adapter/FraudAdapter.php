@@ -15,7 +15,6 @@ class FraudAdapter extends BaseAdapter
     public function updateFraudChecks(array $request)
     {
         $path = "/fraud/v1/fraud-checks/" . $request['id'] . "/check-status";
-        // The id belongs in the path, so only the status is sent as the body.
         $body = array(
             'checkStatus' => $request['checkStatus']
         );
