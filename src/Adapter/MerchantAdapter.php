@@ -33,7 +33,7 @@ class MerchantAdapter extends BaseAdapter
     public function searchMerchantPos(array $request)
     {
         $path = "/merchant/v1/merchant-poses" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 
     public function retrieveMerchantPosCommissions($id)
@@ -69,7 +69,7 @@ class MerchantAdapter extends BaseAdapter
     public function searchMembers(array $request)
     {
         $path = "/onboarding/v1/members" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 
     public function createMerchant(array $request)

@@ -202,7 +202,7 @@ class PaymentAdapter extends BaseAdapter
     public function searchStoredCards(array $request)
     {
         $path = "/payment/v1/cards" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 
     public function deleteStoredCard(array $request)
@@ -298,13 +298,13 @@ class PaymentAdapter extends BaseAdapter
     public function retrieveProviderCards(array $request)
     {
         $path = "/payment/v1/cards/provider-card-mappings" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 
     public function retrieveCardFromIvr(array $request)
     {
         $path = "/payment/v1/ivr-cards" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 
     public function is3DSecureCallbackVerified($threeDSecureCallbackKey, $params)

@@ -14,6 +14,11 @@ class HeaderProbeAdapter extends BaseAdapter
     {
         return $this->prepareHeaders(null, $path, $request, HeaderOptions::of($options));
     }
+
+    public function getHeadersFor($path, $optionsRequest = null)
+    {
+        return $this->prepareHeaders(null, $path, null, HeaderOptions::of($optionsRequest));
+    }
 }
 
 class IdempotencyTest extends \TestCase
@@ -100,6 +105,23 @@ class IdempotencyTest extends \TestCase
             HeaderOptions::of(array('token' => 'token-1', 'headerOptions' => array('idempotencyKey' => 'idempotency-key-1'))));
         $this->assertEquals(array(), HeaderOptions::of(array('token' => 'token-1')));
         $this->assertEquals(array(), HeaderOptions::of(null));
+    }
+
+    public function test_read_request_sends_the_key_and_stays_bodyless()
+    {
+        $adapter = new HeaderProbeAdapter($this->options());
+        $request = array('page' => 0, 'headerOptions' => array('idempotencyKey' => 'idempotency-key-1'));
+        $path = '/payment-reporting/v1/payments' . QueryBuilder::build($request);
+
+        $headers = $adapter->getHeadersFor($path, $request);
+
+        $this->assertEquals('idempotency-key-1', $this->headerValue($headers, 'x-idempotency-key'));
+        $this->assertFalse(strpos($path, 'headerOptions'));
+        $this->assertFalse(strpos($path, 'idempotencyKey'));
+
+        $expected = Signature::generate($this->options(), $path,
+            $this->headerValue($headers, 'x-rnd-key'), null);
+        $this->assertEquals($expected, $this->headerValue($headers, 'x-signature'));
     }
 
     public function test_should_not_change_bodyless_signature()

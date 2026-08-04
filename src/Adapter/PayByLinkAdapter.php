@@ -33,6 +33,6 @@ class PayByLinkAdapter extends BaseAdapter
     public function searchProducts(array $request)
     {
         $path = "/craftlink/v1/products" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 }

@@ -9,7 +9,7 @@ class FraudAdapter extends BaseAdapter
     public function searchFraudChecks(array $request)
     {
         $path = "/fraud/v1/fraud-checks" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 
     public function updateFraudChecks(array $request)
@@ -70,6 +70,6 @@ class FraudAdapter extends BaseAdapter
     public function searchFraudRules(array $request)
     {
         $path = "/fraud/v1/rules" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 }

@@ -17,10 +17,10 @@ class BaseAdapter
         $this->options = $options;
     }
 
-    protected function httpGet($path, $headers = null)
+    protected function httpGet($path, $headers = null, $optionsRequest = null)
     {
         $url = $this->prepareUrl($path);
-        $headers = $this->prepareHeaders($headers, $path);
+        $headers = $this->prepareHeaders($headers, $path, null, HeaderOptions::of($optionsRequest));
 
         return Curl::get($url, $headers);
     }

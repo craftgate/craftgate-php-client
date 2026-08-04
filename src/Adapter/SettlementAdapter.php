@@ -33,6 +33,6 @@ class SettlementAdapter extends BaseAdapter
     public function searchPayoutAccount(array $request)
     {
         $path = "/settlement/v1/payout-accounts" . QueryBuilder::build($request);
-        return $this->httpGet($path, $request);
+        return $this->httpGet($path, $request, $request);
     }
 }
