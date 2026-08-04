@@ -2,7 +2,7 @@
 
 namespace Craftgate\Util;
 
-use Craftgate\Request\BaseRequest;
+use Craftgate\Request\HeaderOptions;
 
 class QueryBuilder
 {
@@ -12,7 +12,7 @@ class QueryBuilder
             return '';
         }
 
-        BaseRequest::takeOptions($params);
+        HeaderOptions::takeFrom($params);
         if (empty($params)) {
             return '';
         }

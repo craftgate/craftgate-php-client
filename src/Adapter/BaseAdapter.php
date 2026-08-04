@@ -3,7 +3,7 @@
 namespace Craftgate\Adapter;
 
 use Craftgate\CraftgateOptions;
-use Craftgate\Request\BaseRequest;
+use Craftgate\Request\HeaderOptions;
 use Craftgate\Util\Curl;
 use Craftgate\Util\Guid;
 use Craftgate\Util\Signature;
@@ -25,32 +25,32 @@ class BaseAdapter
         return Curl::get($url, $headers);
     }
 
-    protected function httpPost($path, $request = null, $headers = null, $headerOptions = null)
+    protected function httpPost($path, $request = null, $headers = null, $optionsRequest = null)
     {
-        $scopedOptions = isset($headerOptions)
-            ? BaseRequest::optionsOf($headerOptions)
-            : BaseRequest::takeOptions($request);
+        $scopedOptions = isset($optionsRequest)
+            ? HeaderOptions::of($optionsRequest)
+            : HeaderOptions::takeFrom($request);
         $url = $this->prepareUrl($path);
         $headers = $this->prepareHeaders($headers, $path, $request, $scopedOptions);
 
         return Curl::post($url, $headers, $request);
     }
 
-    protected function httpPut($path, $request, $headers = null, $headerOptions = null)
+    protected function httpPut($path, $request, $headers = null, $optionsRequest = null)
     {
-        $scopedOptions = isset($headerOptions)
-            ? BaseRequest::optionsOf($headerOptions)
-            : BaseRequest::takeOptions($request);
+        $scopedOptions = isset($optionsRequest)
+            ? HeaderOptions::of($optionsRequest)
+            : HeaderOptions::takeFrom($request);
         $url = $this->prepareUrl($path);
         $headers = $this->prepareHeaders($headers, $path, $request, $scopedOptions);
 
         return Curl::put($url, $headers, $request);
     }
 
-    protected function httpDelete($path, $headers = null, $headerOptions = null)
+    protected function httpDelete($path, $headers = null, $optionsRequest = null)
     {
         $url = $this->prepareUrl($path);
-        $headers = $this->prepareHeaders($headers, $path, null, BaseRequest::optionsOf($headerOptions));
+        $headers = $this->prepareHeaders($headers, $path, null, HeaderOptions::of($optionsRequest));
 
         return Curl::delete($url, $headers);
     }
@@ -71,7 +71,7 @@ class BaseAdapter
         if (isset($language)) {
             $headers[] = 'lang: ' . $language;
         }
-        return array_merge($headers, BaseRequest::toHeaders($scopedOptions));
+        return array_merge($headers, HeaderOptions::toHeaders($scopedOptions));
     }
 
     private function prepareUrl($path)
