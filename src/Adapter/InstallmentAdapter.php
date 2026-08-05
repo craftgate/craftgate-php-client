@@ -9,7 +9,7 @@ class InstallmentAdapter extends BaseAdapter
     public function searchInstallments(array $request)
     {
         $path = "/installment/v1/installments" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 
     public function retrieveBinNumber($binNumber)

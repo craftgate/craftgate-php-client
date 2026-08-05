@@ -61,10 +61,10 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpGet($path);
     }
 
-    public function expireCheckoutPayment($token)
+    public function expireCheckoutPayment(array $request)
     {
-        $path = "/payment/v1/checkout-payments/" . $token;
-        return $this->httpDelete($path);
+        $path = "/payment/v1/checkout-payments/" . $request['token'];
+        return $this->httpDelete($path, null, $request);
     }
 
     public function createDepositPayment(array $request)
@@ -202,7 +202,7 @@ class PaymentAdapter extends BaseAdapter
     public function searchStoredCards(array $request)
     {
         $path = "/payment/v1/cards" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 
     public function deleteStoredCard(array $request)
@@ -253,16 +253,16 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
-    public function approveBnplPayment($paymentId)
+    public function approveBnplPayment(array $request)
     {
-        $path = "/payment/v1/bnpl-payments/" . $paymentId . "/approve";
-        return $this->httpPost($path);
+        $path = "/payment/v1/bnpl-payments/" . $request['paymentId'] . "/approve";
+        return $this->httpPost($path, null, null, $request);
     }
 
-    public function verifyBnplPayment($paymentId)
+    public function verifyBnplPayment(array $request)
     {
-        $path = "/payment/v1/bnpl-payments/" . $paymentId . "/verify";
-        return $this->httpPost($path);
+        $path = "/payment/v1/bnpl-payments/" . $request['paymentId'] . "/verify";
+        return $this->httpPost($path, null, null, $request);
     }
 
     public function bnplLimitInquiryInit(array $request)
@@ -298,13 +298,13 @@ class PaymentAdapter extends BaseAdapter
     public function retrieveProviderCards(array $request)
     {
         $path = "/payment/v1/cards/provider-card-mappings" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 
     public function retrieveCardFromIvr(array $request)
     {
         $path = "/payment/v1/ivr-cards" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 
     public function is3DSecureCallbackVerified($threeDSecureCallbackKey, $params)
