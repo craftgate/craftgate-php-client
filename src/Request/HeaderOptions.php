@@ -15,7 +15,7 @@ class HeaderOptions
             return $options;
         }
         $headerOptions = $request[self::REQUEST_KEY];
-        if (isset($headerOptions[self::IDEMPOTENCY_KEY])) {
+        if (isset($headerOptions[self::IDEMPOTENCY_KEY]) && $headerOptions[self::IDEMPOTENCY_KEY] !== '') {
             $options[self::IDEMPOTENCY_KEY] = $headerOptions[self::IDEMPOTENCY_KEY];
         }
         return $options;
