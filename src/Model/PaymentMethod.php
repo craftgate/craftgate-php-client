@@ -15,7 +15,7 @@ class PaymentMethod
     const TOKENFLEX = 'TOKENFLEX';
     const TOKENFLEX_GIFT = 'TOKENFLEX_GIFT';
     const STRIPE = 'STRIPE';
-    const INSTANT_TRANSFER = 'INSTANT_TRANSFER';
+    const COMPAY = 'COMPAY';
     const ALIPAY = 'ALIPAY';
     const PAYPAL = 'PAYPAL';
     const KLARNA = 'KLARNA';
