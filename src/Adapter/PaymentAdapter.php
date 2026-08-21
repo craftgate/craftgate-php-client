@@ -279,7 +279,7 @@ class PaymentAdapter extends BaseAdapter
 
     public function retrieveActiveBanks()
     {
-        $path = "/payment/v1/compay-banks";
+        $path = "/payment/v1/compay/banks";
         return $this->httpGet($path);
     }
 
