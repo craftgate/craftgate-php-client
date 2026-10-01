@@ -16,6 +16,12 @@ class MasterpassPaymentAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
+    public function generateMasterpassAccountToken(array $request)
+    {
+        $path = "/payment/v2/masterpass-accounts/generate-token";
+        return $this->httpPost($path, $request);
+    }
+
     public function completeMasterpassPayment(array $request)
     {
         $path = "/payment/v2/masterpass-payments/complete";
