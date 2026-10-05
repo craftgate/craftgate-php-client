@@ -24,15 +24,15 @@ class PayByLinkAdapter extends BaseAdapter
         return $this->httpGet($path);
     }
 
-    public function deleteProduct($productId)
+    public function deleteProduct(array $request)
     {
-        $path = "/craftlink/v1/products/" . $productId;
-        return $this->httpDelete($path);
+        $path = "/craftlink/v1/products/" . $request['id'];
+        return $this->httpDelete($path, null, $request);
     }
 
     public function searchProducts(array $request)
     {
         $path = "/craftlink/v1/products" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 }

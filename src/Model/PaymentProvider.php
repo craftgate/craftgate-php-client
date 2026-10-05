@@ -45,5 +45,6 @@ class PaymentProvider
     const IWALLET = "IWALLET";
     const SETCARD = "SETCARD";
     const BKM_EXPRESS = "BKM_EXPRESS";
+    const ALBARAKA = "ALBARAKA";
     const OFFLINE = "OFFLINE";
 }

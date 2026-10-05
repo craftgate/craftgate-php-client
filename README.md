@@ -111,6 +111,38 @@ $response = $craftgate->payment()->createPayment($request);
 var_dump($response);
 ```
 
+## Idempotency
+
+Mutating operations accept an optional idempotency key. Add a `headerOptions` entry to the request with an `idempotencyKey` inside it and the client sends it as the `x-idempotency-key` header, so a request can be safely retried (e.g. after a timeout) without the operation being performed twice — the server returns the result of the first request when it sees a repeated key.
+
+`headerOptions` is a reserved request key, accepted on any request:
+
+```php
+$response = $craftgate->payment()->createPayment(array(
+    'price' => 100.0,
+    'paidPrice' => 100.0,
+    'currency' => Currency::TRY,
+    'paymentGroup' => PaymentGroup::LISTING_OR_SUBSCRIPTION,
+    'headerOptions' => array('idempotencyKey' => uniqid('', true)),
+    // ... other fields
+));
+```
+
+Operations whose parameters live in the URL path take a request array as well, so they can carry a key too:
+
+```php
+$craftgate->payment()->expireCheckoutPayment(array(
+    'token' => '456d1297-908e-4bd6-a13b-4be31a6e47d5',
+    'headerOptions' => array('idempotencyKey' => uniqid('', true))
+));
+```
+
+> Use a fresh key per distinct operation, and reuse the same key when retrying that operation.
+
+> The API honours the key on `POST`, `PATCH` and `DELETE` only. It is ignored on `PUT` endpoints, so retrying one of those is not de-duplicated.
+
+`headerOptions` is sent as headers only — it is removed from the request before it is signed and sent, so it never reaches the request body, the query string, or the signature. Your array is left intact, so the same array can be passed again to retry.
+
 ### Contributions
 For all contributions to this client please see the contribution guide [here](CONTRIBUTING.md). By participating in this project, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md).
 

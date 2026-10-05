@@ -9,13 +9,13 @@ class SettlementReportingAdapter extends BaseAdapter
     public function searchPayoutCompletedTransactions(array $request)
     {
         $path = "/settlement-reporting/v2/settlement-file/payout-completed-transactions" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 
     public function searchBouncedPayoutTransactions(array $request)
     {
         $path = "/settlement-reporting/v1/settlement-file/bounced-sub-merchant-rows" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 
     public function retrievePayoutDetails($id)
@@ -27,6 +27,6 @@ class SettlementReportingAdapter extends BaseAdapter
     public function searchPayoutRows(array $request)
     {
         $path = "/settlement-reporting/v1/settlement-file-rows" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 }

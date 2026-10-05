@@ -27,7 +27,7 @@ class OnboardingAdapter extends BaseAdapter
     public function searchMembers(array $request)
     {
         $path = "/onboarding/v1/members" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 
     public function createMerchant(array $request)

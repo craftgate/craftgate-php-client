@@ -9,7 +9,7 @@ class PaymentReportingAdapter extends BaseAdapter
     public function searchPayments(array $request)
     {
         $path = "/payment-reporting/v1/payments" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 
     public function retrievePayment($paymentId)
@@ -39,12 +39,12 @@ class PaymentReportingAdapter extends BaseAdapter
     public function searchPaymentRefunds(array $request)
     {
         $path = "/payment-reporting/v1/refunds" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 
     public function searchPaymentTransactionRefunds(array $request)
     {
         $path = "/payment-reporting/v1/refund-transactions" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 }

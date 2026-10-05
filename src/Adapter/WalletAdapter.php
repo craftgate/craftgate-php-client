@@ -22,7 +22,7 @@ class WalletAdapter extends BaseAdapter
     public function searchWalletTransactions($walletId, array $request)
     {
         $path = "/wallet/v1/wallets/" . $walletId . "/wallet-transactions" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 
     public function updateMemberWallet($memberId, $walletId, array $request)
@@ -85,10 +85,10 @@ class WalletAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
-    public function cancelWithdraw($withdrawId)
+    public function cancelWithdraw(array $request)
     {
-        $path = "/wallet/v1/withdraws/" . $withdrawId . "/cancel";
-        return $this->httpPost($path);
+        $path = "/wallet/v1/withdraws/" . $request['withdrawId'] . "/cancel";
+        return $this->httpPost($path, null, null, $request);
     }
 
     public function retrieveWithdraw($withdrawId)
@@ -100,6 +100,6 @@ class WalletAdapter extends BaseAdapter
     public function searchWithdraws(array $request)
     {
         $path = "/wallet/v1/withdraws" . QueryBuilder::build($request);
-        return $this->httpGet($path);
+        return $this->httpGet($path, null, $request);
     }
 }
