@@ -21,4 +21,10 @@ class BkmExpressPaymentAdapter extends BaseAdapter
         $path = "/payment/v1/bkm-express/" . $token;
         return $this->httpGet($path);
     }
+
+    public function generateToken(array $request)
+    {
+        $path = "/payment/v2/bkm-express/generate-token";
+        return $this->httpPost($path, $request);
+    }
 }
