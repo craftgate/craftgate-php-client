@@ -45,4 +45,5 @@ class PosIntegrator
     const RUBIK = 'RUBIK';
     const BIN_PAY = 'BIN_PAY';
     const TURKONAY = 'TURKONAY';
+    const ENPARA = 'ENPARA';
 }
