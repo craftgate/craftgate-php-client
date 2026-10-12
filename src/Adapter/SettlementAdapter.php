@@ -24,15 +24,15 @@ class SettlementAdapter extends BaseAdapter
         return $this->httpPut($path, $request);
     }
 
-    public function deletePayoutAccount($id)
+    public function deletePayoutAccount(array $request)
     {
-        $path = "/settlement/v1/payout-accounts/" . $id;
-        return $this->httpDelete($path);
+        $path = "/settlement/v1/payout-accounts/" . $request['id'];
+        return $this->httpDelete($path, null, $request);
     }
 
     public function searchPayoutAccount(array $request)
     {
         $path = "/settlement/v1/payout-accounts" . QueryBuilder::build($request);
-        return $this->httpGet($path, $request);
+        return $this->httpGet($path, $request, $request);
     }
 }
