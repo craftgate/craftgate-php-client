@@ -41,10 +41,15 @@ class PaymentProvider
     const PAYMOB = "PAYMOB";
     const BIZUM = "BIZUM";
     const PAYLANDS_MB_WAY = "PAYLANDS_MB_WAY";
-    const PAYCELL_DCB = "PAYCELL_DCB";
     const IWALLET = "IWALLET";
     const SETCARD = "SETCARD";
     const BKM_EXPRESS = "BKM_EXPRESS";
     const ALBARAKA = "ALBARAKA";
     const OFFLINE = "OFFLINE";
+    const CECABANK_BIZUM = "CECABANK_BIZUM";
+    const COMPAY = "COMPAY";
+    const ISBANK_IDEAL = "ISBANK_IDEAL";
+    const PAPEL = "PAPEL";
+    const PAYGURU = "PAYGURU";
+    const PAYLANDS_BIZUM = "PAYLANDS_BIZUM";
 }

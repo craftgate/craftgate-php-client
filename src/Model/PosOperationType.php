@@ -10,4 +10,5 @@ class PosOperationType
     const PAYMENT = 'PAYMENT';
     const REFUND = 'REFUND';
     const INQUIRY = 'INQUIRY';
+    const POS_APM = 'POS_APM';
 }

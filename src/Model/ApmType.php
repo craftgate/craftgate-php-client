@@ -48,4 +48,11 @@ class ApmType
     const SETCARD = 'SETCARD';
     const SETCARD_GIFT = 'SETCARD_GIFT';
     const ALBARAKA = 'ALBARAKA';
+    const CECABANK_BIZUM = 'CECABANK_BIZUM';
+    const COMPAY_BNPL = 'COMPAY_BNPL';
+    const HEPSIPAY_FINANCE = 'HEPSIPAY_FINANCE';
+    const ISBANK_IDEAL = 'ISBANK_IDEAL';
+    const PAPEL = 'PAPEL';
+    const PAYGURU = 'PAYGURU';
+    const PAYLANDS_BIZUM = 'PAYLANDS_BIZUM';
 }
