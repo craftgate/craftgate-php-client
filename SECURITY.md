@@ -12,8 +12,7 @@ your report as soon as possible. If possible, please include the following infor
 * The version of the project that is affected
 * Steps to reproduce the vulnerability
 * We ask that you keep the details of the vulnerability confidential until we have had a chance to respond and assess
-  the
-  issue.
+  the issue.
 
 ## Response Plan
 
