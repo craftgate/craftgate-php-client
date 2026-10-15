@@ -58,7 +58,13 @@ $craftgate = new \Craftgate\Craftgate(array(
 Included in the project are a number of examples that cover almost all use-cases. Refer to [the `samples/` folder](./samples) for more info.
 
 ### Running the Examples
-If you've cloned this repo on your development machine and wish to run the examples you can run an example with the command `./vendor/bin/phpunit`
+If you've cloned this repo on your development machine and wish to run the examples, replace the `apiKey` and `secretKey` values in [`samples/config/sample_config.php`](samples/config/sample_config.php) with your sandbox credentials, then run an example with PHP:
+
+```bash
+php samples/create_payment.php
+```
+
+To run the unit tests, use `composer install` followed by `composer test`. The unit tests don't call the Craftgate API.
 
 ### Credit Card Payment Use Case
 Let's quickly review an example where we implement a credit card payment scenario.

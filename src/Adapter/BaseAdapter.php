@@ -4,6 +4,7 @@ namespace Craftgate\Adapter;
 
 use Craftgate\CraftgateOptions;
 use Craftgate\Request\HeaderOptions;
+use Craftgate\Util\ClientVersion;
 use Craftgate\Util\Curl;
 use Craftgate\Util\Guid;
 use Craftgate\Util\Signature;
@@ -63,7 +64,7 @@ class BaseAdapter
         $headers[] = 'x-api-key: ' . $this->options->getApiKey();
         $headers[] = 'x-rnd-key: ' . ($randomString = Guid::generate());
         $headers[] = 'x-auth-version: v1';
-        $headers[] = 'x-client-version: craftgate-php-client:1.0.53';
+        $headers[] = 'x-client-version: craftgate-php-client:' . ClientVersion::get();
         $headers[] = 'x-signature: ' . Signature::generate(
                 $this->options, $this->trimPath($path), $randomString, $request
             );
