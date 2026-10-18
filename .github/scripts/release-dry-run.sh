@@ -8,9 +8,16 @@
 set -euo pipefail
 tag="${1:?usage: release-dry-run.sh <tag>}"
 expected="${tag#v}"
-repo_dir="$(cd "$(dirname "$0")/../.." && pwd)"
+source_dir="$(cd "$(dirname "$0")/../.." && pwd)"
 work_dir="$(mktemp -d)"
-trap 'rm -rf "$work_dir"; git -C "$repo_dir" tag -d "$tag" >/dev/null 2>&1 || true' EXIT
+trap 'rm -rf "$work_dir"' EXIT
+
+# Works on a tag-free copy of HEAD: on a tag push HEAD also carries the real release tag, which would be read instead
+# of $tag. The copy also leaves the caller's own tags alone.
+repo_dir="$work_dir/repo"
+git init --quiet "$repo_dir"
+git -C "$repo_dir" fetch --quiet --no-tags --depth 1 "file://$source_dir" HEAD
+git -C "$repo_dir" checkout --quiet FETCH_HEAD
 
 cat > "$work_dir/check.php" <<'PHP'
 <?php
