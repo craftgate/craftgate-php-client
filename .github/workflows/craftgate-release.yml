@@ -1,0 +1,56 @@
+name: Craftgate PHP Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version (format: 1.2.3)"
+        required: true
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Ensure branch context
+        run: |
+          if [[ "${GITHUB_REF}" != refs/heads/* ]]; then
+            echo "::error::Release workflow must run against a branch ref."
+            exit 1
+          fi
+
+      - name: Validate version
+        env:
+          INPUT_VERSION: ${{ inputs.version }}
+        run: .github/scripts/prepare-release.sh "$INPUT_VERSION"
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: intl
+
+      # Installs HEAD the ways users install a release and checks the x-client-version header before tagging.
+      - name: Release dry run
+        run: .github/scripts/release-dry-run.sh "$TAG"
+
+      # Packagist picks up the new tag through its GitHub hook; there is nothing else to publish.
+      - name: Create tag
+        run: |
+          git tag "$TAG"
+          git push origin "refs/tags/$TAG"
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: ${{ env.TAG }}
+          name: ${{ env.TAG }}
+          generate_release_notes: true

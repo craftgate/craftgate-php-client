@@ -38,6 +38,9 @@ jobs:
           composer update --prefer-stable
           composer test
 
-      # Installs this checkout like a release tag would be installed from Packagist and checks the x-client-version header.
+      # Same version validation as the release workflow, with a fake "v" prefixed version; then installs this checkout
+      # like a release tag would be installed from Packagist and checks the x-client-version header.
       - name: Release dry run
-        run: .github/scripts/release-dry-run.sh v9.9.9
+        run: |
+          .github/scripts/prepare-release.sh v9.9.9
+          .github/scripts/release-dry-run.sh v9.9.9
