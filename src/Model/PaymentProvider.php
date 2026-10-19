@@ -16,7 +16,7 @@ class PaymentProvider
     const METROPOL = "METROPOL";
     const STRIPE = "STRIPE";
     const KASPI = "KASPI";
-    const INSTANT_TRANSFER = "INSTANT_TRANSFER";
+    const COMPAY = "COMPAY";
     const TOMPAY = "TOMPAY";
     const YKB_WORLD_PAY = "YKB_WORLD_PAY";
     const APPLEPAY = "APPLEPAY";
