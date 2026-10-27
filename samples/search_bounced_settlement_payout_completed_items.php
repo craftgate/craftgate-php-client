@@ -10,6 +10,6 @@ $request = array(
     'endDate' => date_create()->format('Y-m-d\TH:i:s')
 );
 
-$response = SampleConfig::craftgate()->settlementReporting()->searchPayoutCompletedTransactions($request);
+$response = SampleConfig::craftgate()->settlementReporting()->searchPayoutCompletedItems($request);
 
 print_r($response);

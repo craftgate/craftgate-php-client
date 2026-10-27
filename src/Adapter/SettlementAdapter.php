@@ -35,4 +35,22 @@ class SettlementAdapter extends BaseAdapter
         $path = "/settlement/v1/payout-accounts" . QueryBuilder::build($request);
         return $this->httpGet($path, $request, $request);
     }
+
+    public function approvePaymentTransactions(array $request)
+    {
+        $path = "/settlement/v1/payment-transactions/approve";
+        return $this->httpPost($path, $request);
+    }
+
+    public function disapprovePaymentTransactions(array $request)
+    {
+        $path = "/settlement/v1/payment-transactions/disapprove";
+        return $this->httpPost($path, $request);
+    }
+
+    public function updatePaymentTransaction($paymentTransactionId, array $request)
+    {
+        $path = "/settlement/v1/payment-transactions/" . $paymentTransactionId;
+        return $this->httpPut($path, $request);
+    }
 }
