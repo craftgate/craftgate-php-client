@@ -217,24 +217,6 @@ class PaymentAdapter extends BaseAdapter
         return $this->httpPost($path, $request);
     }
 
-    public function approvePaymentTransactions(array $request)
-    {
-        $path = "/payment/v1/payment-transactions/approve";
-        return $this->httpPost($path, $request);
-    }
-
-    public function disapprovePaymentTransactions(array $request)
-    {
-        $path = "/payment/v1/payment-transactions/disapprove";
-        return $this->httpPost($path, $request);
-    }
-
-    public function updatePaymentTransaction($paymentTransactionId, array $request)
-    {
-        $path = "/payment/v1/payment-transactions/" . $paymentTransactionId;
-        return $this->httpPut($path, $request);
-    }
-
     public function createApplePayMerchantSession(array $request)
     {
         $path = "/payment/v1/apple-pay/merchant-sessions";

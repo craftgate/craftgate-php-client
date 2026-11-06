@@ -12,6 +12,6 @@ $request = array(
     'size' => 10
 );
 
-$response = SampleConfig::craftgate()->settlementReporting()->searchPayoutCompletedTransactions($request);
+$response = SampleConfig::craftgate()->settlementReporting()->searchPayoutCompletedItems($request);
 
 print_r($response);
