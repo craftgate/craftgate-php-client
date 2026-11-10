@@ -18,7 +18,7 @@ class ApmType
     const AFTERPAY = 'AFTERPAY';
     const STRIPE = 'STRIPE';
     const KASPI = 'KASPI';
-    const INSTANT_TRANSFER = 'INSTANT_TRANSFER';
+    const COMPAY = 'COMPAY';
     const TOMPAY = 'TOMPAY';
     const MASLAK = 'MASLAK';
     const ALFABANK = 'ALFABANK';

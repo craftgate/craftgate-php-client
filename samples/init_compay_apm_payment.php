@@ -8,7 +8,7 @@ use Craftgate\Model\PaymentGroup;
 use Craftgate\Util\Guid;
 
 $request = array(
-    'apmType' => ApmType::INSTANT_TRANSFER,
+    'apmType' => ApmType::COMPAY,
     'price' => 1,
     'paidPrice' => 1,
     'currency' => Currency::TL,
@@ -18,7 +18,9 @@ $request = array(
     'callbackUrl' => 'https://www.your-website.com/craftgate-apm-callback',
     'apmUserIdentity' => '5555555555',
     'additionalParams' => array(
-        'bankCode' => '0'
+        'bankCode' => '0',
+        'shopUrl' => 'your-website.com',
+        'receiptDescription' => 'Your receipt description'
     ),
     'items' => array(
         array(
