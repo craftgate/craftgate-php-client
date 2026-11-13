@@ -43,6 +43,7 @@ class PosIntegrator
     const AKBANK_VPOS = 'AKBANK_VPOS';
     const TAP = 'TAP';
     const RUBIK = 'RUBIK';
+    const SAGLAMPAY = 'SAGLAMPAY';
     const BIN_PAY = 'BIN_PAY';
     const TURKONAY = 'TURKONAY';
     const ENPARA = 'ENPARA';
