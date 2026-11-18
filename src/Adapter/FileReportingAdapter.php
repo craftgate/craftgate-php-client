@@ -29,4 +29,10 @@ class FileReportingAdapter extends BaseAdapter
         $path = "/file-reporting/v1/report-demands";
         return $this->httpPost($path, $request);
     }
+
+    public function createReportFromTemplate($templateId, array $request)
+    {
+        $path = "/file-reporting/v1/report-templates/" . $templateId . "/reports";
+        return $this->httpPost($path, $request);
+    }
 }
