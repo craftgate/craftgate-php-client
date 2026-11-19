@@ -27,4 +27,5 @@ class PaymentMethod
     const MULTINET_NEO_GIFT = 'MULTINET_NEO_GIFT';
     const BIZUM = 'BIZUM';
     const PAYCELL_DCB = 'PAYCELL_DCB';
+    const ISPAY_POS_APM = 'ISPAY_POS_APM';
 }
