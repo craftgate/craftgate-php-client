@@ -24,6 +24,12 @@ class FileReportingAdapter extends BaseAdapter
         return $this->httpGet($path, array('content-type: application/octet-stream'), $request);
     }
 
+    public function downloadReport(array $request, $reportId)
+    {
+        $path = "/file-reporting/v1/reports/" . $reportId . "/download" . QueryBuilder::build($request);
+        return $this->httpGet($path, array('content-type: application/octet-stream'), $request);
+    }
+
     public function createReport(array $request)
     {
         $path = "/file-reporting/v1/report-demands";
