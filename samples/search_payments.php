@@ -24,6 +24,7 @@ $request = array(
     'maxPaidPrice' => 10,
     'installment' => 1,
     'isThreeDS' => false,
+    'isMaskedCardPayment' => false,
     'minCreatedDate' => date_create()->modify('-4 days')->format('Y-m-d\TH:i:s'),
     'maxCreatedDate' => date_create()->format('Y-m-d\TH:i:s')
 );
