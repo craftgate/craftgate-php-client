@@ -6,9 +6,9 @@ use Craftgate\Util\QueryBuilder;
 
 class SettlementReportingAdapter extends BaseAdapter
 {
-    public function searchPayoutCompletedTransactions(array $request)
+    public function searchPayoutCompletedItems(array $request)
     {
-        $path = "/settlement-reporting/v2/settlement-file/payout-completed-transactions" . QueryBuilder::build($request);
+        $path = "/settlement-reporting/v1/settlement-file/payout-completed-items" . QueryBuilder::build($request);
         return $this->httpGet($path, null, $request);
     }
 
@@ -18,15 +18,27 @@ class SettlementReportingAdapter extends BaseAdapter
         return $this->httpGet($path, null, $request);
     }
 
-    public function retrievePayoutDetails($id)
+    public function retrieveSettlementRow($settlementRowId)
     {
-        $path = "/settlement-reporting/v1/settlement-file/payout-details/" . $id;
+        $path = "/settlement-reporting/v1/settlement-file/rows/" . $settlementRowId;
         return $this->httpGet($path);
     }
 
     public function searchPayoutRows(array $request)
     {
         $path = "/settlement-reporting/v1/settlement-file-rows" . QueryBuilder::build($request);
+        return $this->httpGet($path, null, $request);
+    }
+
+    public function retrievePaymentTransactionPayout($paymentTransactionId)
+    {
+        $path = "/settlement-reporting/v1/payment-transactions/" . $paymentTransactionId . "/payout";
+        return $this->httpGet($path);
+    }
+
+    public function searchPaymentTransactionPayouts(array $request)
+    {
+        $path = "/settlement-reporting/v1/payment-transactions/payouts" . QueryBuilder::build($request);
         return $this->httpGet($path, null, $request);
     }
 }
